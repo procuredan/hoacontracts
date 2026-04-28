@@ -20,8 +20,14 @@
   <p>We’ll review your information and follow up shortly.</p>
   <p><a href="https://hoacontracts.com">Back to HOA Contracts</a></p>
   <script>
-gtag('event', 'conversion', {
-  'send_to': 'AW-17934471659/ABC123XYZ'
+window.addEventListener('load', function() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17934471659/ABC123XYZ'
+    });
+  } else {
+    console.log('gtag not loaded');
+  }
 });
 </script>
 </body>
