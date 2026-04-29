@@ -146,59 +146,74 @@
       </p>
     </div>
 
-    <!-- FORM -->
-    <form id="hoa-form" action="https://formspree.io/f/xdayqnej" method="POST">
+   <form id="hoa-form" action="https://formspree.io/f/xdayqnej" method="POST">
 
-      <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
+  <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
 
-      <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:13px; margin-top:10px; border:1px solid #ccd6e0; border-radius:5px;">
+  <h3 style="margin-top:0; color:#333;">Tell us about your association</h3>
 
-      <input type="email" name="email" placeholder="Email" required style="width:100%; padding:13px; margin-top:10px; border:1px solid #ccd6e0; border-radius:5px;">
+  <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
-      <input type="tel" name="phone" placeholder="Phone" required style="width:100%; padding:13px; margin-top:10px; border:1px solid #ccd6e0; border-radius:5px;">
+  <input type="email" name="email" placeholder="Email Address" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
-      <input type="text" name="hoa" placeholder="HOA / Condo Association Name" required style="width:100%; padding:13px; margin-top:10px; border:1px solid #ccd6e0; border-radius:5px;">
+  <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
-      <select name="units" required style="width:100%; padding:13px; margin-top:10px; border:1px solid #ccd6e0; border-radius:5px;">
-        <option value="">Number of Units</option>
-        <option>1-50</option>
-        <option>50-100</option>
-        <option>100-300</option>
-        <option>300+</option>
-      </select>
+  <input type="text" name="association_name" placeholder="HOA / Condo Association Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
-      <p style="margin-top:24px;"><strong>What would you like reviewed?</strong></p>
+  <select name="role" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+    <option value="">Your Role</option>
+    <option>HOA Board Member</option>
+    <option>Property Manager</option>
+    <option>Committee Member</option>
+    <option>Homeowner</option>
+    <option>Other</option>
+  </select>
 
-      <div style="color:#444; line-height:1.9;">
-        <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
-        <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
-        <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
-        <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
-        <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
-        <label><input type="checkbox" name="review[]" value="Full Review"> Full vendor contract review</label><br>
-      </div>
+  <select name="units" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+    <option value="">Number of Units</option>
+    <option>1-50</option>
+    <option>51-100</option>
+    <option>101-300</option>
+    <option>301-500</option>
+    <option>500+</option>
+    <option>Not sure</option>
+  </select>
 
-      <button type="submit" style="
-        width:100%;
-        padding:16px;
-        margin-top:24px;
-        background:linear-gradient(90deg,#0070f3,#0055cc);
-        color:white;
-        border:none;
-        font-size:18px;
-        font-weight:bold;
-        border-radius:6px;
-        cursor:pointer;
-        box-shadow:0 4px 10px rgba(0,112,243,0.3);
-      ">
-        Request My Free HOA Review →
-      </button>
+  <p style="margin-top:24px;"><strong>What would you like reviewed?</strong></p>
 
-      <p style="font-size:13px; color:#777; text-align:center; margin-top:12px;">
-        We respect your time and privacy. No spam. No pressure.
-      </p>
+  <div style="color:#444; line-height:1.9; background:#fafcff; padding:15px; border-radius:8px; border:1px solid #e6ecf5;">
+    <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
+    <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
+    <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
+    <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
+    <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
+    <label><input type="checkbox" name="review[]" value="Full Review"> Full vendor contract review</label><br>
+    <label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
+  </div>
 
-    </form>
+  <textarea name="notes" placeholder="Anything specific you want us to know? (Optional)" style="width:100%; min-height:90px; padding:13px; margin-top:14px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"></textarea>
+
+  <button type="submit" style="
+    width:100%;
+    padding:16px;
+    margin-top:22px;
+    background:linear-gradient(90deg,#0070f3,#0055cc);
+    color:white;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,112,243,0.3);
+  ">
+    Request My Free HOA Review →
+  </button>
+
+  <p style="font-size:13px; color:#777; text-align:center; margin-top:12px;">
+    No spam. No pressure. We’ll follow up to learn more and determine what opportunities may be available.
+  </p>
+
+</form>
 
   </div>
 
