@@ -154,9 +154,25 @@
 
   <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
-  <input type="email" name="email" placeholder="Email Address" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+  <input 
+  type="email" 
+  name="email" 
+  placeholder="Email Address" 
+  required 
+  pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+  title="Please enter a valid email address (example: name@email.com)"
+  style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"
+>
 
-  <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+  <input 
+  type="tel" 
+  name="phone" 
+  placeholder="Phone Number" 
+  required 
+  maxlength="14"
+  oninput="formatPhone(this)"
+  style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"
+>
 
   <input type="text" name="association_name" placeholder="HOA / Condo Association Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
 
@@ -216,6 +232,26 @@
 </form>
 
   </div>
+
+<script>
+function formatPhone(input) {
+  let value = input.value.replace(/\D/g, '').substring(0, 10);
+
+  let formatted = '';
+
+  if (value.length > 0) {
+    formatted = '(' + value.substring(0, 3);
+  }
+  if (value.length >= 4) {
+    formatted += ') ' + value.substring(3, 6);
+  }
+  if (value.length >= 7) {
+    formatted += '-' + value.substring(6, 10);
+  }
+
+  input.value = formatted;
+}
+</script>
 
 </body>
 </html>
