@@ -356,66 +356,76 @@
 
     </div>
 
-    <!-- STEP 2 FORM -->
-    <div id="hoa-form" style="background:#f0f5ff; padding:25px; border-radius:8px; margin:45px 0 30px; border:1px solid #dbe7ff; text-align:center;">
-      <h2 style="margin-top:0; color:#0070f3;">
-        Finish Your Free HOA Review Request
-      </h2>
-      <p style="font-weight:bold; color:#333; margin-top:10px;">
-        Tell us what areas you want reviewed so we can route your request correctly.
-      </p>
-    </div>
+   <!-- STEP 2 FORM -->
+<div id="hoa-form" style="background:#f0f5ff; padding:25px; border-radius:8px; margin:45px 0 30px; border:1px solid #dbe7ff; text-align:center;">
+  <h2 style="margin-top:0; color:#0070f3;">
+    Finish Your Free HOA Review Request
+  </h2>
 
-    <form id="step-two-form" action="https://formspree.io/f/xdayqnej" method="POST">
+  <p style="font-weight:bold; color:#333; margin-top:10px;">
+    Help us route your request to the right HOA specialist.
+  </p>
 
-      <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
-      <input type="hidden" name="form_step" value="Step 2 - Completed Review Request">
+  <p style="color:#555; line-height:1.6; max-width:700px; margin:12px auto 0;">
+    Tell us your role and what areas you’d like reviewed. This helps us understand whether your association may have savings opportunities in insurance, cable, trash, landscaping, or vendor agreements.
+  </p>
+</div>
 
-      <input type="hidden" name="name" id="final-name">
-      <input type="hidden" name="association_name" id="final-association-name">
-      <input type="hidden" name="email" id="final-email">
-      <input type="hidden" name="phone" id="final-phone">
-      <input type="hidden" name="units" id="final-units">
+<form id="step-two-form" action="https://formspree.io/f/xdayqnej" method="POST">
 
-      <h3 style="margin-top:0; color:#333;">What would you like reviewed?</h3>
+  <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
+  <input type="hidden" name="form_step" value="Step 2 - Completed Review Request">
 
-      <div style="color:#444; line-height:1.9; background:#fafcff; padding:15px; border-radius:8px; border:1px solid #e6ecf5;">
-        <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
-        <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
-        <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
-        <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
-        <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
-        <label><input type="checkbox" name="review[]" value="Full Review"> Complete vendor contract review</label><br>
-        <label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
-      </div>
+  <input type="hidden" name="name" id="final-name">
+  <input type="hidden" name="association_name" id="final-association-name">
+  <input type="hidden" name="email" id="final-email">
+  <input type="hidden" name="phone" id="final-phone">
+  <input type="hidden" name="units" id="final-units">
 
-      <textarea name="notes" placeholder="Anything specific you want us to know? (Optional)" style="width:100%; min-height:90px; padding:13px; margin-top:14px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"></textarea>
+  <select name="role" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+    <option value="">Your Role</option>
+    <option>HOA Board Member</option>
+    <option>Property Manager</option>
+    <option>Committee Member</option>
+    <option>Homeowner</option>
+    <option>Other</option>
+  </select>
 
-      <button type="submit" style="
-        width:100%;
-        padding:16px;
-        margin-top:22px;
-        background:linear-gradient(90deg,#0070f3,#0055cc);
-        color:white;
-        border:none;
-        font-size:18px;
-        font-weight:bold;
-        border-radius:6px;
-        cursor:pointer;
-        box-shadow:0 4px 10px rgba(0,112,243,0.3);
-      ">
-        Request My Free HOA Review →
-      </button>
+  <p style="margin-top:24px;"><strong>What would you like reviewed?</strong></p>
 
-      <p style="font-size:12px; color:#666; line-height:1.5; text-align:center; margin-top:12px;">
-        By clicking “Request My Free HOA Review”, you expressly consent to be contacted by The Partners Group and its representatives regarding HOA insurance and vendor review services by phone call, text message, and email using automated technology and prerecorded messages at the number and email provided, even if your number is listed on a state or federal Do Not Call list. Consent is not required as a condition of purchase.
-      </p>
+  <div style="color:#444; line-height:1.9; background:#fafcff; padding:15px; border-radius:8px; border:1px solid #e6ecf5;">
+    <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
+    <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
+    <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
+    <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
+    <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
+    <label><input type="checkbox" name="review[]" value="Full Review"> Complete vendor contract review</label><br>
+    <label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
+  </div>
 
-      <p style="font-size:13px; color:#777; text-align:center; margin-top:12px;">
-        No spam. No pressure. We’ll follow up to learn more and determine what opportunities may be available.
-      </p>
+  <textarea name="notes" placeholder="Tell us more about what you want reviewed, upcoming renewals, concerns, or current vendors. (Optional)" style="width:100%; min-height:100px; padding:13px; margin-top:14px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"></textarea>
 
-    </form>
+  <button type="submit" style="
+    width:100%;
+    padding:16px;
+    margin-top:22px;
+    background:linear-gradient(90deg,#0070f3,#0055cc);
+    color:white;
+    border:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:6px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,112,243,0.3);
+  ">
+    Request My Free HOA Review →
+  </button>
+
+  <p style="font-size:13px; color:#777; text-align:center; margin-top:12px;">
+    No spam. No pressure. We’ll follow up to learn more and determine what opportunities may be available.
+  </p>
+
+</form>
 
   </div>
 
