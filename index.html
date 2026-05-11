@@ -8,7 +8,6 @@
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17934471659"></script>
-
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -21,59 +20,433 @@
     /* Google Analytics 4 */
     gtag('config', 'G-Q30LN9L5WP');
   </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #eef4ff 0%, #f7f9fc 100%);
+      margin: 0;
+      color: #222;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 42px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      line-height: 1.12;
+      color: #0070f3;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      color: #444;
+      margin: 10px 0 0;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .hero-list {
+      margin-top: 18px;
+      color: #333;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .trust-box {
+      background: #f0f5ff;
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 22px;
+      border-left: 4px solid #0070f3;
+    }
+
+    .trust-box strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .trust-box p {
+      margin: 0;
+      color: #444;
+      line-height: 1.55;
+    }
+
+    .trust-box p + p {
+      margin-top: 12px;
+    }
+
+    .hero-form {
+      background: #f8fbff;
+      border: 1px solid #dbe7ff;
+      border-radius: 12px;
+      padding: 26px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .hero-form h2 {
+      margin: 0 0 12px;
+      color: #0070f3;
+      font-size: 28px;
+    }
+
+    .hero-form p {
+      color: #555;
+      line-height: 1.5;
+      margin-top: 0;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-top: 10px;
+      border: 1px solid #ccd6e0;
+      border-radius: 5px;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 100px;
+    }
+
+    button, .button-link {
+      display: inline-block;
+      width: 100%;
+      padding: 16px;
+      margin-top: 18px;
+      background: linear-gradient(90deg,#0070f3,#0055cc);
+      color: white;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,112,243,0.3);
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .tcpa {
+      font-size: 11px;
+      color: #666;
+      line-height: 1.45;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .small-note {
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .full-width-trust {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.7;
+      margin: 34px 0 10px;
+      text-align: center;
+    }
+
+    .info-box {
+      background: #f0f5ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 34px 0 28px;
+      border-left: 4px solid #0070f3;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    hr {
+      margin: 35px 0;
+      border: none;
+      border-top: 1px solid #e6ecf5;
+    }
+
+    h2 {
+      color: #0070f3;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    ol, ul {
+      line-height: 1.8;
+      padding-left: 22px;
+    }
+
+    .soft-card {
+      background: #fafcff;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 28px;
+      border: 1px solid #e6ecf5;
+    }
+
+    .warning-card {
+      background: #fff8eb;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 28px;
+      border-left: 4px solid #f5a623;
+    }
+
+    .warning-card h2 {
+      color: #b56a00;
+      margin-top: 0;
+    }
+
+    .section-center {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .section-center p {
+      color: #555;
+      max-width: 760px;
+      margin: 12px auto 35px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #f8fbff;
+      border: 1px solid #dbe7ff;
+      border-radius: 10px;
+      padding: 22px;
+      text-decoration: none;
+      color: #222;
+      display: block;
+    }
+
+    .service-card h3 {
+      margin-top: 0;
+      color: #0070f3;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .resource-card {
+      background: #f8fafc;
+      border: 1px solid #dfe7f3;
+      border-radius: 10px;
+      padding: 22px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .resource-card h3 {
+      margin-top: 0;
+      color: #2b4c7e;
+    }
+
+    .resource-card p {
+      margin-bottom: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .mid-cta {
+      text-align: center;
+      margin-top: 44px;
+    }
+
+    .mid-cta a {
+      display: inline-block;
+      background: linear-gradient(90deg,#0070f3,#0055cc);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,112,243,0.25);
+      text-decoration: none;
+    }
+
+    .form-header {
+      background: #f0f5ff;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 45px 0 30px;
+      border: 1px solid #dbe7ff;
+      text-align: center;
+    }
+
+    .form-header h2 {
+      margin-top: 0;
+    }
+
+    .checkbox-box {
+      color: #444;
+      line-height: 1.9;
+      background: #fafcff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #e6ecf5;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        margin: 0;
+        padding: 24px 18px;
+        border-radius: 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+      }
+
+      .hero-form {
+        padding: 22px;
+      }
+
+      .hero-form h2 {
+        font-size: 25px;
+      }
+
+      .full-width-trust {
+        font-size: 16px;
+        text-align: left;
+      }
+
+      .section-center {
+        margin-top: 42px;
+      }
+
+      .mid-cta a {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .hero-list {
+        padding-left: 18px;
+      }
+
+      .trust-box,
+      .soft-card,
+      .warning-card,
+      .info-box,
+      .form-header {
+        padding: 18px;
+      }
+
+      .hero-form {
+        padding: 18px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; background: linear-gradient(180deg, #eef4ff 0%, #f7f9fc 100%); margin:0; color:#222;">
+<body>
 
-  <div style="max-width:1100px; margin:50px auto; background:#ffffff; padding:42px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.10);">
+  <div class="page">
 
     <!-- HERO WITH STEP 1 FORM -->
-   <div style="display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start;">
+    <div class="hero-grid">
 
       <!-- LEFT HERO -->
       <div>
-        <p style="font-size:14px; color:#777; margin-bottom:6px;">
+        <p class="eyebrow">
           HOA & Condo Association Contract Advocate
         </p>
 
-       <h1 style="margin-bottom:12px; font-size:38px; line-height:1.15; color:#0070f3;">
+        <h1>
           Stop Overpaying HOA Insurance & Vendor Contracts
         </h1>
 
-        <p style="font-size:20px; color:#444; margin-top:10px; font-weight:500;">
+        <p class="hero-subtitle">
           Get a free review to uncover savings in insurance, cable, trash, and service agreements.
         </p>
 
-        <ul style="margin-top:15px; color:#333; font-size:16px; line-height:1.6;">
+        <ul class="hero-list">
           <li>Compare multiple HOA insurance quotes</li>
           <li>Spot overpriced vendor contracts before they renew</li>
           <li>Uncover hidden fees and missed revenue opportunities</li>
         </ul>
-       <div style="background:#f0f5ff; padding:18px; border-radius:8px; margin-top:22px; border-left:4px solid #0070f3;">
-  <strong style="display:block; margin-bottom:8px;">
-    Compare options across leading carriers and service providers:
-  </strong>
 
-  <p style="margin:0; color:#444; line-height:1.55;">
-    We help HOA and condo associations evaluate options from a wide range of insurance carriers and service providers, including companies such as Nationwide, Zurich, Cincinnati, Liberty Mutual, AT&amp;T, Comcast, CenturyLink, Spectrum, and others depending on your association’s needs and location.
-  </p>
+        <div class="trust-box">
+          <strong>
+            Compare options across leading carriers and service providers:
+          </strong>
 
-  <p style="margin:12px 0 0; color:#444; line-height:1.55;">
-    Our review process helps boards compare multiple options, streamline vendor evaluations, and support their fiduciary responsibility to make informed decisions for the community.
-  </p>
-</div>
-     
+          <p>
+            We help HOA and condo associations evaluate options from a wide range of insurance carriers and service providers, including companies such as Nationwide, Zurich, Cincinnati, Liberty Mutual, AT&amp;T, Comcast, CenturyLink, Spectrum, and others depending on your association’s needs and location.
+          </p>
 
-</div>
+          <p>
+            Our review process helps boards compare multiple options, streamline vendor evaluations, and support their fiduciary responsibility to make informed decisions for the community.
+          </p>
+        </div>
+      </div>
 
       <!-- RIGHT STEP 1 FORM -->
-      <div style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:12px; padding:26px; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
+      <div class="hero-form">
 
-       <h2 style="margin-top:0; color:#0070f3; font-size:26px;">
-  I Want A Free HOA Review
-</h2>
+        <h2>
+          I Want A Free HOA Review
+        </h2>
 
-        <p style="color:#555; line-height:1.5; margin-top:0;">
+        <p>
           Tell us a little about your association and we’ll start your free review.
         </p>
 
@@ -81,9 +454,9 @@
 
           <input type="hidden" name="form_step" value="Step 1 - Started Review">
 
-          <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+          <input type="text" name="name" placeholder="Full Name" required>
 
-          <input type="text" name="association_name" placeholder="HOA / Association Name" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
+          <input type="text" name="association_name" placeholder="HOA / Association Name" required>
 
           <input 
             type="email" 
@@ -92,7 +465,6 @@
             required 
             pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
             title="Please enter a valid email address (example: name@email.com)"
-            style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"
           >
 
           <input 
@@ -102,38 +474,17 @@
             required 
             maxlength="14"
             oninput="formatPhone(this)"
-            style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"
           >
 
-          <select name="units" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
-            <option value="">Association Size</option>
-            <option>1-50 Units</option>
-            <option>51-100 Units</option>
-            <option>101-300 Units</option>
-            <option>301+ Units</option>
-          </select>
-
-          <button type="submit" style="
-            width:100%;
-            padding:15px;
-            margin-top:18px;
-            background:linear-gradient(90deg,#0070f3,#0055cc);
-            color:white;
-            border:none;
-            font-size:18px;
-            font-weight:bold;
-            border-radius:6px;
-            cursor:pointer;
-            box-shadow:0 4px 10px rgba(0,112,243,0.3);
-          ">
+          <button type="submit">
             Start My Free Review →
           </button>
 
-          <p style="font-size:11px; color:#666; line-height:1.45; text-align:center; margin-top:12px;">
+          <p class="tcpa">
             By clicking “Start My Free Review”, you expressly consent to be contacted by The Partners Group and its representatives regarding HOA insurance and vendor review services by phone call, text message, and email using automated technology and prerecorded messages at the number and email provided, even if your number is listed on a state or federal Do Not Call list. Consent is not required as a condition of purchase.
           </p>
 
-          <p style="font-size:13px; color:#777; text-align:center; margin-top:10px;">
+          <p class="small-note">
             No spam. No pressure.
           </p>
 
@@ -142,25 +493,26 @@
       </div>
 
     </div>
-     <p style="font-size:16px; color:#444; line-height:1.7; margin-top:22px;">
-  Most HOA boards haven’t reviewed their contracts in 3+ years — meaning they may be overpaying, underinsured, or missing valuable opportunities. Start your vendor-neutral, no-obligation, 100% free HOA review today.
-</p>
+
+    <p class="full-width-trust">
+      Most HOA boards haven’t reviewed their contracts in 3+ years — meaning they may be overpaying, underinsured, or missing valuable opportunities. Start your vendor-neutral, no-obligation, 100% free HOA review today.
+    </p>
 
     <!-- WHAT WE REVIEW -->
-    <div style="background:#f0f5ff; padding:20px; border-radius:8px; margin:34px 0 28px; border-left:4px solid #0070f3;">
+    <div class="info-box">
       <strong style="display:block; margin-bottom:6px;">What we review:</strong>
-      <p style="margin:0; color:#444; line-height:1.5;">
+      <p>
         Vendor pricing, contract terms, insurance coverage, internet and cable agreements,
         service levels, renewal dates, and potential revenue or savings opportunities.
       </p>
     </div>
 
-    <hr style="margin:35px 0; border:none; border-top:1px solid #e6ecf5;">
+    <hr>
 
     <!-- HOW IT WORKS -->
-    <h2 style="color:#0070f3;">How It Works</h2>
+    <h2>How It Works</h2>
 
-    <ol style="color:#444; line-height:1.8; padding-left:20px;">
+    <ol>
       <li><strong>Submit your information</strong> and tell us what areas you want reviewed.</li>
       <li><strong>We coordinate the process</strong> with our vetted partners and schedule a quick call.</li>
       <li><strong>We report back with clear opportunities</strong> — including savings, better vendors, and revenue opportunities.</li>
@@ -174,15 +526,15 @@
       No cost. No obligation. Just clarity on where your association may be losing money.
     </p>
 
-    <hr style="margin:35px 0; border:none; border-top:1px solid #e6ecf5;">
+    <hr>
 
-    <h2 style="color:#0070f3;">Where Most HOAs Lose Money</h2>
+    <h2>Where Most HOAs Lose Money</h2>
 
-    <p style="color:#555; line-height:1.6;">
+    <p style="color:#555;">
       Most HOA boards assume their vendor contracts are competitive. In reality, many associations quietly overpay year after year because contracts renew automatically, vendors increase pricing, and no one benchmarks agreements against current market options.
     </p>
 
-    <ul style="color:#444; line-height:1.8; padding-left:20px;">
+    <ul style="color:#444;">
       <li><strong>Internet & cable agreements</strong> with outdated pricing or missed revenue opportunities</li>
       <li><strong>Landscaping contracts</strong> with price creep and weak performance standards</li>
       <li><strong>Trash and waste services</strong> with oversized service levels or poor bidding</li>
@@ -190,11 +542,11 @@
       <li><strong>Insurance policies</strong> that may be overpriced, outdated, or underinsured</li>
     </ul>
 
-    <div style="background:#fafcff; padding:25px; border-radius:8px; margin-top:28px; border:1px solid #e6ecf5;">
+    <div class="soft-card">
 
-      <h2 style="color:#0070f3; margin-top:0;">The 5 Contracts Most HOAs Overpay On</h2>
+      <h2 style="margin-top:0;">The 5 Contracts Most HOAs Overpay On</h2>
 
-      <ol style="color:#444; line-height:1.8; padding-left:20px;">
+      <ol style="color:#444;">
         <li><strong>Cable & internet</strong> — bulk agreements, access rights, and revenue programs</li>
         <li><strong>Landscaping & grounds maintenance</strong> — recurring contracts that often rise over time</li>
         <li><strong>Trash & recycling</strong> — service levels and pricing that may not match actual need</li>
@@ -202,89 +554,76 @@
         <li><strong>Insurance</strong> — coverage gaps, outdated replacement values, or overpriced renewals</li>
       </ol>
 
-      <p style="color:#555; line-height:1.6; margin-bottom:0;">
+      <p style="color:#555; margin-bottom:0;">
         Even small percentage savings can create major annual budget relief for an association.
       </p>
 
     </div>
 
-    <div style="background:#fff8eb; padding:25px; border-radius:8px; margin-top:28px; border-left:4px solid #f5a623;">
+    <div class="warning-card">
 
-      <h2 style="margin-top:0; color:#b56a00;">Most Associations Have Hidden Risk</h2>
+      <h2>Most Associations Have Hidden Risk</h2>
 
-      <p style="color:#555; line-height:1.6;">
+      <p style="color:#555;">
         Saving money matters, but so does protecting the community. Many associations are underinsured or exposed without realizing it.
       </p>
 
-      <ul style="color:#444; line-height:1.8; padding-left:20px;">
+      <ul style="color:#444;">
         <li>Outdated replacement cost estimates</li>
         <li>Incorrect deductibles</li>
         <li>Missing liability coverage</li>
         <li>Coverage gaps between policies and actual property risk</li>
       </ul>
 
-      <p style="color:#555; line-height:1.6; margin-bottom:0;">
+      <p style="color:#555; margin-bottom:0;">
         A proper review helps make sure your community is protected and not overpaying.
       </p>
 
     </div>
 
     <!-- POPULAR SERVICES -->
-    <div style="margin:50px 0 40px 0;">
+    <div class="section-center">
 
-      <h2 style="text-align:center; margin-bottom:25px;">
-        Popular HOA Review Services
-      </h2>
+      <h2 style="color:#222;">Popular HOA Review Services</h2>
 
-      <p style="text-align:center; color:#555; max-width:700px; margin:0 auto 30px auto; line-height:1.6;">
+      <p>
         Explore common areas where HOA and condo associations may uncover savings opportunities,
         improve vendor agreements, and evaluate better options.
       </p>
 
-      <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-        gap:20px;
-        max-width:900px;
-        margin:0 auto;
-      ">
+      <div class="card-grid">
 
-        <a href="/hoa-insurance-review"
-           style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:10px; padding:22px; text-decoration:none; color:#222; display:block;">
-          <h3 style="margin-top:0; color:#0070f3;">HOA Insurance Review</h3>
-          <p style="margin-bottom:0; color:#555; line-height:1.5;">
+        <a href="/hoa-insurance-review" class="service-card">
+          <h3>HOA Insurance Review</h3>
+          <p>
             Compare HOA insurance coverage, pricing, deductibles, and savings opportunities.
           </p>
         </a>
 
-        <a href="/hoa-internet-cable-contracts"
-           style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:10px; padding:22px; text-decoration:none; color:#222; display:block;">
-          <h3 style="margin-top:0; color:#0070f3;">HOA Internet & Cable Contracts</h3>
-          <p style="margin-bottom:0; color:#555; line-height:1.5;">
+        <a href="/hoa-internet-cable-contracts" class="service-card">
+          <h3>HOA Internet & Cable Contracts</h3>
+          <p>
             Review bulk internet and cable agreements to identify pricing and revenue opportunities.
           </p>
         </a>
 
-        <a href="/hoa-trash-contract-review"
-           style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:10px; padding:22px; text-decoration:none; color:#222; display:block;">
-          <h3 style="margin-top:0; color:#0070f3;">HOA Trash Contract Review</h3>
-          <p style="margin-bottom:0; color:#555; line-height:1.5;">
+        <a href="/hoa-trash-contract-review" class="service-card">
+          <h3>HOA Trash Contract Review</h3>
+          <p>
             Evaluate trash service pricing, service levels, and vendor contract terms.
           </p>
         </a>
 
-        <a href="/hoa-landscaping-contract-review"
-           style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:10px; padding:22px; text-decoration:none; color:#222; display:block;">
-          <h3 style="margin-top:0; color:#0070f3;">HOA Landscaping Contract Review</h3>
-          <p style="margin-bottom:0; color:#555; line-height:1.5;">
+        <a href="/hoa-landscaping-contract-review" class="service-card">
+          <h3>HOA Landscaping Contract Review</h3>
+          <p>
             Review landscaping contracts, vendor performance, and recurring cost increases.
           </p>
         </a>
 
-        <a href="/hoa-vendor-contract-review"
-           style="background:#f8fbff; border:1px solid #dbe7ff; border-radius:10px; padding:22px; text-decoration:none; color:#222; display:block;">
-          <h3 style="margin-top:0; color:#0070f3;">HOA Vendor Contract Review</h3>
-          <p style="margin-bottom:0; color:#555; line-height:1.5;">
+        <a href="/hoa-vendor-contract-review" class="service-card">
+          <h3>HOA Vendor Contract Review</h3>
+          <p>
             Identify opportunities to improve vendor pricing, terms, and service agreements.
           </p>
         </a>
@@ -294,144 +633,110 @@
     </div>
 
     <!-- MID CTA -->
-    <div style="text-align:center; margin-top:40px;">
-
-      <a href="#hoa-form" style="text-decoration:none;">
-        <div style="
-          display:inline-block;
-          background:linear-gradient(90deg,#0070f3,#0055cc);
-          color:white;
-          padding:16px 28px;
-          border-radius:8px;
-          font-size:18px;
-          font-weight:bold;
-          box-shadow:0 4px 10px rgba(0,112,243,0.25);
-        ">
-          Find Out What Your HOA Could Be Saving →
-        </div>
+    <div class="mid-cta">
+      <a href="#hoa-form">
+        Find Out What Your HOA Could Be Saving →
       </a>
 
-      <p style="text-align:center; color:#555; max-width:600px; margin:18px auto 0; line-height:1.6;">
+      <p style="text-align:center; color:#555; max-width:600px; margin:18px auto 0;">
         Quick to get started — we’ll handle the rest and come back with clear opportunities.
       </p>
-
     </div>
 
     <!-- RESOURCES -->
-    <h2 style="text-align:center; margin-top:70px;">
-      HOA Resources & Educational Guides
-    </h2>
+    <div class="section-center">
 
-    <p style="text-align:center; color:#555; max-width:760px; margin:12px auto 35px; line-height:1.6;">
-      Explore HOA insurance, vendor contract, and operational topics affecting associations today.
-    </p>
+      <h2 style="color:#222;">HOA Resources & Educational Guides</h2>
 
-    <div style="
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      max-width:900px;
-      margin:0 auto;
-    ">
+      <p>
+        Explore HOA insurance, vendor contract, and operational topics affecting associations today.
+      </p>
 
-      <a href="/hoa-insurance-cost-increases"
-         style="background:#f8fafc; border:1px solid #dfe7f3; border-radius:10px; padding:22px; text-decoration:none; color:inherit;">
+      <div class="card-grid">
 
-        <h3 style="margin-top:0; color:#2b4c7e;">
-          Why HOA Insurance Costs Are Increasing
-        </h3>
+        <a href="/hoa-insurance-cost-increases" class="resource-card">
+          <h3>Why HOA Insurance Costs Are Increasing</h3>
+          <p>
+            Learn what is driving HOA insurance premium increases and what boards should review.
+          </p>
+        </a>
 
-        <p style="margin-bottom:0; color:#555; line-height:1.6;">
-          Learn what is driving HOA insurance premium increases and what boards should review.
-        </p>
+        <a href="/how-hoa-cable-agreements-work" class="resource-card">
+          <h3>How HOA Cable Agreements Work</h3>
+          <p>
+            Understand bulk internet agreements, contract terms, and provider review opportunities.
+          </p>
+        </a>
 
-      </a>
-
-      <a href="/how-hoa-cable-agreements-work"
-         style="background:#f8fafc; border:1px solid #dfe7f3; border-radius:10px; padding:22px; text-decoration:none; color:inherit;">
-
-        <h3 style="margin-top:0; color:#2b4c7e;">
-          How HOA Cable Agreements Work
-        </h3>
-
-        <p style="margin-bottom:0; color:#555; line-height:1.6;">
-          Understand bulk internet agreements, contract terms, and provider review opportunities.
-        </p>
-
-      </a>
+      </div>
 
     </div>
 
-   <!-- STEP 2 FORM -->
-<div id="hoa-form" style="background:#f0f5ff; padding:25px; border-radius:8px; margin:45px 0 30px; border:1px solid #dbe7ff; text-align:center;">
-  <h2 style="margin-top:0; color:#0070f3;">
-    Finish Your Free HOA Review Request
-  </h2>
+    <!-- STEP 2 FORM -->
+    <div id="hoa-form" class="form-header">
+      <h2>
+        Finish Your Free HOA Review Request
+      </h2>
 
-  <p style="font-weight:bold; color:#333; margin-top:10px;">
-    Help us route your request to the right HOA specialist.
-  </p>
+      <p style="font-weight:bold; color:#333; margin-top:10px;">
+        Help us route your request to the right HOA specialist.
+      </p>
 
-  <p style="color:#555; line-height:1.6; max-width:700px; margin:12px auto 0;">
-    Tell us your role and what areas you’d like reviewed. This helps us understand whether your association may have savings opportunities in insurance, cable, trash, landscaping, or vendor agreements.
-  </p>
-</div>
+      <p style="color:#555; max-width:700px; margin:12px auto 0;">
+        Tell us your role and what areas you’d like reviewed. This helps us understand whether your association may have savings opportunities in insurance, cable, trash, landscaping, or vendor agreements.
+      </p>
+    </div>
 
-<form id="step-two-form" action="https://formspree.io/f/xdayqnej" method="POST">
+    <form id="step-two-form" action="https://formspree.io/f/xdayqnej" method="POST">
 
-  <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
-  <input type="hidden" name="form_step" value="Step 2 - Completed Review Request">
+      <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
+      <input type="hidden" name="form_step" value="Step 2 - Completed Review Request">
 
-  <input type="hidden" name="name" id="final-name">
-  <input type="hidden" name="association_name" id="final-association-name">
-  <input type="hidden" name="email" id="final-email">
-  <input type="hidden" name="phone" id="final-phone">
-  <input type="hidden" name="units" id="final-units">
+      <input type="hidden" name="name" id="final-name">
+      <input type="hidden" name="association_name" id="final-association-name">
+      <input type="hidden" name="email" id="final-email">
+      <input type="hidden" name="phone" id="final-phone">
 
-  <select name="role" required style="width:100%; padding:13px; margin-top:10px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;">
-    <option value="">Your Role</option>
-    <option>HOA Board Member</option>
-    <option>Property Manager</option>
-    <option>Committee Member</option>
-    <option>Homeowner</option>
-    <option>Other</option>
-  </select>
+      <select name="units" required>
+        <option value="">Association Size</option>
+        <option>1-50 Units</option>
+        <option>51-100 Units</option>
+        <option>101-300 Units</option>
+        <option>301+ Units</option>
+      </select>
 
-  <p style="margin-top:24px;"><strong>What would you like reviewed?</strong></p>
+      <select name="role" required>
+        <option value="">Your Role</option>
+        <option>HOA Board Member</option>
+        <option>Property Manager</option>
+        <option>Committee Member</option>
+        <option>Homeowner</option>
+        <option>Other</option>
+      </select>
 
-  <div style="color:#444; line-height:1.9; background:#fafcff; padding:15px; border-radius:8px; border:1px solid #e6ecf5;">
-    <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
-    <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
-    <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
-    <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
-    <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
-    <label><input type="checkbox" name="review[]" value="Full Review"> Complete vendor contract review</label><br>
-    <label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
-  </div>
+      <p style="margin-top:24px;"><strong>What would you like reviewed?</strong></p>
 
-  <textarea name="notes" placeholder="Tell us more about what you want reviewed, upcoming renewals, concerns, or current vendors. (Optional)" style="width:100%; min-height:100px; padding:13px; margin-top:14px; box-sizing:border-box; border:1px solid #ccd6e0; border-radius:5px;"></textarea>
+      <div class="checkbox-box">
+        <label><input type="checkbox" name="review[]" value="Insurance"> Insurance coverage</label><br>
+        <label><input type="checkbox" name="review[]" value="Internet/Cable"> Internet / Cable agreements</label><br>
+        <label><input type="checkbox" name="review[]" value="Trash"> Trash service</label><br>
+        <label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label><br>
+        <label><input type="checkbox" name="review[]" value="Maintenance"> Maintenance vendors</label><br>
+        <label><input type="checkbox" name="review[]" value="Full Review"> Complete vendor contract review</label><br>
+        <label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
+      </div>
 
-  <button type="submit" style="
-    width:100%;
-    padding:16px;
-    margin-top:22px;
-    background:linear-gradient(90deg,#0070f3,#0055cc);
-    color:white;
-    border:none;
-    font-size:18px;
-    font-weight:bold;
-    border-radius:6px;
-    cursor:pointer;
-    box-shadow:0 4px 10px rgba(0,112,243,0.3);
-  ">
-    Request My Free HOA Review →
-  </button>
+      <textarea name="notes" placeholder="Tell us more about what you want reviewed, upcoming renewals, concerns, or current vendors. (Optional)"></textarea>
 
-  <p style="font-size:13px; color:#777; text-align:center; margin-top:12px;">
-    No spam. No pressure. We’ll follow up to learn more and determine what opportunities may be available.
-  </p>
+      <button type="submit">
+        Request My Free HOA Review →
+      </button>
 
-</form>
+      <p class="small-note">
+        No spam. No pressure. We’ll follow up to learn more and determine what opportunities may be available.
+      </p>
+
+    </form>
 
   </div>
 
@@ -464,7 +769,6 @@
       document.getElementById('final-association-name').value = formData.get('association_name');
       document.getElementById('final-email').value = formData.get('email');
       document.getElementById('final-phone').value = formData.get('phone');
-      document.getElementById('final-units').value = formData.get('units');
 
       fetch('https://formspree.io/f/xdayqnej', {
         method: 'POST',
