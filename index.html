@@ -617,16 +617,19 @@ No cost. No obligation. No board vote required to begin the review process.
 </select>
 </div>
 
-<div>
-<select name="focus" required>
-<option value="">Primary Review Area</option>
-<option>Insurance</option>
-<option>Internet / Cable</option>
-<option>Trash / Recycling</option>
-<option>Landscaping</option>
-<option>Maintenance Vendors</option>
-<option>Complete Review</option>
-</select>
+<div class="full">
+  <p style="font-weight:700; color:#142132; margin:4px 0 10px;">
+    Where do you suspect the biggest opportunities are?
+  </p>
+
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="opportunities[]" value="Insurance"> Insurance</label>
+    <label><input type="checkbox" name="opportunities[]" value="Internet / Cable"> Internet / Cable</label>
+    <label><input type="checkbox" name="opportunities[]" value="Trash / Recycling"> Trash / Recycling</label>
+    <label><input type="checkbox" name="opportunities[]" value="Landscaping"> Landscaping</label>
+    <label><input type="checkbox" name="opportunities[]" value="Maintenance Vendors"> Maintenance Vendors</label>
+    <label><input type="checkbox" name="opportunities[]" value="Not Sure"> Not sure — help us identify opportunities</label>
+  </div>
 </div>
 
 </div>
