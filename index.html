@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>HOA Contracts | Free HOA Vendor & Insurance Review</title>
+<title>HOA Contracts | Free HOA Insurance Review</title>
 
-<meta name="description" content="Free HOA and condo association contract reviews for insurance, internet, cable, landscaping, trash, and vendor agreements. Identify savings and revenue opportunities before renewal deadlines." />
+<meta name="description" content="Free HOA master insurance policy reviews for condo and homeowners associations. Identify premium savings, coverage gaps, replacement cost issues, deductible exposure, and competitive carrier options before renewal." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,53 +24,9 @@
   --text:#142132;
   --muted:#6E7A8A;
   --line:#E5EBF2;
-  --green:#2F9D68;
-  --radius:16px;
-  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --radius:18px;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
   --container:1180px;
-}
- .checkbox-group{
-  margin-top:12px;
-}
-
-.checkbox-group label{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:14px;
-  font-size:16px;
-  font-weight:500;
-  color:var(--text);
-  cursor:pointer;
-}
-
-.checkbox-group input{
-  width:18px;
-  height:18px;
-  margin:0;
-}
-  .tcpa{
-  margin-top:18px;
-  font-size:12px;
-  line-height:1.6;
-  color:#6E7A8A;
-}
-  .hero-title{
-  font-size:clamp(52px, 7vw, 96px);
-  line-height:0.95;
-  font-weight:800;
-  letter-spacing:-2px;
-  color:white;
-}
-
-.highlight{
-  color:var(--gold);
-}
-
-@media(max-width:700px){
-  .checkbox-group{
-    grid-template-columns:1fr;
-  }
 }
 
 *{
@@ -111,7 +67,7 @@ img{
   position:sticky;
   top:0;
   z-index:999;
-  background:rgba(255,255,255,.95);
+  background:rgba(255,255,255,.96);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
@@ -160,9 +116,9 @@ img{
   align-items:center;
   justify-content:center;
   gap:10px;
-  padding:15px 24px;
+  padding:16px 28px;
   border-radius:12px;
-  font-weight:700;
+  font-weight:800;
   transition:.2s ease;
 }
 
@@ -176,16 +132,11 @@ img{
   transform:translateY(-2px);
 }
 
-.btn-outline{
-  border:1px solid rgba(255,255,255,.3);
-  color:#fff;
-}
-
 /* HERO */
 
 .hero{
   background:
-  linear-gradient(rgba(7,37,61,.85), rgba(7,37,61,.88)),
+  linear-gradient(rgba(7,37,61,.86), rgba(7,37,61,.88)),
   url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop');
   background-size:cover;
   background-position:center;
@@ -202,9 +153,9 @@ img{
 
 .eyebrow{
   display:inline-block;
-  background:rgba(244,166,33,.15);
+  background:rgba(244,166,33,.16);
   color:var(--gold);
-  padding:8px 14px;
+  padding:8px 16px;
   border-radius:999px;
   font-size:12px;
   font-weight:700;
@@ -212,14 +163,15 @@ img{
   text-transform:uppercase;
 }
 
-.hero h1{
-  font-size:64px;
-  line-height:1.05;
-  margin:22px 0;
+.hero-title{
+  font-size:clamp(52px,7vw,92px);
+  line-height:.96;
   font-weight:800;
+  letter-spacing:-2px;
+  margin:22px 0;
 }
 
-.hero h1 span{
+.highlight{
   color:var(--gold);
 }
 
@@ -239,8 +191,8 @@ img{
   display:flex;
   align-items:flex-start;
   gap:12px;
-  font-size:16px;
   color:#fff;
+  font-size:16px;
 }
 
 .hero-points span{
@@ -259,8 +211,9 @@ img{
 }
 
 .form-card h3{
-  font-size:28px;
+  font-size:34px;
   margin-bottom:10px;
+  line-height:1.1;
 }
 
 .form-card p{
@@ -283,7 +236,7 @@ input,
 select{
   width:100%;
   padding:15px;
-  border-radius:10px;
+  border-radius:12px;
   border:1px solid var(--line);
   font-size:15px;
 }
@@ -294,25 +247,46 @@ select:focus{
   border-color:var(--navy);
 }
 
+.checkbox-group{
+  margin-top:10px;
+}
+
+.checkbox-group label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+  font-size:16px;
+  font-weight:600;
+  color:var(--text);
+  cursor:pointer;
+}
+
+.checkbox-group input{
+  width:18px;
+  height:18px;
+  margin:0;
+}
+
 .submit-btn{
   width:100%;
   border:none;
   cursor:pointer;
-  margin-top:10px;
+  margin-top:12px;
 }
 
-.small{
+.tcpa{
+  margin-top:18px;
   font-size:12px;
-  color:var(--muted);
-  margin-top:14px;
-  line-height:1.5;
+  line-height:1.6;
+  color:#6E7A8A;
 }
 
 /* STATS */
 
 .stats{
   background:var(--navy);
-  padding:36px 0;
+  padding:40px 0;
 }
 
 .stats-grid{
@@ -349,12 +323,12 @@ select:focus{
 
 .section-head{
   text-align:center;
-  max-width:760px;
+  max-width:820px;
   margin:auto auto 60px;
 }
 
 .section-head h2{
-  font-size:48px;
+  font-size:52px;
   line-height:1.1;
   margin:18px 0;
 }
@@ -364,105 +338,147 @@ select:focus{
   font-size:18px;
 }
 
-/* CARDS */
+/* REVIEW GRID */
 
-.cards{
+.review-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  gap:28px;
 }
 
-.card{
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:30px;
+.review-card{
   background:#fff;
-  transition:.2s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:34px;
   box-shadow:var(--shadow);
+  transition:.2s ease;
+  text-decoration:none;
+  color:inherit;
 }
 
-.card h3{
-  font-size:24px;
-  margin:18px 0 10px;
+.review-card:hover{
+  transform:translateY(-4px);
 }
 
-.card p{
-  color:var(--muted);
-}
-
-.icon{
+.review-icon{
   width:58px;
   height:58px;
-  border-radius:14px;
-  background:#EEF4FA;
+  border-radius:16px;
+  background:#F4F7FB;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--navy);
   font-size:26px;
+  margin-bottom:22px;
 }
 
-/* SPLIT */
-
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
+.review-card h3{
+  font-size:28px;
+  line-height:1.2;
+  margin-bottom:14px;
+  color:var(--navy-dark);
 }
 
-.split-box{
-  background:var(--light);
-  border-radius:var(--radius);
-  padding:40px;
-}
-
-.split-box h3{
-  font-size:32px;
-  margin-bottom:18px;
-}
-
-.split-box ul{
-  display:grid;
-  gap:14px;
-  margin-top:20px;
-}
-
-.split-box li{
+.review-card p{
   color:var(--muted);
+  line-height:1.7;
+  font-size:17px;
 }
 
-/* CTA BAND */
+/* HOW */
 
-.cta{
-  background:linear-gradient(135deg,var(--navy),#114B77);
+.how-section{
+  background:#f5f8fb;
+}
+
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:40px;
+}
+
+.how-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #dfe7f0;
+  border-radius:18px;
+  padding:48px 28px 32px;
+  box-shadow:0 8px 24px rgba(0,0,0,.05);
+}
+
+.step-badge{
+  position:absolute;
+  top:-18px;
+  left:28px;
+  background:#0B3558;
   color:#fff;
-  text-align:center;
-  padding:90px 0;
+  font-weight:800;
+  padding:7px 14px;
+  border-radius:8px;
+  font-size:14px;
 }
 
-.cta h2{
-  font-size:54px;
-  margin:20px 0;
-}
-
-.cta p{
-  max-width:700px;
-  margin:auto;
-  color:#C7D8E7;
-  font-size:18px;
-}
-
-.cta-buttons{
-  margin-top:34px;
+.how-icon{
+  width:54px;
+  height:54px;
+  border-radius:14px;
+  background:#eef4fa;
   display:flex;
+  align-items:center;
   justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
+  font-size:24px;
+  margin-bottom:22px;
+}
+
+.how-card h3{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.how-card p{
+  color:#435269;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* FINAL CTA */
+
+.final-cta{
+  background:#0B3558;
+  padding:90px 20px;
+  text-align:center;
+}
+
+.cta-box{
+  max-width:820px;
+  margin:0 auto;
+}
+
+.final-cta h2{
+  color:#fff;
+  font-size:58px;
+  line-height:1.1;
+  margin:24px 0;
+}
+
+.final-cta p{
+  color:#d7e4ef;
+  font-size:22px;
+  line-height:1.6;
+  margin-bottom:34px;
+}
+
+.final-cta .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 34px;
+  font-size:18px;
+  font-weight:800;
+  border-radius:12px;
+  margin-top:10px;
 }
 
 /* FOOTER */
@@ -491,10 +507,6 @@ footer a{
   margin-bottom:12px;
 }
 
-footer a:hover{
-  color:#fff;
-}
-
 .footer-bottom{
   border-top:1px solid rgba(255,255,255,.1);
   padding-top:24px;
@@ -506,23 +518,11 @@ footer a:hover{
 @media(max-width:980px){
 
 .hero-grid,
-.split,
-.cards,
+.review-grid,
+.how-grid,
 .footer-grid,
 .stats-grid{
   grid-template-columns:1fr;
-}
-
-.hero h1{
-  font-size:44px;
-}
-
-.section-head h2{
-  font-size:36px;
-}
-
-.cta h2{
-  font-size:40px;
 }
 
 .nav-links{
@@ -533,165 +533,13 @@ footer a:hover{
   grid-template-columns:1fr;
 }
 
-}
-  .review-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-  margin-top:50px;
+.hero-title{
+  font-size:52px;
 }
 
-.review-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:20px;
-  padding:34px;
-  box-shadow:var(--shadow);
-}
-
-.review-icon{
-  width:58px;
-  height:58px;
-  border-radius:16px;
-  background:#F4F7FB;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
-  margin-bottom:22px;
-}
-
-.review-card h3{
-  font-size:28px;
-  line-height:1.2;
-  margin-bottom:14px;
-  color:var(--navy-dark);
-}
-
-.review-card p{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:17px;
-}
-
-@media(max-width:900px){
-
-  .review-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-  .review-card{
-  text-decoration:none;
-  color:inherit;
-}
- .how-section{
-  background:#f5f8fb;
-}
-
-.how-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:40px;
-}
-
-.how-card{
-  position:relative;
-  background:#fff;
-  border:1px solid #dfe7f0;
-  border-radius:18px;
-  padding:48px 28px 32px;
-  min-height:300px;
-  box-shadow:0 8px 24px rgba(0,0,0,.05);
-}
-
-.step-badge{
-  position:absolute;
-  top:-18px;
-  left:28px;
-  background:#0B3558;
-  color:#fff;
-  font-weight:800;
-  padding:7px 14px;
-  border-radius:8px;
-  font-size:14px;
-  letter-spacing:.5px;
-}
-
-.how-icon{
-  width:54px;
-  height:54px;
-  border-radius:14px;
-  background:#eef4fa;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  margin-bottom:22px;
-}
-
-.how-card h3{
-  font-size:24px;
-  line-height:1.25;
-  margin-bottom:12px;
-  color:#142132;
-}
-
-.how-card p{
-  color:#435269;
-  font-size:16px;
-  line-height:1.6;
-}
-
-@media(max-width:900px){
-  .how-grid{
-    grid-template-columns:1fr;
-  }
-} 
-  .final-cta{
-  background:#0B3558;
-  padding:90px 20px;
-  text-align:center;
-}
-
-.cta-box{
-  max-width:820px;
-  margin:0 auto;
-}
-
+.section-head h2,
 .final-cta h2{
-  color:#fff;
-  font-size:58px;
-  line-height:1.1;
-  margin:24px 0;
-}
-
-.final-cta p{
-  color:#d7e4ef;
-  font-size:22px;
-  line-height:1.6;
-  margin-bottom:34px;
-}
-
-@media(max-width:768px){
-
-  .final-cta h2{
-    font-size:40px;
-  }
-
-  .final-cta p{
-    font-size:18px;
-  }
-  .final-cta .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px 34px;
-  font-size:18px;
-  font-weight:800;
-  border-radius:12px;
-  margin-top:10px;
+  font-size:40px;
 }
 
 }
@@ -700,8 +548,6 @@ footer a:hover{
 </head>
 
 <body>
-
-<!-- NAV -->
 
 <header class="nav">
 
@@ -715,7 +561,6 @@ HOA Contracts
 <nav class="nav-links">
 <a href="#services">Services</a>
 <a href="#how">How It Works</a>
-<a href="#reviews">Why Boards Use Us</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -724,9 +569,8 @@ Get My Free Review →
 </a>
 
 </div>
-</header>
 
-<!-- HERO -->
+</header>
 
 <section class="hero">
 
@@ -740,8 +584,10 @@ FREE HOA CONTRACT REVIEW
 
 <h1 class="hero-title">
 Auto-Renewing HOA Insurance Policies<br>
-<span class="highlight">Leave Boards<br>
-Overpaying And Underinsured.</span>
+<span class="highlight">
+Leave Boards<br>
+Overpaying And Underinsured.
+</span>
 </h1>
 
 <p>
@@ -773,8 +619,6 @@ Start My Free Review →
 
 </div>
 
-<!-- FORM -->
-
 <div class="form-card" id="form">
 
 <h3>Request Your Free HOA Review</h3>
@@ -802,14 +646,15 @@ No cost. No obligation. No board vote required to begin the review process.
 <div class="full">
 <input type="text" name="association" placeholder="Association Name" required>
 </div>
-  <div>
-  <select name="community_size" required>
-    <option value="">Community Size</option>
-    <option>1–50 Units</option>
-    <option>51–100 Units</option>
-    <option>101–300 Units</option>
-    <option>301+ Units</option>
-  </select>
+
+<div>
+<select name="community_size" required>
+<option value="">Community Size</option>
+<option>1–50 Units</option>
+<option>51–100 Units</option>
+<option>101–300 Units</option>
+<option>301+ Units</option>
+</select>
 </div>
 
 <div>
@@ -824,18 +669,20 @@ No cost. No obligation. No board vote required to begin the review process.
 </div>
 
 <div class="full">
-  <p style="font-weight:700; color:#142132; margin:4px 0 10px;">
-    What review can we start with?
-  </p>
 
-  <div class="checkbox-group">
-    <label><input type="checkbox" name="opportunities[]" value="Insurance"> Insurance</label>
-    <label><input type="checkbox" name="opportunities[]" value="Internet / Cable"> Internet / Cable</label>
-    <label><input type="checkbox" name="opportunities[]" value="Trash / Recycling"> Trash / Recycling</label>
-    <label><input type="checkbox" name="opportunities[]" value="Landscaping"> Landscaping</label>
-    <label><input type="checkbox" name="opportunities[]" value="Maintenance Vendors"> Maintenance Vendors</label>
-    <label><input type="checkbox" name="opportunities[]" value="Not Sure"> Not sure — help us identify opportunities</label>
-  </div>
+<p style="font-weight:700; color:#142132; margin:4px 0 12px;">
+What review can we start with?
+</p>
+
+<div class="checkbox-group">
+<label><input type="checkbox" name="review[]" value="Insurance"> Insurance</label>
+<label><input type="checkbox" name="review[]" value="Internet / Cable"> Internet / Cable</label>
+<label><input type="checkbox" name="review[]" value="Trash / Recycling"> Trash / Recycling</label>
+<label><input type="checkbox" name="review[]" value="Landscaping"> Landscaping</label>
+<label><input type="checkbox" name="review[]" value="Maintenance Vendors"> Maintenance Vendors</label>
+<label><input type="checkbox" name="review[]" value="Not Sure"> Not sure — help us identify opportunities</label>
+</div>
+
 </div>
 
 </div>
@@ -844,8 +691,8 @@ No cost. No obligation. No board vote required to begin the review process.
 Get My Free Review →
 </button>
 
-<div class="small tcpa">
-  By clicking “Get My Free Review,” you expressly consent to be contacted by HOA Contracts and The Partners Group regarding HOA insurance and related association services by phone, text message, and email, including through automated technology and prerecorded messages. Consent is not required as a condition of purchase.
+<div class="tcpa">
+By clicking “Get My Free Review,” you expressly consent to be contacted by HOA Contracts and The Partners Group regarding HOA insurance and related association services by phone, text message, and email, including through automated technology and prerecorded messages. Consent is not required as a condition of purchase.
 </div>
 
 </form>
@@ -855,8 +702,6 @@ Get My Free Review →
 </div>
 
 </section>
-
-<!-- STATS -->
 
 <section class="stats">
 
@@ -886,174 +731,152 @@ Get My Free Review →
 
 </section>
 
-<!-- SERVICES -->
-
 <section class="section" id="services">
 
 <div class="container">
 
 <div class="section-head">
 
-<section class="services" id="services">
-  <div class="container">
+<div class="eyebrow">
+WHAT WE REVIEW
+</div>
 
-    <div class="section-title">
-      <span class="eyebrow">WHAT WE REVIEW</span>
+<h2>
+HOA Insurance Reviews Designed To Catch Coverage Gaps Before Renewal.
+</h2>
 
-      <h2>
-        HOA Insurance Reviews Designed To Catch
-        Coverage Gaps Before Renewal.
-      </h2>
+<p>
+We review HOA master insurance policies for pricing, replacement cost accuracy, liability exposure, deductible structures, and competitive market options before boards auto-renew another term.
+</p>
 
-      <p>
-        We review HOA master insurance policies for pricing,
-        replacement cost accuracy, liability exposure, deductible
-        structures, and competitive market options before boards
-        auto-renew another term.
-      </p>
-    </div>
+</div>
 
-    <div class="review-grid">
+<div class="review-grid">
 
-      <a href="/hoa-master-insurance-policies.html" class="review-card">
-        <div class="review-icon">🛡️</div>
-        <h3>HOA Master Policies</h3>
-        <p>
-          Review of property, liability, umbrella,
-          D&amp;O, crime, and specialty coverages.
-        </p>
-      </a>
-
-     <a href="/hoa-insurance-coverage-limits.html" class="review-card">
-        <div class="review-icon">🏢</div>
-        <h3>Coverage Limits</h3>
-        <p>
-          Evaluate current policy limits against
-          real-world replacement and exposure risks.
-        </p>
-      </a>
-
-     <a href="/hoa-replacement-cost-analysis.html" class="review-card">
-        <div class="review-icon">📋</div>
-        <h3>Replacement Cost Analysis</h3>
-        <p>
-          Identify underinsured buildings and outdated
-          valuations before claims happen.
-        </p>
-      </a>
-
-      <a href="/hoa-insurance-deductibles.html" class="review-card">
-        <div class="review-icon">⚖️</div>
-        <h3>Deductible Structures</h3>
-        <p>
-          Analyze wind, hail, wildfire, water,
-          and percentage deductible exposure.
-        </p>
-      </a>
-
-      <a href="/hoa-board-liability-insurance.html" class="review-card">
-        <div class="review-icon">👥</div>
-        <h3>Board Liability Protection</h3>
-        <p>
-          Review director &amp; officer protections
-          and potential board exposure issues.
-        </p>
-      </a>
-
-      <a href="/hoa-insurance-carrier-review.html" class="review-card">
-        <div class="review-icon">📈</div>
-        <h3>Competitive Carrier Options</h3>
-        <p>
-          Compare available market options,
-          pricing structures, and renewal strategy.
-        </p>
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- HOW -->
-<section class="section how-section" id="how">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="eyebrow">HOW IT WORKS</div>
-
-      <h2>
-        Three steps. About two weeks. Zero cost to your association.
-      </h2>
-
-      <p>
-        You sit back. We coordinate everything and deliver a clean, board-ready insurance review.
-      </p>
-    </div>
-
-    <div class="how-grid">
-
-      <div class="how-card">
-        <div class="step-badge">01</div>
-        <div class="how-icon">📄</div>
-        <h3>Share your current policy</h3>
-        <p>
-          A 15-minute call. Send whatever you have — current insurance binder, renewal notice, declaration pages, or premium history. We'll help fill in any gaps.
-        </p>
-      </div>
-
-      <div class="how-card">
-        <div class="step-badge">02</div>
-        <div class="how-icon">🔍</div>
-        <h3>We benchmark the market</h3>
-        <p>
-          We compare your current HOA insurance program against competitive carrier options, coverage structures, deductibles, and replacement cost concerns.
-        </p>
-      </div>
-
-      <div class="how-card">
-        <div class="step-badge">03</div>
-        <div class="how-icon">✅</div>
-        <h3>You get clear next steps</h3>
-        <p>
-          Your board receives a clean, practical review showing potential savings, coverage gaps, carrier options, and areas worth addressing before renewal.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-<section class="final-cta">
-
-  <div class="container">
-
-    <div class="cta-box">
-
-      <div class="eyebrow">
-        NO COST • NO OBLIGATION • NO BOARD VOTE REQUIRED
-      </div>
-
-      <h2>
-        Request Your Free HOA Insurance Review
-      </h2>
-
-      <p>
-        We review HOA master insurance policies for premium savings, coverage gaps, replacement cost concerns, deductible exposure, and competitive carrier options before renewals lock boards into another term.
-      </p>
-
-     <a href="#quote-form" class="btn">
-  Request My Free Review →
+<a href="/hoa-master-insurance-policies.html" class="review-card">
+<div class="review-icon">🛡️</div>
+<h3>HOA Master Policies</h3>
+<p>Review of property, liability, umbrella, D&O, crime, and specialty coverages.</p>
 </a>
 
-    </div>
+<a href="/hoa-insurance-coverage-limits.html" class="review-card">
+<div class="review-icon">🏢</div>
+<h3>Coverage Limits</h3>
+<p>Evaluate current policy limits against real-world replacement and exposure risks.</p>
+</a>
 
-  </div>
+<a href="/hoa-replacement-cost-analysis.html" class="review-card">
+<div class="review-icon">📋</div>
+<h3>Replacement Cost Analysis</h3>
+<p>Identify underinsured buildings and outdated valuations before claims happen.</p>
+</a>
+
+<a href="/hoa-insurance-deductibles.html" class="review-card">
+<div class="review-icon">⚖️</div>
+<h3>Deductible Structures</h3>
+<p>Analyze wind, hail, wildfire, water, and percentage deductible exposure.</p>
+</a>
+
+<a href="/hoa-board-liability-insurance.html" class="review-card">
+<div class="review-icon">👥</div>
+<h3>Board Liability Protection</h3>
+<p>Review director & officer protections and potential board exposure issues.</p>
+</a>
+
+<a href="/hoa-insurance-carrier-review.html" class="review-card">
+<div class="review-icon">📈</div>
+<h3>Competitive Carrier Options</h3>
+<p>Compare available market options, pricing structures, and renewal strategy.</p>
+</a>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- FOOTER -->
+<section class="section how-section" id="how">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="eyebrow">
+HOW IT WORKS
+</div>
+
+<h2>
+Three steps. About two weeks. Zero cost to your association.
+</h2>
+
+<p>
+You sit back. We coordinate everything and deliver a clean, board-ready insurance review.
+</p>
+
+</div>
+
+<div class="how-grid">
+
+<div class="how-card">
+<div class="step-badge">01</div>
+<div class="how-icon">📄</div>
+<h3>Share your current policy</h3>
+<p>
+A 15-minute call. Send your current insurance binder, renewal notice, declaration pages, or premium history.
+</p>
+</div>
+
+<div class="how-card">
+<div class="step-badge">02</div>
+<div class="how-icon">🔍</div>
+<h3>We benchmark the market</h3>
+<p>
+We compare your HOA insurance program against competitive carrier options, deductibles, and coverage structures.
+</p>
+</div>
+
+<div class="how-card">
+<div class="step-badge">03</div>
+<div class="how-icon">✅</div>
+<h3>You get clear next steps</h3>
+<p>
+Your board receives a practical review showing savings opportunities, coverage gaps, and renewal concerns.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="final-cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<div class="eyebrow">
+NO COST • NO OBLIGATION • NO BOARD VOTE REQUIRED
+</div>
+
+<h2>
+Request Your Free HOA Insurance Review
+</h2>
+
+<p>
+We review HOA master insurance policies for premium savings, coverage gaps, replacement cost concerns, deductible exposure, and competitive carrier options before renewals lock boards into another term.
+</p>
+
+<a href="#form" class="btn btn-primary">
+Request My Free Review →
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 <footer id="contact">
 
@@ -1069,7 +892,7 @@ HOA Contracts
 </div>
 
 <p>
-Free HOA and condo association contract reviews across insurance, internet, cable, landscaping, trash, and maintenance vendors.
+Free HOA and condo association insurance reviews focused on premium savings, liability protection, and renewal strategy.
 </p>
 
 </div>
@@ -1079,9 +902,8 @@ Free HOA and condo association contract reviews across insurance, internet, cabl
 <h4>Services</h4>
 
 <a href="#">Insurance Reviews</a>
-<a href="#">Cable & Internet</a>
-<a href="#">Vendor Reviews</a>
-<a href="#">Revenue Opportunities</a>
+<a href="#">Coverage Analysis</a>
+<a href="#">Carrier Benchmarking</a>
 
 </div>
 
@@ -1090,8 +912,8 @@ Free HOA and condo association contract reviews across insurance, internet, cabl
 <h4>Resources</h4>
 
 <a href="#">HOA Insurance Trends</a>
-<a href="#">Cable Agreement Reviews</a>
-<a href="#">Vendor Contract Timing</a>
+<a href="#">Coverage Gap Reviews</a>
+<a href="#">Replacement Cost Analysis</a>
 
 </div>
 
