@@ -267,34 +267,41 @@ select:focus{
   height:18px;
   margin:0;
 }
-  .secondary-services{
-  margin-top:4px;
+.secondary-label{
+  font-size:13px;
+  color:#6E7A8A;
+  margin:18px 0 10px;
 }
 
-.secondary-services label{
+.secondary-services-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 18px;
+  margin-bottom:18px;
+}
+
+.secondary-services-grid label{
+  display:flex;
+  align-items:center;
+  gap:8px;
   font-size:13px;
   font-weight:500;
-  margin-bottom:8px;
   color:#6E7A8A;
+  cursor:pointer;
 }
 
-.secondary-services input{
+.secondary-services-grid input{
   width:14px;
   height:14px;
-}
-
-.submit-btn{
-  width:100%;
-  border:none;
-  cursor:pointer;
-  margin-top:12px;
+  margin:0;
 }
 
 .tcpa{
-  margin-top:18px;
-  font-size:12px;
-  line-height:1.6;
-  color:#6E7A8A;
+  margin-top:16px;
+  font-size:11px;
+  line-height:1.5;
+  color:#7B8794;
+  text-align:left;
 }
 
 /* STATS */
@@ -693,11 +700,11 @@ Ready to review your HOA insurance coverage?
 Get My Free Review →
 </button>
 
-<p style="font-size:13px; color:#6E7A8A; margin:18px 0 10px;">
+<p class="secondary-label">
 Can we help review any other services?
 </p>
 
-<div class="checkbox-group secondary-services">
+<div class="secondary-services-grid">
 
 <label>
 <input type="checkbox" name="review[]" value="Internet / Cable">
@@ -717,11 +724,6 @@ Landscaping
 <label>
 <input type="checkbox" name="review[]" value="Maintenance Vendors">
 Maintenance Vendors
-</label>
-
-<label>
-<input type="checkbox" name="review[]" value="Not Sure">
-Not Sure
 </label>
 
 </div>
