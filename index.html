@@ -585,6 +585,70 @@ footer a:hover{
   text-decoration:none;
   color:inherit;
 }
+ .how-section{
+  background:#f5f8fb;
+}
+
+.how-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:40px;
+}
+
+.how-card{
+  position:relative;
+  background:#fff;
+  border:1px solid #dfe7f0;
+  border-radius:18px;
+  padding:48px 28px 32px;
+  min-height:300px;
+  box-shadow:0 8px 24px rgba(0,0,0,.05);
+}
+
+.step-badge{
+  position:absolute;
+  top:-18px;
+  left:28px;
+  background:#0B3558;
+  color:#fff;
+  font-weight:800;
+  padding:7px 14px;
+  border-radius:8px;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+
+.how-icon{
+  width:54px;
+  height:54px;
+  border-radius:14px;
+  background:#eef4fa;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  margin-bottom:22px;
+}
+
+.how-card h3{
+  font-size:24px;
+  line-height:1.25;
+  margin-bottom:12px;
+  color:#142132;
+}
+
+.how-card p{
+  color:#435269;
+  font-size:16px;
+  line-height:1.6;
+}
+
+@media(max-width:900px){
+  .how-grid{
+    grid-template-columns:1fr;
+  }
+} 
 
 </style>
 </head>
@@ -865,69 +929,49 @@ Get My Free Review →
 </section>
 
 <!-- HOW -->
-
-<section class="section" id="how" style="background:#f5f8fb;">
+<section class="section how-section" id="how">
 
   <div class="container">
 
     <div class="section-head">
-
-      <div class="eyebrow">
-        HOW IT WORKS
-      </div>
+      <div class="eyebrow">HOW IT WORKS</div>
 
       <h2>
         Three steps. About two weeks. Zero cost to your association.
       </h2>
 
       <p>
-        You sit back. We coordinate everything and deliver a clean, board-ready report.
+        You sit back. We coordinate everything and deliver a clean, board-ready insurance review.
       </p>
-
     </div>
 
     <div class="how-grid">
 
       <div class="how-card">
-
         <div class="step-badge">01</div>
-
         <div class="how-icon">📄</div>
-
-        <h3>Share your current contracts</h3>
-
+        <h3>Share your current policy</h3>
         <p>
-          A 15-minute call. Bring whatever you have — copies of current insurance binders, telecom agreements, vendor invoices. We'll fill in any gaps.
+          A 15-minute call. Send whatever you have — current insurance binder, renewal notice, declaration pages, or premium history. We'll help fill in any gaps.
         </p>
-
       </div>
 
       <div class="how-card">
-
         <div class="step-badge">02</div>
-
         <div class="how-icon">🔍</div>
-
-        <h3>We benchmark and bid</h3>
-
+        <h3>We benchmark the market</h3>
         <p>
-          We solicit competing options from vetted carriers and vendors, side-by-side, against your current spend. Vendor-neutral — we represent the board, not the providers.
+          We compare your current HOA insurance program against competitive carrier options, coverage structures, deductibles, and replacement cost concerns.
         </p>
-
       </div>
 
       <div class="how-card">
-
         <div class="step-badge">03</div>
-
-        <div class="how-icon">☑</div>
-
-        <h3>You get a board-ready report</h3>
-
+        <div class="how-icon">✅</div>
+        <h3>You get clear next steps</h3>
         <p>
-          A clean PDF — current vs. recommended, projected annual savings, any revenue programs your association qualifies for. Your board decides what to do next. We never push.
+          Your board receives a clean, practical review showing potential savings, coverage gaps, carrier options, and areas worth addressing before renewal.
         </p>
-
       </div>
 
     </div>
@@ -935,7 +979,6 @@ Get My Free Review →
   </div>
 
 </section>
-
 <!-- CTA -->
 
 <section class="cta">
