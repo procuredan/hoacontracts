@@ -534,6 +534,53 @@ footer a:hover{
 }
 
 }
+  .review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:50px;
+}
+
+.review-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:34px;
+  box-shadow:var(--shadow);
+}
+
+.review-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  background:#F4F7FB;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  margin-bottom:22px;
+}
+
+.review-card h3{
+  font-size:28px;
+  line-height:1.2;
+  margin-bottom:14px;
+  color:var(--navy-dark);
+}
+
+.review-card p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:17px;
+}
+
+@media(max-width:900px){
+
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+
+}
 
 </style>
 </head>
@@ -737,70 +784,84 @@ Get My Free Review →
 WHAT WE REVIEW
 </div>
 
-<h2>
-One Review Across Every Major HOA Vendor Category
-</h2>
+<section class="services" id="services">
+  <div class="container">
 
-<p>
-Most associations focus only on insurance. We help boards review the entire vendor stack where pricing creep and renewal traps quietly happen.
-</p>
+    <div class="section-title">
+      <span class="eyebrow">WHAT WE REVIEW</span>
 
-</div>
+      <h2>
+        HOA Insurance Reviews Designed To Catch
+        Coverage Gaps Before Renewal.
+      </h2>
 
-<div class="cards">
+      <p>
+        We review HOA master insurance policies for pricing,
+        replacement cost accuracy, liability exposure, deductible
+        structures, and competitive market options before boards
+        auto-renew another term.
+      </p>
+    </div>
 
-<div class="card">
-<div class="icon">🛡</div>
-<h3>HOA Insurance</h3>
-<p>
-Master policies, deductibles, replacement cost analysis, and competitive carrier review.
-</p>
-</div>
+    <div class="review-grid">
 
-<div class="card">
-<div class="icon">📶</div>
-<h3>Internet & Cable</h3>
-<p>
-Bulk agreements, fiber upgrades, revenue sharing, and telecom negotiation opportunities.
-</p>
-</div>
+      <div class="review-card">
+        <div class="review-icon">🛡️</div>
+        <h3>HOA Master Policies</h3>
+        <p>
+          Review of property, liability, umbrella,
+          D&amp;O, crime, and specialty coverages.
+        </p>
+      </div>
 
-<div class="card">
-<div class="icon">♻</div>
-<h3>Trash & Recycling</h3>
-<p>
-Service-level review, competitive bidding, auto-renewal traps, and pricing analysis.
-</p>
-</div>
+      <div class="review-card">
+        <div class="review-icon">🏢</div>
+        <h3>Coverage Limits</h3>
+        <p>
+          Evaluate current policy limits against
+          real-world replacement and exposure risks.
+        </p>
+      </div>
 
-<div class="card">
-<div class="icon">🌳</div>
-<h3>Landscaping</h3>
-<p>
-Competitive vendor reviews, scope comparisons, and contract performance standards.
-</p>
-</div>
+      <div class="review-card">
+        <div class="review-icon">📋</div>
+        <h3>Replacement Cost Analysis</h3>
+        <p>
+          Identify underinsured buildings and outdated
+          valuations before claims happen.
+        </p>
+      </div>
 
-<div class="card">
-<div class="icon">🔧</div>
-<h3>Maintenance Vendors</h3>
-<p>
-Elevators, gates, pools, lighting, and recurring service contract reviews.
-</p>
-</div>
+      <div class="review-card">
+        <div class="review-icon">⚖️</div>
+        <h3>Deductible Structures</h3>
+        <p>
+          Analyze wind, hail, wildfire, water,
+          and percentage deductible exposure.
+        </p>
+      </div>
 
-<div class="card">
-<div class="icon">💰</div>
-<h3>Revenue Opportunities</h3>
-<p>
-Signing bonuses, marketing agreements, and revenue-share programs many boards overlook.
-</p>
-</div>
+      <div class="review-card">
+        <div class="review-icon">👥</div>
+        <h3>Board Liability Protection</h3>
+        <p>
+          Review director &amp; officer protections
+          and potential board exposure issues.
+        </p>
+      </div>
 
-</div>
+      <div class="review-card">
+        <div class="review-icon">📈</div>
+        <h3>Competitive Carrier Options</h3>
+        <p>
+          Compare available market options,
+          pricing structures, and renewal strategy.
+        </p>
+      </div>
 
-</div>
+    </div>
 
+  </div>
 </section>
 
 <!-- HOW -->
