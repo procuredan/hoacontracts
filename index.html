@@ -714,7 +714,15 @@ No cost. No obligation. No board vote required to begin the review process.
 </div>
 
 <div>
-<input type="tel" name="phone" placeholder="Phone Number" required>
+<input 
+  type="tel" 
+  name="phone" 
+  placeholder="Phone Number"
+  autocomplete="tel"
+  inputmode="tel"
+  pattern="[\d\s\-\(\)\.]{10,20}"
+  required
+>
 </div>
 
 <div class="full">
@@ -1035,6 +1043,24 @@ boards@hoacontracts.com
 </div>
 
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.querySelector('input[name="phone"]');
 
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function (e) {
+      let value = e.target.value.replace(/\D/g, "").slice(0, 10);
+
+      if (value.length > 6) {
+        e.target.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
+      } else if (value.length > 3) {
+        e.target.value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+      } else if (value.length > 0) {
+        e.target.value = `(${value}`;
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
