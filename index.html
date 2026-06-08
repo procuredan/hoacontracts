@@ -924,5 +924,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<!-- Procure form analytics — A) GA4 funnel events (no PII)  B) partial capture to separate DB -->
+<script>
+(function(){
+  var form = document.querySelector('form');
+  if(!form) return;
+  var FIELDS = ['name','email','phone','association','community_size','role'];
+  var ENDPOINT = 'https://procure-lead-engine.dan-fda.workers.dev/partial';
+  var sid;
+  try { sid = sessionStorage.getItem('pm_sid'); if(!sid){ sid = (window.crypto && crypto.randomUUID ? crypto.randomUUID() : (Date.now()+'-'+Math.random())); sessionStorage.setItem('pm_sid', sid); } }
+  catch(e){ sid = Date.now()+'-'+Math.random(); }
+  var attr = {};
+  try { var c=(document.cookie.match(/(?:^|; )pm_attr=([^;]*)/)||[])[1]; if(c) attr=JSON.parse(decodeURIComponent(c))||{}; } catch(e){}
+  var started=false, reached={}, lastField='', t=null;
+  function v(n){ var el=form.querySelector('[name="'+n+'"]'); return el ? (el.value||'').trim() : ''; }
+  function snap(sub){ return {
+    session_id:sid, site:'hoacontracts.com', last_field:lastField, fields_reached:Object.keys(reached).length, submitted:sub?1:0,
+    name:v('name'), email:v('email'), phone:v('phone'), association:v('association'), community_size:v('community_size'), role:v('role'),
+    gclid:attr.gclid||'', utm_source:attr.utm_source||'', utm_medium:attr.utm_medium||'', utm_campaign:attr.utm_campaign||'',
+    utm_term:attr.utm_term||'', utm_content:attr.utm_content||'', landing:attr.landing||'', referrer:attr.referrer||'' }; }
+  function beacon(sub){ try{ var b=new Blob([JSON.stringify(snap(sub))],{type:'text/plain'});
+    if(navigator.sendBeacon) navigator.sendBeacon(ENDPOINT,b); else fetch(ENDPOINT,{method:'POST',body:JSON.stringify(snap(sub)),mode:'no-cors',keepalive:true}); }catch(e){} }
+  function ga(name,p){ try{ if(window.gtag) gtag('event',name,p||{}); }catch(e){} }
+  form.addEventListener('focusin', function(){ if(!started){ started=true; ga('form_start',{form:'hoa_review'}); beacon(false); } });
+  FIELDS.forEach(function(n,idx){ var el=form.querySelector('[name="'+n+'"]'); if(!el) return;
+    function mark(){ if(v(n) && !reached[n]){ reached[n]=true; lastField=n; ga('form_progress',{field_name:n, step:idx+1}); } }
+    el.addEventListener('blur', function(){ mark(); clearTimeout(t); t=setTimeout(function(){ beacon(false); },400); });
+    el.addEventListener('change', function(){ mark(); beacon(false); });
+  });
+  form.addEventListener('submit', function(){ beacon(true); });
+  window.addEventListener('pagehide', function(){ if(started) beacon(false); });
+  document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && started) beacon(false); });
+})();
+</script>
 </body>
 </html>
