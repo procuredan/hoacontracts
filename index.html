@@ -936,6 +936,8 @@ document.addEventListener("DOMContentLoaded", function () {
   catch(e){ sid = Date.now()+'-'+Math.random(); }
   var attr = {};
   try { var c=(document.cookie.match(/(?:^|; )pm_attr=([^;]*)/)||[])[1]; if(c) attr=JSON.parse(decodeURIComponent(c))||{}; } catch(e){}
+  // pass the session id with the form so the worker can mark this partial complete server-side
+  if(!form.querySelector('[name="pm_sid"]')){ var h=document.createElement('input'); h.type='hidden'; h.name='pm_sid'; h.value=sid; form.appendChild(h); }
   var started=false, reached={}, lastField='', t=null;
   function v(n){ var el=form.querySelector('[name="'+n+'"]'); return el ? (el.value||'').trim() : ''; }
   function snap(sub){ return {
