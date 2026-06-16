@@ -224,6 +224,22 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .article-cta-box h3{color:var(--navy);font-size:22px;margin-bottom:8px;}
 .article-cta-box p{color:var(--muted);margin-bottom:20px;}
 @media(max-width:980px){.blog-grid{grid-template-columns:1fr;}}
+.ms-progress{display:flex;align-items:center;margin-bottom:22px;}
+.ms-dot{width:30px;height:30px;border-radius:50%;background:var(--line);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;transition:.2s;}
+.ms-dot.ms-active{background:var(--accent);color:#fff;}
+.ms-dot.ms-done{background:var(--navy);color:#fff;}
+.ms-line{flex:1;height:2px;background:var(--line);transition:.2s;}
+.ms-line.ms-done{background:var(--navy);}
+.ms-panel{display:none;}
+.ms-panel.ms-active{display:block;}
+.ms-q{font-size:18px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:6px;}
+.ms-sub{font-size:13px;color:var(--muted);margin-bottom:4px;}
+.ms-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 8px;}
+.ms-opt{padding:13px 14px;border:2px solid var(--line);border-radius:12px;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;text-align:left;background:#fff;transition:.15s;line-height:1.3;width:100%;}
+.ms-opt:hover,.ms-opt.ms-sel{border-color:var(--accent);background:rgba(244,166,33,.08);}
+.ms-back-btn{background:none;border:none;font-size:13px;color:var(--muted);font-weight:600;cursor:pointer;padding:0;margin-top:12px;display:inline-block;}
+.ms-back-btn:hover{color:var(--navy);}
+@media(max-width:500px){.ms-opts{grid-template-columns:1fr;}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Condo Association Insurance | HOA Contracts","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Free condo association (COA) insurance review. Benchmark your condo master policy for premium savings, coverage gaps, replacement cost, and deductible exposure before renewal.","url":"https://hoacontracts.com/condo-association-insurance.html"}</script>
@@ -269,20 +285,54 @@ HOA Contracts
 <p>No cost. No obligation. No board vote required to begin the review process.</p>
 </div>
 <div class="form-body">
-
-<div class="form-stats">
-  <div class="form-stat"><strong>4,000+</strong><span>Properties</span></div>
-  <div class="form-stat"><strong>1M+</strong><span>Units</span></div>
-  <div class="form-stat"><strong>$3B+</strong><span>Negotiated</span></div>
-  <div class="form-stat"><strong>38</strong><span>States</span></div>
-</div>
+<div class="ms-progress"><div class="ms-dot" id="ms-dot-0">1</div><div class="ms-line" id="ms-line-0"></div><div class="ms-dot" id="ms-dot-1">2</div><div class="ms-line" id="ms-line-1"></div><div class="ms-dot" id="ms-dot-2">3</div><div class="ms-line" id="ms-line-2"></div><div class="ms-dot" id="ms-dot-3">4</div></div>
 <form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
-  <input type="hidden" name="lead_source" value="hoacontracts.com/condo-association-insurance" />
-  <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true" />
-  <input type="hidden" name="site" value="hoacontracts.com" />
-  <input type="hidden" name="vertical" value="HOA Insurance" />
-  <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html" />
-<div class="form-grid">
+<input type="hidden" name="lead_source" value="hoacontracts.com/condo-association-insurance">
+<input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input type="hidden" name="site" value="hoacontracts.com">
+<input type="hidden" name="vertical" value="HOA Insurance">
+<input type="hidden" name="variant" value="multistep-v1">
+<input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
+<input type="hidden" id="msf-community_type" name="community_type" value="">
+<input type="hidden" id="msf-community_size" name="community_size" value="">
+<input type="hidden" id="msf-last_review" name="last_review" value="">
+<div class="ms-panel ms-active" id="ms-panel-0">
+<p class="ms-q">What type of community are you?</p>
+<p class="ms-sub">Pick the closest match — it helps us tailor the review.</p>
+<div class="ms-opts">
+<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="HOA (Single Family)">HOA (Single Family)</button>
+<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Condo Association">Condo Association</button>
+<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Townhome Community">Townhome Community</button>
+<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Master-Planned">Master-Planned</button>
+</div>
+
+</div>
+<div class="ms-panel" id="ms-panel-1">
+<p class="ms-q">About how many units or homes?</p>
+<p class="ms-sub">A rough range is fine.</p>
+<div class="ms-opts">
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="1–50 Units">1–50 Units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="51–100 Units">51–100 Units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="101–300 Units">101–300 Units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="301+ Units">301+ Units</button>
+</div>
+<button type="button" class="ms-back-btn" data-goto="0">← Back</button>
+</div>
+<div class="ms-panel" id="ms-panel-2">
+<p class="ms-q">When was your board's last independent insurance review?</p>
+<p class="ms-sub">An outside review — not from your current agent.</p>
+<div class="ms-opts">
+<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="Within 1 year">Within 1 year</button>
+<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="1–3 years ago">1–3 years ago</button>
+<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="3+ years ago">3+ years ago</button>
+<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="Never / Not sure">Never / Not sure</button>
+</div>
+<button type="button" class="ms-back-btn" data-goto="1">← Back</button>
+</div>
+<div class="ms-panel" id="ms-panel-3">
+<p class="ms-q" style="margin-bottom:18px;">Last step — let's connect.</p>
+<button type="button" class="ms-back-btn" data-goto="2">← Back</button>
+<div class="form-grid" style="margin-top:16px;">
 <div class="">
 <label class="field-label" for="first_name">First Name</label>
 <input id="first_name" type="text" name="first_name" autocomplete="given-name" required>
@@ -299,20 +349,6 @@ HOA Contracts
 <label class="field-label" for="email">Email</label>
 <input id="email" type="email" name="email" autocomplete="email" required>
 </div>
-<div class="full">
-<label class="field-label" for="association">Association / Community Name</label>
-<input id="association" type="text" name="association" placeholder="Optional">
-</div>
-<div class="">
-<label class="field-label" for="community_size">Community Size</label>
-<select id="community_size" name="community_size" required>
-<option value="">Select one</option>
-<option>1–50 Units</option>
-<option>51–100 Units</option>
-<option>101–300 Units</option>
-<option>301+ Units</option>
-</select>
-</div>
 <div class="">
 <label class="field-label" for="role">Your Role</label>
 <select id="role" name="role" required>
@@ -324,34 +360,45 @@ HOA Contracts
 <option>Committee Member</option>
 </select>
 </div>
-<div class="">
-<label class="field-label" for="state">State</label>
-<input id="state" type="text" name="state" placeholder="e.g. ID" autocomplete="address-level1">
-</div>
-<div class="">
-<label class="field-label" for="renewal_date">Renewal Date</label>
-<input id="renewal_date" type="date" name="renewal_date">
-</div>
 <div class="full">
-<p style="font-weight:700; color:#142132; margin:4px 0 14px; font-size:16px;">Most HOA boards find at least one coverage gap in the first review.</p>
+<p style="font-weight:700;color:#142132;margin:4px 0 14px;font-size:16px;">Most HOA boards find at least one coverage gap in the first review.</p>
 <button class="btn btn-primary submit-btn" type="submit">Get My Free Review →</button>
 <div class="trust-strip"><span class="tbadge">🔒 SSL Secured</span>
 <span class="tbadge">✓ TCPA-Compliant Consent</span>
 <span class="tbadge">🚫 Never Sold or Shared</span>
 <span class="tbadge">✓ Free &amp; No Obligation</span></div>
-<p class="secondary-label">Can we help review any other services?</p>
-<div class="secondary-services-grid">
-<label><input type="checkbox" name="also_review[]" value="Internet / Cable"> Internet / Cable</label>
-<label><input type="checkbox" name="also_review[]" value="Trash / Recycling"> Trash / Recycling</label>
-<label><input type="checkbox" name="also_review[]" value="Landscaping"> Landscaping</label>
-<label><input type="checkbox" name="also_review[]" value="Maintenance Vendors"> Maintenance Vendors</label>
-</div>
 </div>
 </div>
 <div class="tcpa">By clicking "Get My Free Review," you expressly consent to be contacted by HOA Contracts and The Partners Group regarding HOA insurance and related association services by phone, text message, and email, including through automated technology and prerecorded messages. Consent is not required as a condition of purchase. View our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</div>
+</div>
 </form>
 </div>
 </div>
+<script>
+(function(){
+  var panels=document.querySelectorAll('.ms-panel');
+  var dots=document.querySelectorAll('.ms-dot');
+  var lines=document.querySelectorAll('.ms-line');
+  function go(n){
+    panels.forEach(function(p,i){p.classList.toggle('ms-active',i===n);});
+    dots.forEach(function(d,i){d.classList.toggle('ms-active',i===n);d.classList.toggle('ms-done',i<n);});
+    lines.forEach(function(l,i){l.classList.toggle('ms-done',i<n);});
+  }
+  document.querySelectorAll('.ms-opt').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var s=+this.dataset.step,fld=this.dataset.field,val=this.dataset.val;
+      document.querySelectorAll('.ms-opt[data-step="'+s+'"]').forEach(function(b){b.classList.remove('ms-sel');});
+      this.classList.add('ms-sel');
+      var hf=document.getElementById('msf-'+fld);if(hf)hf.value=val;
+      setTimeout(function(){go(s+1);},200);
+    });
+  });
+  document.querySelectorAll('.ms-back-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){go(+this.dataset.goto);});
+  });
+  go(0);
+})();
+</script>
 </div>
 </section>
 
