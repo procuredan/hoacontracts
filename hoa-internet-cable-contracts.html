@@ -80,6 +80,7 @@ img{max-width:100%;}
 .btn-primary{background:var(--accent);color:#fff;}
 .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
 .hero{background:radial-gradient(1100px 480px at 78% -10%, rgba(0,0,0,.10), transparent 60%), linear-gradient(160deg,var(--navy) 0%, var(--navy-dark) 100%);color:#fff;padding:90px 0;}
+.hero--photo .hero-title,.hero--photo .hero p,.hero--photo .hero-points div,.hero--photo .trust-line,.hero--photo .mini-proof{text-shadow:0 1px 16px rgba(3,12,24,.55);}
 .hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:56px;align-items:start;}
 .eyebrow{display:inline-block;background:rgba(244,166,33,.16);color:var(--gold);padding:8px 16px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 .hero-title{font-size:clamp(38px,4.6vw,60px);line-height:1.08;font-weight:800;letter-spacing:-1.5px;margin:22px 0;max-width:720px;}
@@ -89,6 +90,15 @@ img{max-width:100%;}
 .hero-points{margin:28px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;max-width:640px;}
 .hero-points div{display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:16px;}
 .hero-points span{color:var(--gold);font-weight:800;}
+.hero-ba{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:12px;margin-bottom:28px;max-width:560px;}
+.hero-ba-head{display:flex;flex-direction:column;gap:2px;margin:2px 4px 11px;}
+.hero-ba-title{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px;letter-spacing:-.2px;}
+.hero-ba-title b{color:var(--gold);font-size:18px;line-height:1;}
+.hero-ba-sub{color:#AEBED0;font-size:12.5px;}
+.hero-ba-imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.hero-ba-fig{position:relative;border-radius:10px;overflow:hidden;margin:0;}
+.hero-ba-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
+.hero-ba-tag{position:absolute;top:8px;left:8px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;padding:4px 9px;border-radius:999px;box-shadow:0 3px 8px rgba(0,0,0,.3);}
 .trust-line{margin:8px 0 26px;font-size:14px;color:#C7D8E7;font-weight:500;}
 .form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);color:var(--text);overflow:hidden;}
 .form-head{background:var(--accent);color:#fff;padding:24px 32px;}
@@ -100,6 +110,10 @@ img{max-width:100%;}
 .form-stat:last-child{border-right:none;}
 .form-stat strong{display:block;font-size:18px;font-weight:800;color:var(--navy);line-height:1.2;}
 .form-stat span{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:600;}
+.form-stat--hl{background:rgba(225,29,42,.05);}
+.form-stat--hl strong{color:var(--accent);font-size:21px;}
+.form-stat--strike strong{color:#9aa6b2;text-decoration:line-through;text-decoration-color:#c2ccd6;}
+.stats-kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);text-align:center;margin-bottom:8px;}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .form-grid .full{grid-column:1/-1;}
 .field-label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;}
@@ -191,9 +205,28 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .ba-vcap{text-align:center;color:var(--muted);font-size:15px;margin-top:16px;}
 .trust-strip{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px;}
 .tbadge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#5B6B7C;background:#F4F7FB;border:1px solid #E5EBF2;border-radius:999px;padding:5px 11px;white-space:nowrap;}
+.carriers{padding:44px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.carriers-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;}
+.carriers-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px 48px;}
+.carriers-grid img{height:44px;width:auto;opacity:.72;filter:grayscale(25%);transition:.25s ease;}
+.carriers-grid img:hover{opacity:1;filter:grayscale(0%);}
+@media(max-width:640px){.carriers-grid img{height:32px;}.carriers-grid{gap:18px 28px;}}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
+.blog-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 20px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:10px;}
+.blog-card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);background:rgba(0,0,0,.06);padding:4px 10px;border-radius:999px;}
+.blog-card h2{font-size:19px;color:var(--navy);line-height:1.25;margin:0;}
+.blog-card p{color:var(--muted);font-size:14px;flex:1;}
+.blog-card-date{font-size:12px;color:var(--muted);font-weight:500;}
+.blog-card .read-more{font-size:14px;font-weight:700;color:var(--accent);}
+.article-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+.article-breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.article-cta-box{margin-top:44px;padding:32px;background:var(--light);border-radius:16px;border:1px solid var(--line);}
+.article-cta-box h3{color:var(--navy);font-size:22px;margin-bottom:8px;}
+.article-cta-box p{color:var(--muted);margin-bottom:20px;}
+@media(max-width:980px){.blog-grid{grid-template-columns:1fr;}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"HOA Internet & Cable Contracts: Bulk Agreements, Terms & Renewals","description":"How HOA bulk internet and cable agreements work, what to watch for in the terms, and how associations can review them for savings and better service.","mainEntityOfPage":"https://hoacontracts.com/hoa-internet-cable-contracts.html","author":{"@type":"Organization","name":"HOA Contracts"},"publisher":{"@type":"Organization","name":"HOA Contracts"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"HOA Internet & Cable Contracts: Bulk Agreements, Terms & Renewals","description":"How HOA bulk internet and cable agreements work, what to watch for in the terms, and how associations can review them for savings and better service.","mainEntityOfPage":"https://hoacontracts.com/hoa-internet-cable-contracts.html","author":{"@type":"Organization","name":"HOA Contracts"},"publisher":{"@type":"Organization","name":"HOA Contracts","logo":{"@type":"ImageObject","url":"https://hoacontracts.com/og.png"}},"datePublished":"2025-11-15","dateModified":"2025-11-15"}</script>
 </head>
 <body>
 <div class="top-bar">HOA and condo association insurance reviews — premium savings, coverage gaps, replacement cost, and board liability, before renewal.</div>
@@ -210,6 +243,11 @@ HOA Contracts
 </div>
 </header>
 <article class="article container">
+<p class="article-breadcrumb"><a href="/blog.html" style="color:var(--accent);font-weight:600;">← All Articles</a></p>
+<div class="article-meta">
+<span class="blog-card-tag">Vendor Contracts</span>
+<span class="blog-card-date">November 15, 2025</span>
+</div>
 <h1>HOA Internet &amp; Cable Contracts: Bulk Agreements, Terms &amp; Renewals</h1>
 <p class="lede">Bulk internet and cable agreements are some of the largest long-term contracts an association signs — and some of the least reviewed. The terms your board agrees to can lock the community in for years.</p>
 <h2>How bulk agreements work</h2>
@@ -218,7 +256,12 @@ HOA Contracts
 <p>Auto-renewal clauses, annual escalators, exclusivity, and equipment obligations all deserve scrutiny. These are where multi-year contracts quietly become expensive.</p>
 <h2>Reviewing before you sign</h2>
 <p>Because these agreements run for years, a review before signing or renewing is worth far more than the time it takes. We help boards compare terms and negotiate from a stronger position.</p>
-<a class="back" href="/#form">← Get My Free Review →</a>
+<div class="article-cta-box">
+<h3>Request Your Free HOA Insurance Review</h3>
+<p>No cost. No obligation. No board vote required to begin the review process.</p>
+<a href="/#form" class="btn btn-primary">Get My Free Review →</a>
+</div>
+<a class="back" href="/blog.html">← Back to All Articles</a>
 </article>
 <footer id="contact">
 <div class="container">
@@ -239,6 +282,7 @@ HOA Contracts
 </div>
 <div>
 <h4>Resources</h4>
+<a href="/blog.html">Blog &amp; Insights</a>
 <a href="/condo-association-insurance.html">Condo Association Insurance</a>
 <a href="/coverage-gap-review.html">Coverage Gap Review</a>
 <a href="/hoa-insurance-carrier-review.html">Carrier Review</a>
