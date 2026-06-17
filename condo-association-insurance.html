@@ -293,28 +293,28 @@ HOA Contracts
 <input type="hidden" name="vertical" value="HOA Insurance">
 <input type="hidden" name="variant" value="multistep-v1">
 <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
-<input type="hidden" id="msf-community_type" name="community_type" value="">
-<input type="hidden" id="msf-community_size" name="community_size" value="">
+<input type="hidden" id="msf-visit_reason" name="visit_reason" value="">
+<input type="hidden" id="msf-board_confidence" name="board_confidence" value="">
 <input type="hidden" id="msf-last_review" name="last_review" value="">
 <div class="ms-panel ms-active" id="ms-panel-0">
-<div class="ms-q">What type of community are you?</div>
-<div class="ms-sub">Pick the closest match — it helps us tailor the review.</div>
+<div class="ms-q">What brings you in today?</div>
+
 <div class="ms-opts">
-<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="HOA (Single Family)">HOA (Single Family)</button>
-<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Condo Association">Condo Association</button>
-<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Townhome Community">Townhome Community</button>
-<button type="button" class="ms-opt" data-step="0" data-field="community_type" data-val="Master-Planned">Master-Planned</button>
+<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Renewal's coming up">Renewal's coming up</button>
+<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Premium jumped">Premium jumped</button>
+<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Just making sure we're covered">Just making sure we're covered</button>
+<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Board due diligence">Board due diligence</button>
 </div>
 
 </div>
 <div class="ms-panel" id="ms-panel-1">
-<div class="ms-q">About how many units or homes?</div>
-<div class="ms-sub">A rough range is fine.</div>
+<div class="ms-q">How confident is your board in your current coverage?</div>
+
 <div class="ms-opts">
-<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="1–50 Units">1–50 Units</button>
-<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="51–100 Units">51–100 Units</button>
-<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="101–300 Units">101–300 Units</button>
-<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="301+ Units">301+ Units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Pretty confident">Pretty confident</button>
+<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Due for a sanity check">Due for a sanity check</button>
+<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Honestly not sure">Honestly not sure</button>
+<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="We've had concerns">We've had concerns</button>
 </div>
 <button type="button" class="ms-back-btn" data-goto="0">← Back</button>
 </div>
@@ -379,10 +379,13 @@ HOA Contracts
   var panels=document.querySelectorAll('.ms-panel');
   var dots=document.querySelectorAll('.ms-dot');
   var lines=document.querySelectorAll('.ms-line');
+  var SITE='hoacontracts.com';
+  function ga4(ev,p){try{if(window.gtag)gtag('event',ev,p||{});}catch(e){}}
   function go(n){
     panels.forEach(function(p,i){p.classList.toggle('ms-active',i===n);});
     dots.forEach(function(d,i){d.classList.toggle('ms-active',i===n);d.classList.toggle('ms-done',i<n);});
     lines.forEach(function(l,i){l.classList.toggle('ms-done',i<n);});
+    if(n>0) ga4('multistep_step_'+(n+1),{site:SITE,step:n+1});
   }
   document.querySelectorAll('.ms-opt').forEach(function(btn){
     btn.addEventListener('click',function(){
@@ -390,12 +393,15 @@ HOA Contracts
       document.querySelectorAll('.ms-opt[data-step="'+s+'"]').forEach(function(b){b.classList.remove('ms-sel');});
       this.classList.add('ms-sel');
       var hf=document.getElementById('msf-'+fld);if(hf)hf.value=val;
+      ga4('multistep_option_selected',{site:SITE,step:s+1,field:fld,value:val});
       setTimeout(function(){go(s+1);},200);
     });
   });
   document.querySelectorAll('.ms-back-btn').forEach(function(btn){
     btn.addEventListener('click',function(){go(+this.dataset.goto);});
   });
+  var f=document.querySelector('form');
+  if(f) f.addEventListener('submit',function(){ga4('multistep_submit',{site:SITE});});
   go(0);
 })();
 </script>
