@@ -357,7 +357,30 @@ document.addEventListener("DOMContentLoaded", function () {
   var sidEl = document.getElementById('pm_sid'); if (sidEl) sidEl.value = sid;
 
   var qs = new URLSearchParams(location.search);
-  var angle = (qs.get('angle') || qs.get('utm_content') || 'default').toLowerCase();
+  // --- Segment routing (Brief 4): map ?utm_content / ?angle slug -> distinct lead_source + lead_type ---
+  // Locked canonical set: slug == lead_source suffix == utm_content == ad-group. 'copy' picks the on-page angle copy.
+  var SEGMENTS = {
+    'condo-association': { lead_source:'hoacontracts.com/condo-association', lead_type:'condo_association', copy:'condo' },
+    'townhome':          { lead_source:'hoacontracts.com/townhome',          lead_type:'townhome',          copy:'condo' },
+    'multi-unit':        { lead_source:'hoacontracts.com/multi-unit',        lead_type:'multi_unit',        copy:'condo' },
+    'broker':            { lead_source:'hoacontracts.com/broker',            lead_type:'broker',            copy:'hoa'  },
+    'hoa':               { lead_source:'hoacontracts.com/hoa',               lead_type:'hoa',               copy:'hoa'  },
+    // legacy aliases so existing live ads keep routing cleanly into the new scheme
+    'condo':             { lead_source:'hoacontracts.com/condo-association', lead_type:'condo_association', copy:'condo'   },
+    'savings':           { lead_source:'hoacontracts.com/hoa',               lead_type:'hoa',               copy:'savings' }
+  };
+  var slug = (qs.get('utm_content') || qs.get('angle') || '').toLowerCase();
+  var SEG = SEGMENTS[slug] || null;
+  if (SEG) {
+    var lsEl = document.querySelector('input[name="lead_source"]'); if (lsEl) lsEl.value = SEG.lead_source;
+    var segForm = document.getElementById('msForm');
+    if (segForm) {
+      if (!segForm.querySelector('[name="lead_type"]'))  { var i_lt=document.createElement('input'); i_lt.type='hidden'; i_lt.name='lead_type';  i_lt.value=SEG.lead_type; segForm.appendChild(i_lt); }
+      // backfill utm_content from the slug when the ad only passed ?angle (fixes NULL utm_content in D1)
+      if (!segForm.querySelector('[name="utm_content"]')) { var i_uc=document.createElement('input'); i_uc.type='hidden'; i_uc.name='utm_content'; i_uc.value=slug;        segForm.appendChild(i_uc); }
+    }
+  }
+  var angle = (SEG && SEG.copy) ? SEG.copy : (slug || 'default');
   if (ANGLES && ANGLES[angle]) {
     var A = ANGLES[angle];
     if (A.title_html){ var et=document.getElementById('heroTitle'); if(et) et.innerHTML=A.title_html; }
@@ -397,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
     reached = Math.max(reached, cur+1);
     try{
       var ans={}; STEPS.forEach(function(st){ var i=document.getElementById('f_'+st.field); if(i&&i.value) ans[st.field]=i.value; });
-      ans.angle=angle;
+      ans.angle=angle; ans.segment = (SEG ? slug : '');
       var body=new URLSearchParams({ session_id:sid, site:SITE, last_field:'step-'+(cur+1), fields_reached:String(reached), extra:JSON.stringify(ans) });
       fetch(ENGINE+'/partial',{ method:'POST', body:body, keepalive:true }).catch(function(){});
     }catch(e){}
@@ -407,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if(form) form.addEventListener('submit', function(e){
     var active=steps[cur]; var invalid=active.querySelector(':invalid');
     if(invalid){ e.preventDefault(); if(invalid.reportValidity) invalid.reportValidity(); return; }
-    try{ gtag('event','generate_lead',{ angle: angle }); }catch(e2){}
+    try{ gtag('event','generate_lead',{ angle: angle, segment: (SEG?slug:''), lead_type: (SEG?SEG.lead_type:'') }); }catch(e2){}
   });
 
   render();
