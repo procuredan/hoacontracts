@@ -181,6 +181,8 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .ms-back.hide{display:none;}
 .ms-card .form-stats{border:none;border-top:1px solid var(--line);border-radius:0;margin:0;}
 .ms-card select{-webkit-appearance:none;appearance:none;padding-right:44px;cursor:pointer;background-image:url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%3E%3Cpath%20d='M1%201l5%205%205-5'%20stroke='%236E7A8A'%20stroke-width='2'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px 8px;}
+.sms-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#39485B;cursor:pointer;padding:11px 13px;border:1px solid #E5EBF2;border-radius:10px;background:#fff;}
+.sms-consent input{width:18px;height:18px;margin:1px 0 0;flex-shrink:0;accent-color:#F4A621;}
 </style>
 </head>
 <body>
@@ -221,6 +223,10 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
   <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you">
   <input type="hidden" name="pm_sid" id="pm_sid" value="" />
   <input type="hidden" name="variant" value="multistep" />
+<input type="hidden" name="sms_consent" id="sms_consent_field" value="false" />
+<input type="hidden" name="sms_consent_text" value="" />
+<input type="hidden" name="sms_consent_url" value="" />
+<input type="hidden" name="sms_consent_timestamp" value="" />
   <input type="hidden" name="property_type" id="f_property_type" value="" />
   <input type="hidden" name="community_size" id="f_community_size" value="" />
   <input type="hidden" name="last_review" id="f_last_review" value="" />
@@ -248,15 +254,32 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
         <div><input type="email" name="email" placeholder="Email Address" autocomplete="email" required></div>
         <div><input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required></div>
         <div class="full"><input type="text" name="association" placeholder="Association / Community Name" required></div>
+        <div class="full"><label class="sms-consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label></div>
       </div>
       <div class="cf-turnstile" data-sitekey="" data-size="flexible" style="margin:14px 0 4px"></div>
       <script>(function(){var d=document.currentScript.previousElementSibling,k=d&&d.getAttribute('data-sitekey');if(k&&k.indexOf('{{')<0&&k.length>5){var s=document.createElement('script');s.src='https://challenges.cloudflare.com/turnstile/v0/api.js';s.async=s.defer=true;document.head.appendChild(s);}else if(d){d.style.display='none';}})();</script>
       <button class="btn btn-primary ms-submit" type="submit">Get My Free Review →</button>
       <span class="ms-privacy">🔒 Your information is never sold or shared.</span>
-      <div class="tcpa">By clicking "Get My Free Review," you expressly consent to be contacted by HOA Contracts and The Partners Group regarding HOA insurance and related association services by phone, text message, and email, including through automated technology and prerecorded messages. Consent is not required as a condition of purchase.</div>
+      <div class="tcpa">By clicking "Get My Free Review," you consent to be contacted by HOA Contracts and The Partners Group regarding HOA insurance and related association services by phone call and email, including through automated technology. Consent is not required as a condition of purchase.</div>
+      <div class="tcpa"><strong>SMS terms:</strong> If you check the box above, message frequency varies and Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. SMS consent is not a condition of purchase. See our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms</a>.</div>
     </div>
     <button type="button" class="ms-back hide" id="msBack">← Back</button>
   </div>
+<script>
+(function(){
+  var box=document.getElementById("sms_consent_box");
+  var f=document.getElementById("sms_consent_field"); if(!box||!f) return;
+  var form=box.closest("form");
+  var lab=box.closest("label"); var txt=lab?(lab.textContent||"").trim():"";
+  function setv(n,v){ var el=form&&form.querySelector('[name="'+n+'"]'); if(el) el.value=v; }
+  function sync(){ var on=box.checked; f.value=on?"true":"false";
+    setv("sms_consent_text", on?txt:"");
+    setv("sms_consent_url", on?location.href:"");
+    setv("sms_consent_timestamp", on?new Date().toISOString():""); }
+  box.addEventListener("change",sync);
+  if(form) form.addEventListener("submit",sync);
+})();
+</script>
 </form>
 <div class="form-stats"><div class="form-stat"><strong>4,000+</strong><span>Properties</span></div><div class="form-stat"><strong>1M+</strong><span>Units</span></div><div class="form-stat"><strong>$3B+</strong><span>Negotiated</span></div><div class="form-stat"><strong>38</strong><span>States</span></div></div>
 </div>
