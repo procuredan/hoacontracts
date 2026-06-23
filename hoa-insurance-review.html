@@ -254,6 +254,8 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .ms-back-btn{background:none;border:none;font-size:13px;color:var(--muted);font-weight:600;cursor:pointer;padding:0;margin-top:12px;display:inline-block;}
 .ms-back-btn:hover{color:var(--navy);}
 @media(max-width:500px){.ms-opts{grid-template-columns:1fr;}}
+.sms-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#39485B;cursor:pointer;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;}
+.sms-consent input{width:18px;height:18px;margin:1px 0 0;flex-shrink:0;accent-color:var(--accent);}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"HOA Insurance Review | HOA Contracts","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Free HOA insurance review and cost-savings evaluation. We benchmark your association's master policy for premium savings, coverage gaps, replacement cost accuracy, and competitive carrier options before renewal.","url":"https://hoacontracts.com/hoa-insurance-review.html"}</script>
@@ -307,6 +309,10 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <input type="hidden" name="site" value="hoacontracts.com">
 <input type="hidden" name="vertical" value="HOA Insurance">
 <input type="hidden" name="variant" value="multistep-v1">
+<input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
+<input type="hidden" name="sms_consent_text" value="">
+<input type="hidden" name="sms_consent_url" value="">
+<input type="hidden" name="sms_consent_timestamp" value="">
 <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
 <input type="hidden" id="msf-visit_reason" name="visit_reason" value="">
 <input type="hidden" id="msf-board_confidence" name="board_confidence" value="">
@@ -376,6 +382,9 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 </select>
 </div>
 <div class="full">
+<label class="sms-consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
+</div>
+<div class="full">
 <p style="font-weight:700;color:#142132;margin:4px 0 14px;font-size:16px;">Most HOA boards find at least one coverage gap in the first review.</p>
 <button class="btn btn-primary submit-btn" type="submit">Get My Free Review →</button>
 <div class="trust-strip"><span class="tbadge">🔒 SSL Secured</span>
@@ -384,8 +393,24 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <span class="tbadge">✓ Free &amp; No Obligation</span></div>
 </div>
 </div>
-<div class="tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands by phone call, SMS, and email, including via automated technology. SMS is sent only by ProcureMedia and your mobile opt-in is never shared. You also consent to a phone call from The Partners Group. Consent is not a condition of purchase. Msg & data rates may apply; frequency varies. Reply STOP to opt out, HELP for help. View our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a>.</div>
+<div class="tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. Your information is never sold or shared.</div>
+<div class="tcpa"><strong>SMS terms:</strong> If you check the box above, message frequency varies and Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. SMS consent is not a condition of purchase. See our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms</a>.</div>
 </div>
+<script>
+(function(){
+  var box=document.getElementById("sms_consent_box");
+  var f=document.getElementById("sms_consent_field"); if(!box||!f) return;
+  var form=box.closest("form");
+  var lab=box.closest("label"); var txt=lab?(lab.textContent||"").trim():"";
+  function setv(n,v){ var el=form&&form.querySelector('[name="'+n+'"]'); if(el) el.value=v; }
+  function sync(){ var on=box.checked; f.value=on?"true":"false";
+    setv("sms_consent_text", on?txt:"");
+    setv("sms_consent_url", on?location.href:"");
+    setv("sms_consent_timestamp", on?new Date().toISOString():""); }
+  box.addEventListener("change",sync);
+  if(form) form.addEventListener("submit",sync);
+})();
+</script>
 </form>
 </div>
 </div>
