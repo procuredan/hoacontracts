@@ -314,28 +314,28 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <input type="hidden" name="sms_consent_url" value="">
 <input type="hidden" name="sms_consent_timestamp" value="">
 <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
-<input type="hidden" id="msf-visit_reason" name="visit_reason" value="">
-<input type="hidden" id="msf-board_confidence" name="board_confidence" value="">
+<input type="hidden" id="msf-property_type" name="property_type" value="">
+<input type="hidden" id="msf-community_size" name="community_size" value="">
 <input type="hidden" id="msf-last_review" name="last_review" value="">
 <div class="ms-panel ms-active" id="ms-panel-0">
-<div class="ms-q">What brings you in today?</div>
+<div class="ms-q">What type of community is it?</div>
 
 <div class="ms-opts">
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Renewal's coming up">Renewal's coming up</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Premium jumped">Premium jumped</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Just making sure we're covered">Just making sure we're covered</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Board due diligence">Board due diligence</button>
+<button type="button" class="ms-opt" data-step="0" data-field="property_type" data-val="Condo association">🏢 Condo association</button>
+<button type="button" class="ms-opt" data-step="0" data-field="property_type" data-val="Townhome community">🏘️ Townhome community</button>
+<button type="button" class="ms-opt" data-step="0" data-field="property_type" data-val="Single-family HOA">🏡 Single-family HOA</button>
+<button type="button" class="ms-opt" data-step="0" data-field="property_type" data-val="High-rise / condo tower">🏙️ High-rise / condo tower</button>
 </div>
 
 </div>
 <div class="ms-panel" id="ms-panel-1">
-<div class="ms-q">How confident is your board in your current coverage?</div>
+<div class="ms-q">How many units?</div>
 
 <div class="ms-opts">
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Pretty confident">Pretty confident</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Due for a sanity check">Due for a sanity check</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Honestly not sure">Honestly not sure</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="We've had concerns">We've had concerns</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="1–50 Units">1–50 units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="51–100 Units">51–100 units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="101–300 Units">101–300 units</button>
+<button type="button" class="ms-opt" data-step="1" data-field="community_size" data-val="301+ Units">301+ units</button>
 </div>
 <button type="button" class="ms-back-btn" data-goto="0">← Back</button>
 </div>
@@ -354,13 +354,9 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <div class="ms-q" style="margin-bottom:18px;">Last step — let's connect.</div>
 <button type="button" class="ms-back-btn" data-goto="2">← Back</button>
 <div class="form-grid" style="margin-top:16px;">
-<div class="">
-<label class="field-label" for="first_name">First Name</label>
-<input id="first_name" type="text" name="first_name" autocomplete="given-name" required>
-</div>
-<div class="">
-<label class="field-label" for="last_name">Last Name</label>
-<input id="last_name" type="text" name="last_name" autocomplete="family-name" required>
+<div class="full">
+<label class="field-label" for="name">Name</label>
+<input id="name" type="text" name="name" autocomplete="name" required>
 </div>
 <div class="">
 <label class="field-label" for="phone">Phone</label>
@@ -369,6 +365,10 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <div class="">
 <label class="field-label" for="email">Email</label>
 <input id="email" type="email" name="email" autocomplete="email" required>
+</div>
+<div class="">
+<label class="field-label" for="state">State</label>
+<input id="state" type="text" name="state" autocomplete="address-level1" placeholder="State" required>
 </div>
 <div class="">
 <label class="field-label" for="role">Your Role</label>
@@ -677,8 +677,9 @@ document.addEventListener("DOMContentLoaded", function () {
     FIELDS.forEach(function(n){ if(!core[n]){ var val=v(n); if(val) o[n]=val; } }); return JSON.stringify(o); }
   function snap(sub){ return {
     session_id:sid, site:SITE, last_field:lastField, fields_reached:Object.keys(reached).length, submitted:sub?1:0,
-    name:fullname(), email:v('email'), phone:v('phone'),
-    association:v('association'), community_size:v('community_size'), role:v('role'), extra:extra(),
+    name:fullname(), first_name:v('first_name'), last_name:v('last_name'), email:v('email'), phone:v('phone'),
+    association:v('association'), community_size:v('community_size'), role:v('role'),
+    property_type:v('property_type'), renewal_timing:v('renewal_timing'), ab_variant:v('ab_variant'), sms_consent:v('sms_consent'), extra:extra(),
     gclid:attr.gclid||'', utm_source:attr.utm_source||'', utm_medium:attr.utm_medium||'', utm_campaign:attr.utm_campaign||'',
     utm_term:attr.utm_term||'', utm_content:attr.utm_content||'', landing:attr.landing||'', referrer:attr.referrer||'' }; }
   function beacon(sub){ try{ var b=new Blob([JSON.stringify(snap(sub))],{type:'text/plain'});
@@ -693,6 +694,15 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener('submit', function(){ beacon(true); });
   window.addEventListener('pagehide', function(){ if(started) beacon(false); });
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && started) beacon(false); });
+  // --- cradle-to-grave tracking additions (2026-06-24) ---
+  try{ lastField='pageview'; beacon(false); }catch(e){}
+  Array.prototype.forEach.call(document.querySelectorAll('.ms-opt'), function(b){
+    b.addEventListener('click', function(){ if(this.disabled) return;
+      var fld=this.getAttribute('data-field'); if(fld){ reached[fld]=true; lastField=fld; }
+      setTimeout(function(){ beacon(false); }, 0); });
+  });
+  var _sms=document.getElementById('sms_consent_box');
+  if(_sms) _sms.addEventListener('change', function(){ if(this.checked){ reached['sms_consent']=true; lastField='sms_consent'; ga('form_progress',{field_name:'sms_consent'}); } beacon(false); });
 })();
 </script>
 </body>
