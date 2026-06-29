@@ -320,8 +320,6 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <input type="hidden" name="sms_consent_url" value="">
 <input type="hidden" name="sms_consent_timestamp" value="">
 <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
-<input type="hidden" id="msf-property_type" name="property_type" value="">
-<input type="hidden" id="msf-community_size" name="community_size" value="">
 <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
 <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
 <div class="ms-panel ms-active" id="ms-panel-0">
@@ -375,13 +373,33 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 <label class="field-label" for="email">Email</label>
 <input id="email" type="email" name="email" autocomplete="email" required>
 </div>
-<div class="">
+<div class="full">
 <label class="field-label" for="state">State</label>
 <input id="state" type="text" name="state" autocomplete="address-level1" placeholder="State" required>
 </div>
 <div class="">
+<label class="field-label" for="property_type">Community type</label>
+<select id="property_type" name="property_type">
+<option value="">Select type</option>
+<option>Condo association</option>
+<option>Townhome community</option>
+<option>Single-family HOA</option>
+<option>High-rise / condo tower</option>
+</select>
+</div>
+<div class="">
+<label class="field-label" for="community_size">Community size</label>
+<select id="community_size" name="community_size">
+<option value="">Select size</option>
+<option>1–50 Units</option>
+<option>51–100 Units</option>
+<option>101–300 Units</option>
+<option>301+ Units</option>
+</select>
+</div>
+<div class="full">
 <label class="field-label" for="role">Your Role</label>
-<select id="role" name="role" required>
+<select id="role" name="role">
 <option value="">Select one</option>
 <option>Board President</option>
 <option>Board Treasurer</option>
