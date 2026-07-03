@@ -195,6 +195,7 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .thanks .badge{width:84px;height:84px;border-radius:50%;background:rgba(244,166,33,.15);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 26px;}
 .thanks h1{font-size:40px;color:var(--navy);margin-bottom:16px;}
 .thanks p{font-size:19px;color:var(--muted);margin-bottom:14px;}
+.m-lead{display:none;}
 @media(max-width:980px){
 #form{order:-1;}
 .top-bar{display:none;}
@@ -202,6 +203,16 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 .hero-grid{gap:24px;}
 .form-head{padding:18px 20px;}
 .form-head h3{font-size:21px;line-height:1.15;}
+.hero-copy{display:none;}
+.m-lead{display:block;order:-2;color:#fff;text-align:center;}
+.m-lead .eyebrow{margin-bottom:8px;}
+.m-lead .m-head{font-size:23px;line-height:1.18;font-weight:800;margin:0 0 14px;color:#fff;}
+.m-lead .m-head .highlight{color:var(--gold);}
+.m-tl{font-size:13.5px;font-weight:700;color:#EAF1F8;text-align:center;margin:0 0 10px;}
+.m-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 10px;}
+.m-logos span{background:#fff;border-radius:7px;height:36px;display:flex;align-items:center;justify-content:center;padding:6px;}
+.m-logos img{max-height:22px;max-width:100%;object-fit:contain;}
+.m-stat{font-size:12px;color:#AFC1D4;text-align:center;font-weight:600;margin:0;}
 .hero-grid,.review-grid,.how-grid,.footer-grid,.stats-grid,.seg-grid,.ba-grid{grid-template-columns:1fr;}
 .form-grid{grid-template-columns:1fr;}
 .hero-points{grid-template-columns:1fr;}
@@ -286,10 +297,11 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 
 <section class="hero">
 <div class="container hero-grid">
-<div>
+<div class="m-lead"><div class="eyebrow">Replacement Cost Analysis</div><div class="m-head">Insured to rebuild —<br>or stuck with <span class="highlight">last year's number</span>?</div><p class="m-tl">We check every carrier to find your best fit</p><div class="m-logos"><span><img src="/logos/image001.png" alt="Travelers" loading="lazy"></span><span><img src="/logos/image004.png" alt="Zurich" loading="lazy"></span><span><img src="/logos/image005.png" alt="Cincinnati" loading="lazy"></span><span><img src="/logos/image006.png" alt="EMC" loading="lazy"></span><span><img src="/logos/image007.png" alt="Liberty Mutual" loading="lazy"></span><span><img src="/logos/image008.png" alt="Nationwide" loading="lazy"></span></div><p class="m-stat">4,000+ properties · 1M+ units · 38 states</p></div>
+<div class="hero-copy">
 
 <div class="eyebrow">Replacement Cost Analysis</div>
-<h1 class="hero-title">Insured to rebuild — or stuck with <span class="highlight">last year's number</span>?</h1>
+<h1 class="hero-title">Insured to rebuild —<br>or stuck with <span class="highlight">last year's number</span>?</h1>
 <p>Free replacement-cost review — catch underinsured buildings and outdated valuations before a claim exposes the gap.</p>
 <p class="mini-proof">Building valuations and insured-to-value reviewed against current rebuild costs.</p>
 <div class="hero-points">
