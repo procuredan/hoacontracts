@@ -17,7 +17,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Google tag (gtag.js) — GA4 + Google Ads (standard across all pages) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z38W9N0GQQ"></script>
@@ -57,386 +57,351 @@
 </script>
 <style>
 :root{
-  --navy:#0B3558;--navy-dark:#07253D;--gold:#F4A621;--gold-dark:#D88D13;
-  --accent:#F4A621;--accent-dark:#D88D13;
-  --light:#F7F9FC;--text:#142132;--muted:#6E7A8A;--line:#E5EBF2;
-  --radius:18px;--shadow:0 12px 30px rgba(0,0,0,.08);--container:1180px;
+  --navy:#0A2540;--navy-2:#123A5E;--ink:#0F2136;
+  --accent:#1E63F0;--accent-ink:#0B4AD1;--good:#0E9F6E;
+  --paper:#F4F7FC;--surface:#FFFFFF;--line:#E4EBF3;--muted:#5C6B7D;--text:#132339;
+  --radius:16px;--shadow:0 18px 44px rgba(10,37,64,.10);--shadow-sm:0 6px 18px rgba(10,37,64,.07);
+  --container:1200px;
 }
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;line-height:1.6;}
-.container{width:100%;max-width:var(--container);margin:auto;padding:0 24px;}
-a{text-decoration:none;}
-img{max-width:100%;}
-.top-bar{background:var(--navy-dark);color:#C7D8E7;text-align:center;font-size:13px;font-weight:600;padding:9px 16px;}
-.nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
-.nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;}
-.logo{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);font-size:22px;}
-.logo-box{width:42px;height:42px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);}
-.logo-box svg{width:25px;height:25px;}
-.nav-right{display:flex;align-items:center;gap:22px;}
-.nav-inner{gap:12px;}
-.logo{min-width:0;}
-.brand-txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.nav-actions,.nav-right{flex-shrink:0;}
-.nav-cta{padding:11px 18px;font-size:15px;background:transparent;color:var(--navy);border:1.5px solid var(--line);}
-.nav-cta:hover{border-color:var(--navy);background:var(--navy);color:#fff;transform:none;}
-.call-btn{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;background:var(--accent);color:#fff;padding:9px 18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.16);transition:.2s ease;}
-.call-btn:hover{background:var(--accent-dark);transform:translateY(-2px);}
-.call-ic{width:22px;height:22px;flex-shrink:0;}
-.call-txt{display:flex;flex-direction:column;line-height:1.05;}
-.call-txt small{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;opacity:.92;}
-.call-txt strong{font-size:18px;font-weight:800;white-space:nowrap;}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:12px;font-weight:800;transition:.2s ease;cursor:pointer;border:none;}
-.btn-primary{background:var(--accent);color:#fff;}
-.btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
-.hero{background:radial-gradient(1100px 480px at 78% -10%, rgba(0,0,0,.10), transparent 60%), linear-gradient(160deg,var(--navy) 0%, var(--navy-dark) 100%);color:#fff;padding:90px 0;}
-.hero--photo .hero-title,.hero--photo .hero p,.hero--photo .hero-points div,.hero--photo .trust-line,.hero--photo .mini-proof{text-shadow:0 1px 16px rgba(3,12,24,.55);}
-.hero-grid{display:grid;grid-template-columns:1fr .95fr;gap:56px;align-items:start;}
-.eyebrow{display:inline-block;background:rgba(244,166,33,.16);color:var(--gold);padding:8px 16px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-.hero-title{font-size:clamp(38px,4.6vw,60px);line-height:1.08;font-weight:800;letter-spacing:-1.5px;margin:22px 0;max-width:720px;}
-.highlight{color:var(--gold);}
-.hero p{font-size:20px;color:#D3DCE7;max-width:700px;}
-.mini-proof{margin-top:16px;font-size:13px;line-height:1.6;color:#C7D8E7;font-weight:500;opacity:.92;}
-.hero-points{margin:28px 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;max-width:640px;}
-.hero-points div{display:flex;align-items:flex-start;gap:12px;color:#fff;font-size:16px;}
-.hero-points span{color:var(--gold);font-weight:800;}
-.hero-ba{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:12px;margin-bottom:28px;max-width:560px;}
-.hero-ba-head{display:flex;flex-direction:column;gap:2px;margin:2px 4px 11px;}
-.hero-ba-title{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px;letter-spacing:-.2px;}
-.hero-ba-title b{color:var(--gold);font-size:18px;line-height:1;}
-.hero-ba-sub{color:#AEBED0;font-size:12.5px;}
-.hero-ba-imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.hero-ba-fig{position:relative;border-radius:10px;overflow:hidden;margin:0;}
-.hero-ba-fig img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
-.hero-ba-tag{position:absolute;top:8px;left:8px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;padding:4px 9px;border-radius:999px;box-shadow:0 3px 8px rgba(0,0,0,.3);}
-.trust-line{margin:8px 0 26px;font-size:14px;color:#C7D8E7;font-weight:500;}
-.form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);color:var(--text);overflow:hidden;}
-.form-head{background:var(--accent);color:#fff;padding:24px 32px;}
-.form-head h3{font-size:25px;line-height:1.12;margin-bottom:6px;color:#fff;}
-.form-head p{color:rgba(255,255,255,.9);font-size:14px;}
-.form-body{padding:28px 32px 32px;}
-.form-stats{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:20px;}
-.form-stat{flex:1;text-align:center;padding:10px 8px;border-right:1px solid var(--line);}
-.form-stat:last-child{border-right:none;}
-.form-stat strong{display:block;font-size:18px;font-weight:800;color:var(--navy);line-height:1.2;}
-.form-stat span{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:600;}
-.form-stat--hl{background:rgba(225,29,42,.05);}
-.form-stat--hl strong{color:var(--accent);font-size:21px;}
-.form-stat--strike strong{color:#9aa6b2;text-decoration:line-through;text-decoration-color:#c2ccd6;}
-.stats-kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);text-align:center;margin-bottom:8px;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.form-grid .full{grid-column:1/-1;}
-.field-label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;}
-.submit-btn{width:100%;display:flex;justify-content:center;margin-top:6px;padding:18px 24px;font-size:18px;}
-input,select,textarea{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);font-size:15px;font-family:inherit;background:#fff;}
-textarea{min-height:84px;resize:vertical;}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy);}
-.secondary-label{font-size:13px;color:var(--muted);margin:18px 0 10px;}
-.secondary-services-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-bottom:18px;}
-.secondary-services-grid label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;}
-.secondary-services-grid input{width:14px;height:14px;margin:0;}
-.privacy-note{display:block;margin-top:10px;font-size:12px;color:#8A97A5;text-align:center;}
-.tcpa{display:block;width:100%;margin-top:16px;font-size:11px;line-height:1.5;color:#7B8794;text-align:left;}
-.tcpa a{color:#7B8794;text-decoration:underline;}
-.stats{background:var(--navy);padding:40px 0;}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;}
-.stat h2{color:#fff;font-size:38px;font-weight:800;}
-.stat h2 span{color:var(--gold);}
-.stat p{color:#BFD0E0;text-transform:uppercase;letter-spacing:1px;font-size:12px;font-weight:700;margin-top:8px;}
-.section{padding:90px 0;}
-.how-section{background:#f5f8fb;}
-.section-head{text-align:center;max-width:820px;margin:auto auto 60px;}
-.section-head h2{font-size:clamp(32px,4vw,52px);line-height:1.1;margin:18px 0;}
-.section-head p{color:var(--muted);font-size:18px;}
-.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.review-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:var(--shadow);transition:.2s ease;}
-.review-card:hover{transform:translateY(-4px);}
-.review-icon{width:58px;height:58px;border-radius:16px;background:#F4F7FB;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:22px;}
-.review-card h3{font-size:23px;line-height:1.2;margin-bottom:14px;color:var(--navy-dark);}
-.review-card p{color:var(--muted);line-height:1.7;font-size:16px;}
-.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:920px;margin:0 auto;}
-.seg-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;box-shadow:0 8px 18px rgba(16,32,51,.04);}
-.seg-item .check{color:var(--gold);font-weight:900;font-size:18px;}
-.seg-item strong{display:block;color:var(--navy);margin-bottom:2px;}
-.seg-item span{color:var(--muted);font-size:14px;}
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px;}
-.how-card{position:relative;background:#fff;border:1px solid #dfe7f0;border-radius:18px;padding:48px 28px 32px;box-shadow:0 8px 24px rgba(0,0,0,.05);}
-.step-badge{position:absolute;top:-18px;left:28px;background:var(--navy);color:#fff;font-weight:800;padding:7px 14px;border-radius:8px;font-size:14px;}
-.how-icon{width:54px;height:54px;border-radius:14px;background:#eef4fa;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px;}
-.how-card h3{font-size:22px;margin-bottom:12px;color:var(--navy-dark);}
-.how-card p{color:#435269;font-size:16px;line-height:1.7;}
-.faq{max-width:900px;margin:0 auto;display:grid;gap:14px;}
-.faq-item{border:1px solid var(--line);border-radius:14px;padding:22px 24px;background:#fff;}
-.faq-item h3{color:var(--navy);margin-bottom:6px;font-size:19px;}
-.faq-item p{color:var(--muted);}
-.final-cta{background:var(--navy);padding:90px 20px;text-align:center;}
-.cta-box{max-width:820px;margin:0 auto;}
-.final-cta h2{color:#fff;font-size:clamp(34px,4.4vw,56px);line-height:1.1;margin:24px 0;}
-.final-cta p{color:#d7e4ef;font-size:22px;line-height:1.6;margin-bottom:34px;}
-.final-cta .btn{padding:18px 34px;font-size:18px;margin-top:10px;}
-footer{background:#071C2E;color:#A7BED1;padding:70px 0 30px;}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
-footer h4{color:#fff;margin-bottom:18px;}
-footer a{color:#A7BED1;display:block;margin-bottom:12px;}
-.footer-disclaimer{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;font-size:12px;line-height:1.6;color:#7B92A6;margin-bottom:18px;}
-.footer-bottom{font-size:13px;}
-.article{max-width:820px;margin:0 auto;padding:70px 0;}
-.article h1{font-size:clamp(30px,4vw,46px);color:var(--navy);line-height:1.12;margin-bottom:18px;}
-.article .lede{font-size:19px;color:var(--muted);margin-bottom:30px;}
-.article h2{color:var(--navy);font-size:26px;margin:34px 0 12px;}
-.article p{color:#39485B;font-size:17px;margin-bottom:16px;}
-.article .back{display:inline-block;margin-top:30px;font-weight:700;color:var(--accent);}
-.legal{max-width:820px;margin:0 auto;padding:70px 0;}
-.legal h1{font-size:38px;color:var(--navy);margin-bottom:10px;}
-.legal h2{color:var(--navy);font-size:22px;margin:28px 0 10px;}
-.legal p{color:#39485B;margin-bottom:14px;}
-.thanks{max-width:680px;margin:0 auto;padding:110px 24px;text-align:center;}
-.thanks .badge{width:84px;height:84px;border-radius:50%;background:rgba(244,166,33,.15);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 26px;}
-.thanks h1{font-size:40px;color:var(--navy);margin-bottom:16px;}
-.thanks p{font-size:19px;color:var(--muted);margin-bottom:14px;}
-.m-lead{display:none;}
-.form-call{margin-top:8px;font-size:14px;font-weight:700;color:#1B3A5C;}.form-call a{color:#0E6DC2;text-decoration:none;}
-@media(max-width:980px){
-#form{order:-1;}
-.top-bar{display:none;}
-.hero{padding:18px 0 36px;}
-.hero-grid{gap:24px;}
-.form-head{padding:18px 20px;}
-.form-head h3{font-size:21px;line-height:1.15;}
-.hero-copy{display:none;}
-.m-lead{display:block;order:-2;color:#fff;text-align:center;}
-.m-lead .eyebrow{margin-bottom:8px;}
-.m-lead .m-head{font-size:23px;line-height:1.18;font-weight:800;margin:0 0 14px;color:#fff;}
-.m-lead .m-head .highlight{color:var(--gold);}
-.m-tl{font-size:13.5px;font-weight:700;color:#EAF1F8;text-align:center;margin:0 0 10px;}
-.m-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 10px;}
-.m-logos span{background:#fff;border-radius:7px;height:36px;display:flex;align-items:center;justify-content:center;padding:6px;}
-.m-logos img{max-height:22px;max-width:100%;object-fit:contain;}
-.m-stat{font-size:12px;color:#AFC1D4;text-align:center;font-weight:600;margin:0;}
-.hero-grid,.review-grid,.how-grid,.footer-grid,.stats-grid,.seg-grid,.ba-grid{grid-template-columns:1fr;}
-.form-grid{grid-template-columns:1fr;}
-.hero-points{grid-template-columns:1fr;}
-.form-stats{flex-wrap:wrap;}
-.form-stat{flex:1 1 45%;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--surface);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:var(--container);margin:auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--accent-ink);background:rgba(30,99,240,.09);padding:7px 13px;border-radius:999px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;border:1.5px solid transparent;transition:.18s ease;font-family:inherit}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(30,99,240,.28)}
+.btn-primary:hover{background:var(--accent-ink);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.btn svg{width:18px;height:18px}
+.top-bar{background:var(--navy);color:#C6D7E8;text-align:center;font-size:13px;font-weight:600;padding:9px 16px}
+.top-bar b{color:#fff}
+.nav{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy);font-size:20px;letter-spacing:-.02em}
+.logo-box{width:40px;height:40px;border-radius:11px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff}
+.logo-box svg{width:22px;height:22px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-phone{display:flex;flex-direction:column;line-height:1.05;text-align:right}
+.nav-phone small{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nav-phone strong{font-size:18px;font-weight:900;color:var(--navy)}
+.callbar{display:none}
+.hero{background:linear-gradient(180deg,var(--paper) 0%,#fff 100%);padding:64px 0 40px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(680px 340px at 88% -8%,rgba(30,99,240,.10),transparent 62%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
+.hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.06;letter-spacing:-.025em;font-weight:900;color:var(--navy);margin:20px 0 16px}
+.hero h1 .u{color:var(--accent);white-space:nowrap}
+.hero .sub{font-size:19px;color:#3d4d61;max-width:560px}
+.hero .miniproof{margin-top:12px;font-size:14px;color:var(--muted);max-width:560px}
+.points{margin:24px 0 0;display:grid;gap:12px;max-width:560px}
+.points li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:500}
+.points .ic{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(14,159,110,.12);color:var(--good);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.points .ic svg{width:13px;height:13px}
+.hero-note{margin-top:24px;display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted);font-weight:600}
+.hero-note .av{display:flex}
+.hero-note .av span{width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:var(--navy-2);margin-left:-8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800}
+.hero-note .av span:first-child{margin-left:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-head{padding:22px 26px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfcff)}
+.card-head .k{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
+.card-head h3{font-size:22px;color:var(--navy);letter-spacing:-.02em;margin:5px 0 3px}
+.card-head p{font-size:13.5px;color:var(--muted)}
+.card-body{padding:22px 26px 24px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.f{margin-bottom:13px}
+.f.full{grid-column:1/-1}
+label.lab{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px}
+input,select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;font-size:15px;font-family:inherit;background:#fff;color:var(--text);transition:.15s}
+input::placeholder{color:#9aa7b6}
+input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(30,99,240,.12)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.45;color:#4a5768;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 12px;cursor:pointer}
+.consent input{width:18px;height:18px;margin-top:1px;flex-shrink:0;accent-color:var(--accent)}
+.submit{width:100%;margin-top:14px;padding:16px;font-size:17px}
+.reassure{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+.reassure a{color:var(--accent-ink);font-weight:700}
+.trust-row{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#54657a;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
+.chip svg{width:12px;height:12px;color:var(--good)}
+.tcpa{font-size:10.5px;line-height:1.5;color:#8a97a6;margin-top:12px}
+.tcpa a{text-decoration:underline}
+.carriers{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.carriers .lab{text-align:center;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.carrier-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 44px}
+.carrier-row img{height:34px;width:auto;opacity:.72;filter:grayscale(25%);transition:.25s ease}
+.carrier-row img:hover{opacity:1;filter:grayscale(0)}
+.stats{background:var(--navy);color:#fff;padding:46px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat b{display:block;font-size:40px;font-weight:900;letter-spacing:-.02em;line-height:1}
+.stat b i{color:#6FA8FF;font-style:normal}
+.stat span{display:block;margin-top:9px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9C0D8}
+.sec{padding:82px 0}
+.sec.alt{background:var(--paper)}
+.sec-head{max-width:760px;margin:0 auto 52px;text-align:center}
+.sec-head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.025em;color:var(--navy);margin:14px 0 12px}
+.sec-head p{font-size:17px;color:var(--muted)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow-sm);transition:.2s}
+.rev:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d3dfec}
+.rev .ic{width:48px;height:48px;border-radius:12px;background:rgba(30,99,240,.10);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.rev .ic svg{width:24px;height:24px}
+.rev h3{font-size:19px;color:var(--navy);letter-spacing:-.01em;margin-bottom:9px}
+.rev p{color:var(--muted);font-size:15px}
+.serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto}
+.serve{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow-sm)}
+.serve .ic{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
+.serve .ic svg{width:20px;height:20px}
+.serve strong{display:block;color:var(--navy);font-size:16px;margin-bottom:3px}
+.serve span{color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 26px 26px;box-shadow:var(--shadow-sm)}
+.step .n{position:absolute;top:-16px;left:26px;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 8px 18px rgba(30,99,240,.3)}
+.step h3{color:var(--navy);font-size:18px;margin:6px 0 9px}
+.step p{color:var(--muted);font-size:15px}
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.qa{border:1px solid var(--line);border-radius:13px;background:#fff;padding:20px 22px}
+.qa h3{color:var(--navy);font-size:17px;margin-bottom:6px;display:flex;gap:9px;align-items:flex-start}
+.qa h3 svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:2px}
+.qa p{color:var(--muted);font-size:15px;padding-left:27px}
+.final{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;text-align:center;padding:76px 20px}
+.final h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;max-width:760px;margin-left:auto;margin-right:auto}
+.final p{color:#C6D7E8;font-size:18px;max-width:640px;margin:0 auto 28px}
+.final .btn-primary{background:#fff;color:var(--navy)}
+.final .btn-primary:hover{background:#eaf1ff}
+.final .callalt{display:block;margin-top:16px;color:#C6D7E8;font-size:14px}
+.final .callalt a{color:#fff;font-weight:800}
+footer{background:#071B2D;color:#9FB6C9;padding:56px 0 26px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:34px}
+footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.02em}
+footer a{display:block;margin-bottom:10px;color:#9FB6C9}
+footer a:hover{color:#fff}
+.foot-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;font-size:18px;margin-bottom:14px}
+.foot-logo .logo-box{width:34px;height:34px;border-radius:9px}
+.foot-dis{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12px;color:#6f8598;line-height:1.6;margin-bottom:12px}
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .hero-copy{order:2}
+  .hero-form{order:1}
+  .rev-grid,.steps{grid-template-columns:1fr}
+  .serve-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:26px 16px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .top-bar{display:none}
+  .sec{padding:56px 0}
+  .hero{padding:34px 0 24px}
 }
-@media(max-width:640px){.nav-inner{height:60px;}.nav-cta{display:none;}.brand-txt{display:none;}.logo{gap:0;}.call-btn{padding:7px 13px;gap:8px;}.call-txt strong{font-size:16px;}.call-ic{width:19px;height:19px;}}
-/* sticky bottom tap-to-call bar (mobile thumb zone) — same tracked number */
-.callbar{display:none;}
-@media(max-width:640px){.callbar{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:var(--accent);color:#fff;font-weight:800;font-size:17px;letter-spacing:.2px;padding:14px 16px;box-shadow:0 -4px 16px rgba(0,0,0,.18);}.callbar svg{width:20px;height:20px;}body{padding-bottom:62px;}}
-.results{background:#fff;}
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1040px;margin:0 auto;}
-.ba-card{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff;}
-.ba-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
-.ba-tag{position:absolute;top:14px;left:14px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#fff;padding:7px 14px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.28);}
-.ba-before{background:#6b7280;}
-.ba-after{background:var(--gold);color:var(--navy);}
-.ba-cap{padding:16px 18px;color:var(--muted);font-size:15px;text-align:center;}
-.ba-video{max-width:1040px;margin:38px auto 0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#000;}
-.ba-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000;}
-.ba-vcap{text-align:center;color:var(--muted);font-size:15px;margin-top:16px;}
-.trust-strip{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px;}
-.tbadge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#5B6B7C;background:#F4F7FB;border:1px solid #E5EBF2;border-radius:999px;padding:5px 11px;white-space:nowrap;}
-.carriers{padding:44px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.carriers-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:28px;}
-.carriers-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px 48px;}
-.carriers-grid img{height:44px;width:auto;opacity:.72;filter:grayscale(25%);transition:.25s ease;}
-.carriers-grid img:hover{opacity:1;filter:grayscale(0%);}
-@media(max-width:640px){.carriers-grid img{height:32px;}.carriers-grid{gap:18px 28px;}}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px;}
-.blog-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 20px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:10px;}
-.blog-card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);background:rgba(0,0,0,.06);padding:4px 10px;border-radius:999px;}
-.blog-card h2{font-size:19px;color:var(--navy);line-height:1.25;margin:0;}
-.blog-card p{color:var(--muted);font-size:14px;flex:1;}
-.blog-card-date{font-size:12px;color:var(--muted);font-weight:500;}
-.blog-card .read-more{font-size:14px;font-weight:700;color:var(--accent);}
-.article-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
-.article-breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px;}
-.article-cta-box{margin-top:44px;padding:32px;background:var(--light);border-radius:16px;border:1px solid var(--line);}
-.article-cta-box h3{color:var(--navy);font-size:22px;margin-bottom:8px;}
-.article-cta-box p{color:var(--muted);margin-bottom:20px;}
-@media(max-width:980px){.blog-grid{grid-template-columns:1fr;}}
-.ms-progress{display:flex;align-items:center;margin-bottom:22px;}
-.ms-dot{width:30px;height:30px;border-radius:50%;background:var(--line);color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;transition:.2s;}
-.ms-dot.ms-active{background:var(--accent);color:#fff;}
-.ms-dot.ms-done{background:var(--navy);color:#fff;}
-.ms-line{flex:1;height:2px;background:var(--line);transition:.2s;}
-.ms-line.ms-done{background:var(--navy);}
-.ms-panel{display:none;}
-.ms-panel.ms-active{display:block;}
-.ms-q{font-size:20px;font-weight:800;color:#142132;line-height:1.3;margin-bottom:6px;}
-.ms-sub{font-size:14px;color:#4A5568;margin-bottom:4px;}
-.ms-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 8px;}
-.ms-opt{padding:13px 14px;border:2px solid var(--line);border-radius:12px;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;text-align:left;background:#fff;transition:.15s;line-height:1.3;width:100%;}
-.ms-opt:hover,.ms-opt.ms-sel{border-color:var(--accent);background:rgba(244,166,33,.08);}
-.ms-back-btn{background:none;border:none;font-size:13px;color:var(--muted);font-weight:600;cursor:pointer;padding:0;margin-top:12px;display:inline-block;}
-.ms-back-btn:hover{color:var(--navy);}
-@media(max-width:500px){.ms-opts{grid-template-columns:1fr;}}
-.sms-consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#39485B;cursor:pointer;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;}
-.sms-consent input{width:18px;height:18px;margin:1px 0 0;flex-shrink:0;accent-color:var(--accent);}
+@media(max-width:600px){
+  .nav-phone small{display:none}
+  .nav-cta{display:none}
+  .nav-in{height:auto;padding:11px 0}
+  .logo{font-size:17px;white-space:nowrap}
+  .logo-box{width:34px;height:34px}
+  .nav-phone strong{font-size:15px;white-space:nowrap}
+  .grid2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  body{padding-bottom:62px}
+  .callbar{display:flex;align-items:center;justify-content:center;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:14px;box-shadow:0 -4px 16px rgba(0,0,0,.18)}
+  .callbar svg{width:19px;height:19px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"HOA Board Liability Insurance (D&O) | HOA Contracts","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Free review of HOA directors & officers (D&O) liability coverage. Protect board members from personal exposure for decisions made on behalf of the association.","url":"https://hoacontracts.com/hoa-board-liability-insurance.html"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is D&O coverage for an HOA?","acceptedAnswer":{"@type":"Answer","text":"Directors & officers coverage helps protect board members from personal liability for decisions and actions taken in their role for the association."}},{"@type":"Question","name":"Why does it matter?","acceptedAnswer":{"@type":"Answer","text":"Board members are volunteers, but lawsuits over decisions, elections, or enforcement can name them personally. Adequate D&O limits and defense coverage matter."}},{"@type":"Question","name":"Is the review free?","acceptedAnswer":{"@type":"Answer","text":"Yes — free, no obligation, and your information is never sold or shared."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does an HOA insurance review cost?","acceptedAnswer":{"@type":"Answer","text":"Nothing. The review is free, there's no obligation to switch, and your association's information is never sold or shared."}},{"@type":"Question","name":"Do we need a board vote to start?","acceptedAnswer":{"@type":"Answer","text":"No. Any board member or property manager can request the review. A board vote is only relevant if you later decide to change carriers."}},{"@type":"Question","name":"What do you need from us?","acceptedAnswer":{"@type":"Answer","text":"Your current binder or declaration pages, the renewal date, and a little history. The more you share, the sharper the benchmarking."}},{"@type":"Question","name":"Will this disrupt our current coverage?","acceptedAnswer":{"@type":"Answer","text":"No. A review is just a benchmark. Nothing changes with your existing policy unless your board chooses to act on the findings."}}]}</script>
 </head>
 <body>
-<div class="top-bar">HOA and condo association insurance reviews — premium savings, coverage gaps, replacement cost, and board liability, before renewal.</div>
+<div class="top-bar"><b>HOA &amp; condo association insurance reviews</b> — premium savings, coverage gaps, replacement cost &amp; board liability, before renewal.</div>
 
 <header class="nav">
-<div class="container nav-inner">
-<a href="/" class="logo">
-<div class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></div>
-<span class="brand-txt">HOA Contracts</span>
-</a>
-<div class="nav-right">
-<a href="#form" class="btn btn-ghost nav-cta">Get My Free Review →</a>
-<a href="tel:12083614295" class="call-btn" aria-label="Call Now: (208) 361-4295"><svg class="call-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="call-txt"><small>Call Now</small><strong>(208) 361-4295</strong></span></a>
-</div>
-</div>
+  <div class="wrap nav-in">
+    <a href="/" class="logo"><span class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></span>HOA Contracts</a>
+    <div class="nav-right">
+      <a href="#form" class="btn btn-ghost nav-cta">Get my free review</a>
+      <a href="tel:12083614295" class="nav-phone" aria-label="Call Now: (208) 361-4295"><small>Call now · toll-free</small><strong>(208) 361-4295</strong></a>
+    </div>
+  </div>
 </header>
-<a href="tel:12083614295" class="callbar" aria-label="Call Now: (208) 361-4295"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Now · (208) 361-4295</a>
+<a href="tel:12083614295" class="callbar" aria-label="Call Now: (208) 361-4295"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now · (208) 361-4295</a>
 
 <section class="hero">
-<div class="container hero-grid">
-<div class="m-lead"><div class="eyebrow">Board Liability (D&amp;O)</div><div class="m-head">Could your board be <span class="highlight">personally liable</span>?<br>Check your D&amp;O.</div><p class="m-tl">We check every carrier to find your best fit</p><div class="m-logos"><span><img src="/logos/image001.png" alt="Travelers" loading="lazy"></span><span><img src="/logos/image004.png" alt="Zurich" loading="lazy"></span><span><img src="/logos/image005.png" alt="Cincinnati" loading="lazy"></span><span><img src="/logos/image006.png" alt="EMC" loading="lazy"></span><span><img src="/logos/image007.png" alt="Liberty Mutual" loading="lazy"></span><span><img src="/logos/image008.png" alt="Nationwide" loading="lazy"></span></div><p class="m-stat">4,000+ properties · 1M+ units · 38 states</p></div>
-<div class="hero-copy">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" id="hero-eyebrow">Board liability (D&amp;O)</span>
+      <h1 id="hero-h1">Could your board be <span class="u">personally liable</span>? Check your D&amp;O.</h1>
+      <p class="sub" id="hero-sub">Free review of your directors &amp; officers protection and the board-exposure gaps most HOAs don't know they have — until a claim.</p>
+      <p class="miniproof">D&amp;O limits, exclusions and defense coverage — reviewed for real board exposure.</p>
+      <ul class="points">
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Compare your program against competitive carrier options</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Spot coverage gaps, replacement-cost &amp; deductible issues</li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>No board vote required to begin — your info is never sold or shared</li>
+      </ul>
+      <div class="hero-note"><span class="av"><span>HB</span><span>PM</span><span>CT</span></span>Trusted by HOA boards, treasurers &amp; property managers nationwide</div>
+    </div>
 
-<div class="eyebrow">Board Liability (D&amp;O)</div>
-<h1 class="hero-title">Could your board be <span class="highlight">personally liable</span>?<br>Check your D&amp;O.</h1>
-<p>Free review of your directors &amp; officers protection and the board-exposure gaps most HOAs don't know they have — until a claim.</p>
-<p class="mini-proof">D&amp;O limits, exclusions, and defense coverage — reviewed for real board exposure.</p>
-<div class="hero-points">
-<div><span>✓</span> Compare your program against competitive carrier options</div>
-<div><span>✓</span> Spot coverage gaps, replacement-cost, and deductible issues</div>
-<div><span>✓</span> Board-ready review — no board vote required to begin</div>
-<div><span>✓</span> No cost, no obligation, your info never sold or shared</div>
-</div>
-<p class="trust-line">Trusted by HOA boards, property managers, and association industry partners nationwide.</p>
-<a href="#form" class="btn btn-primary">Get My Free Review →</a>
-</div>
+    <div class="hero-form">
+      <div class="card" id="form">
+        <div class="card-head">
+          <div class="k">Free HOA insurance review</div>
+          <h3>Get your free board liability review</h3>
+          <p>Takes about a minute — or call <a href="tel:12083614295" style="color:var(--accent-ink);font-weight:700">(208) 361-4295</a> and skip the form.</p>
+        </div>
+        <div class="card-body">
+          <form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
+            <input type="hidden" name="lead_source" value="hoacontracts.com/hoa-board-liability-insurance">
+            <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="site" value="hoacontracts.com">
+            <input type="hidden" name="vertical" value="HOA Insurance">
+            <input type="hidden" name="variant" value="opt1-2026-07">
+            <input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
+            <input type="hidden" name="sms_consent_text" value="">
+            <input type="hidden" name="sms_consent_url" value="">
+            <input type="hidden" name="sms_consent_timestamp" value="">
+            <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
+            <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
+            <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
+            <div class="f full"><label class="lab" for="name">Full name</label><input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required></div>
+            <div class="grid2">
+              <div class="f"><label class="lab" for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required></div>
+              <div class="f"><label class="lab" for="email">Email</label><input id="email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required></div>
+            </div>
+            <div class="grid2">
+              <div class="f"><label class="lab" for="state">State</label><input id="state" type="text" name="state" autocomplete="address-level1" placeholder="e.g. Florida" required></div>
+              <div class="f"><label class="lab" for="property_type">Community type <span style="color:var(--muted);font-weight:500">(optional)</span></label>
+                <select id="property_type" name="property_type"><option value="">Select type</option><option>Condo association</option><option>Townhome community</option><option>Single-family HOA</option><option>High-rise / condo tower</option></select>
+              </div>
+            </div>
+            <div class="grid2">
+              <div class="f"><label class="lab" for="community_size">Community size <span style="color:var(--muted);font-weight:500">(optional)</span></label>
+                <select id="community_size" name="community_size"><option value="">Select size</option><option>1–50 Units</option><option>51–100 Units</option><option>101–300 Units</option><option>301+ Units</option></select>
+              </div>
+              <div class="f"><label class="lab" for="role">Your role <span style="color:var(--muted);font-weight:500">(optional)</span></label>
+                <select id="role" name="role"><option value="">Select one</option><option>Board President</option><option>Board Treasurer</option><option>Board Member</option><option>Property Manager</option><option>Committee Member</option></select>
+              </div>
+            </div>
+            <label class="consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
+            <button class="btn btn-primary submit" type="submit">Get my free review →</button>
+            <div class="reassure">Most HOA boards find at least one coverage gap in the first review.</div>
+            <div class="trust-row">
+              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>SSL secured</span>
+              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TCPA-compliant</span>
+              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Never sold or shared</span>
+            </div>
+            <div class="tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. <strong>SMS:</strong> if you check the box, msg frequency varies, msg &amp; data rates may apply, reply STOP to opt out. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="form-card" id="form">
-<div class="form-head">
-<h3>Get your free board liability review</h3>
-<p>No cost. No obligation. No board vote required to begin the review process.</p>
-<p class="form-call">Takes about 60 seconds — or call <a href="tel:12083614295"><strong>(208) 361-4295</strong></a> and skip the form.</p>
-</div>
-<div class="form-body">
-<div class="ms-progress"><div class="ms-dot" id="ms-dot-0">1</div><div class="ms-line" id="ms-line-0"></div><div class="ms-dot" id="ms-dot-1">2</div><div class="ms-line" id="ms-line-1"></div><div class="ms-dot" id="ms-dot-2">3</div><div class="ms-line" id="ms-line-2"></div><div class="ms-dot" id="ms-dot-3">4</div></div>
-<form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
-<input type="hidden" name="lead_source" value="hoacontracts.com/hoa-board-liability-insurance">
-<input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
-<input type="hidden" name="site" value="hoacontracts.com">
-<input type="hidden" name="vertical" value="HOA Insurance">
-<input type="hidden" name="variant" value="single-v1">
-<input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
-<input type="hidden" name="sms_consent_text" value="">
-<input type="hidden" name="sms_consent_url" value="">
-<input type="hidden" name="sms_consent_timestamp" value="">
-<input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
-<input type="hidden" id="msf-visit_reason" name="visit_reason" value="">
-<input type="hidden" id="msf-board_confidence" name="board_confidence" value="">
-<input type="hidden" id="msf-last_review" name="last_review" value="">
-<div class="ms-panel ms-active" id="ms-panel-0">
-<div class="ms-q">What brings you in today?</div>
+<section class="carriers">
+  <div class="wrap">
+    <div class="lab">Carriers we access</div>
+    <div class="carrier-row">
+      <img src="/logos/image001.png" alt="Travelers Insurance" loading="lazy">
+      <img src="/logos/image004.png" alt="Zurich Insurance" loading="lazy">
+      <img src="/logos/image005.png" alt="The Cincinnati Insurance Companies" loading="lazy">
+      <img src="/logos/image006.png" alt="EMC Insurance" loading="lazy">
+      <img src="/logos/image007.png" alt="Liberty Mutual Insurance" loading="lazy">
+      <img src="/logos/image008.png" alt="Nationwide Insurance" loading="lazy">
+    </div>
+  </div>
+</section>
 
-<div class="ms-opts">
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Renewal's coming up">Renewal's coming up</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Premium jumped">Premium jumped</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Just making sure we're covered">Just making sure we're covered</button>
-<button type="button" class="ms-opt" data-step="0" data-field="visit_reason" data-val="Board due diligence">Board due diligence</button>
-</div>
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><b><i>4,000+</i></b><span>Communities served</span></div>
+    <div class="stat"><b><i>1M+</i></b><span>Units nationwide</span></div>
+    <div class="stat"><b><i>$3B+</i></b><span>Coverage reviewed</span></div>
+    <div class="stat"><b><i>38</i></b><span>States served</span></div>
+  </div>
+</section>
 
-</div>
-<div class="ms-panel" id="ms-panel-1">
-<div class="ms-q">How confident is your board in your current coverage?</div>
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">What we review</span><h2>A full read of your master program — before you auto-renew</h2><p>We review HOA master insurance policies for pricing, replacement-cost accuracy, liability exposure, deductible structure, and competitive market options.</p></div>
+    <div class="rev-grid">
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>HOA master policies</h3><p>Property, liability, umbrella, D&amp;O, crime and specialty coverages on your association's master program.</p></div>
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-3 3 3 5-6"/></svg></div><h3>Coverage limits</h3><p>We evaluate current policy limits against real-world replacement and exposure risk for your community.</p></div>
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-6h6v6"/></svg></div><h3>Replacement cost</h3><p>Identify underinsured buildings and outdated valuations before a claim exposes the gap.</p></div>
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></div><h3>Deductible structure</h3><p>Wind, hail, wildfire, water and percentage deductibles that can fall to owners or the association.</p></div>
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Board liability (D&amp;O)</h3><p>Review directors &amp; officers protection and potential board exposure issues.</p></div>
+      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><h3>Competitive options</h3><p>Compare available market options, pricing structure and renewal strategy across carriers.</p></div>
+    </div>
+  </div>
+</section>
 
-<div class="ms-opts">
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Pretty confident">Pretty confident</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Due for a sanity check">Due for a sanity check</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="Honestly not sure">Honestly not sure</button>
-<button type="button" class="ms-opt" data-step="1" data-field="board_confidence" data-val="We've had concerns">We've had concerns</button>
-</div>
-<button type="button" class="ms-back-btn" data-goto="0">← Back</button>
-</div>
-<div class="ms-panel" id="ms-panel-2">
-<div class="ms-q">When was your board's last independent insurance review?</div>
-<div class="ms-sub">An outside review — not from your current agent.</div>
-<div class="ms-opts">
-<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="Within 1 year">Within 1 year</button>
-<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="1–3 years ago">1–3 years ago</button>
-<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="3+ years ago">3+ years ago</button>
-<button type="button" class="ms-opt" data-step="2" data-field="last_review" data-val="Never / Not sure">Never / Not sure</button>
-</div>
-<button type="button" class="ms-back-btn" data-goto="1">← Back</button>
-</div>
-<div class="ms-panel" id="ms-panel-3">
-<div class="ms-q" style="margin-bottom:18px;">Last step — let's connect.</div>
-<button type="button" class="ms-back-btn" data-goto="2">← Back</button>
-<div class="form-grid" style="margin-top:16px;">
-<div class="full">
-<label class="field-label" for="name">Name</label>
-<input id="name" type="text" name="name" autocomplete="name" required>
-</div>
-<div class="">
-<label class="field-label" for="phone">Phone</label>
-<input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required>
-</div>
-<div class="">
-<label class="field-label" for="email">Email</label>
-<input id="email" type="email" name="email" autocomplete="email" required>
-</div>
-<div class="full">
-<label class="field-label" for="state">State</label>
-<input id="state" type="text" name="state" autocomplete="address-level1" placeholder="State" required>
-</div>
-<div class="">
-<label class="field-label" for="property_type">Community type</label>
-<select id="property_type" name="property_type">
-<option value="">Select type</option>
-<option>Condo association</option>
-<option>Townhome community</option>
-<option>Single-family HOA</option>
-<option>High-rise / condo tower</option>
-</select>
-</div>
-<div class="">
-<label class="field-label" for="community_size">Community size</label>
-<select id="community_size" name="community_size">
-<option value="">Select size</option>
-<option>1–50 Units</option>
-<option>51–100 Units</option>
-<option>101–300 Units</option>
-<option>301+ Units</option>
-</select>
-</div>
-<div class="full">
-<label class="field-label" for="role">Your Role</label>
-<select id="role" name="role">
-<option value="">Select one</option>
-<option>Board President</option>
-<option>Board Treasurer</option>
-<option>Board Member</option>
-<option>Property Manager</option>
-<option>Committee Member</option>
-</select>
-</div>
-<div class="full">
-<label class="sms-consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
-</div>
-<div class="full">
-<p style="font-weight:700;color:#142132;margin:4px 0 14px;font-size:16px;">Most HOA boards find at least one coverage gap in the first review.</p>
-<button class="btn btn-primary submit-btn" type="submit">Get My Free Review →</button>
-<div class="trust-strip"><span class="tbadge">🔒 SSL Secured</span>
-<span class="tbadge">✓ TCPA-Compliant Consent</span>
-<span class="tbadge">🚫 Never Sold or Shared</span>
-<span class="tbadge">✓ Free &amp; No Obligation</span></div>
-</div>
-</div>
-<div class="tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. Your information is never sold or shared.</div>
-<div class="tcpa"><strong>SMS terms:</strong> If you check the box above, message frequency varies and Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. SMS consent is not a condition of purchase. See our <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms</a>.</div>
-</div>
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Who we serve</span><h2>Built for the people who run communities</h2><p>Every association is structured and insured differently. We review your program and point you toward the markets and strategy that fit.</p></div>
+    <div class="serve-grid">
+      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span><div><strong>HOA &amp; COA boards</strong><span>Presidents, treasurers and members responsible for the master policy.</span></div></div>
+      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V7l6-4 6 4v14"/><path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01"/></svg></span><div><strong>Property managers</strong><span>Community managers coordinating renewals across one or many associations.</span></div></div>
+      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></span><div><strong>Condo &amp; townhome</strong><span>Condominium, townhome and stacked-unit communities with shared structures.</span></div></div>
+      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><strong>Master-planned</strong><span>Large master-planned and mixed-use communities with complex exposures.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">How it works</span><h2>Three steps. About two weeks. Zero cost.</h2><p>You sit back. We coordinate everything and deliver a clean, board-ready review.</p></div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3>Share your current policy</h3><p>A short call, then send your binder, renewal notice, declaration pages and premium history.</p></div>
+      <div class="step"><span class="n">2</span><h3>We benchmark the market</h3><p>We compare your program against competitive carrier options, deductibles and coverage structures.</p></div>
+      <div class="step"><span class="n">3</span><h3>You get clear next steps</h3><p>Your board receives a practical review showing savings, coverage gaps and renewal concerns.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Common questions</span><h2>HOA insurance review FAQ</h2></div>
+    <div class="faq"><div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>What does an HOA insurance review cost?</h3><p>Nothing. The review is free, there's no obligation to switch, and your association's information is never sold or shared.</p></div>
+      <div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Do we need a board vote to start?</h3><p>No. Any board member or property manager can request the review. A board vote is only relevant if you later decide to change carriers.</p></div>
+      <div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>What do you need from us?</h3><p>Your current binder or declaration pages, the renewal date, and a little history. The more you share, the sharper the benchmarking.</p></div>
+      <div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Will this disrupt our current coverage?</h3><p>No. A review is just a benchmark. Nothing changes with your existing policy unless your board chooses to act on the findings.</p></div></div>
+  </div>
+</section>
+
+<section class="final">
+  <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">No cost · No obligation · No board vote</span>
+  <h2>Request your free HOA insurance review</h2>
+  <p>We benchmark your master policy for premium savings, coverage gaps, replacement-cost concerns and competitive options — before renewal locks your board into another term.</p>
+  <a href="#form" class="btn btn-primary">Get my free review →</a>
+  <span class="callalt">or call <a href="tel:12083614295">(208) 361-4295</a></span>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></span>HOA Contracts</div>
+        <p style="color:#9FB6C9;max-width:300px">Free HOA and condo association insurance reviews focused on premium savings, liability protection and renewal strategy.</p>
+      </div>
+      <div><h4>Reviews</h4><a href="/hoa-insurance-review.html">HOA Insurance Review</a><a href="/hoa-master-insurance-policies.html">HOA Master Policies</a><a href="/hoa-board-liability-insurance.html">Board Liability (D&amp;O)</a><a href="/hoa-replacement-cost-analysis.html">Replacement Cost</a></div>
+      <div><h4>Resources</h4><a href="/blog.html">Blog &amp; Insights</a><a href="/condo-association-insurance.html">Condo Association Insurance</a><a href="/coverage-gap-review.html">Coverage Gap Review</a><a href="/hoa-insurance-carrier-review.html">Carrier Review</a></div>
+      <div><h4>Contact</h4><a href="tel:12083614295">(208) 361-4295</a><a href="mailto:reviews@hoacontracts.com">reviews@hoacontracts.com</a><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms &amp; Conditions</a></div>
+    </div>
+    <div class="foot-dis">This website is for lead generation and referral purposes. Coverage availability, terms and pricing vary by carrier, state and underwriting review. Submitting a request does not bind, alter or guarantee coverage.</div>
+    <div style="font-size:13px">© 2026 HOA Contracts. All rights reserved.</div>
+  </div>
+</footer>
+
 <script>
+/* Phone formatter (from live) */
+document.addEventListener("DOMContentLoaded", function () {
+  var p = document.querySelector('input[name="phone"]');
+  if (p) p.addEventListener("input", function (e) {
+    var v = e.target.value.replace(/\D/g, "");
+    if (v.charAt(0) === "1") v = v.slice(1);
+    v = v.slice(0, 10);
+    if (v.length > 6) e.target.value = "(" + v.slice(0,3) + ") " + v.slice(3,6) + "-" + v.slice(6);
+    else if (v.length > 3) e.target.value = "(" + v.slice(0,3) + ") " + v.slice(3);
+    else if (v.length > 0) e.target.value = "(" + v;
+  });
+});
+/* SMS consent proof-of-consent capture (from live) */
 (function(){
   var box=document.getElementById("sms_consent_box");
   var f=document.getElementById("sms_consent_field"); if(!box||!f) return;
@@ -451,251 +416,13 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
   if(form) form.addEventListener("submit",sync);
 })();
 </script>
-</form>
-</div>
-</div>
-<script>
-(function(){
-  var panels=document.querySelectorAll('.ms-panel');
-  var dots=document.querySelectorAll('.ms-dot');
-  var lines=document.querySelectorAll('.ms-line');
-  var SITE='hoacontracts.com';
-  function ga4(ev,p){try{if(window.gtag)gtag('event',ev,p||{});}catch(e){}}
-  function go(n){
-    panels.forEach(function(p,i){p.classList.toggle('ms-active',i===n);});
-    dots.forEach(function(d,i){d.classList.toggle('ms-active',i===n);d.classList.toggle('ms-done',i<n);});
-    lines.forEach(function(l,i){l.classList.toggle('ms-done',i<n);});
-    if(n>0) ga4('multistep_step_'+(n+1),{site:SITE,step:n+1});
-  }
-  document.querySelectorAll('.ms-opt').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var s=+this.dataset.step,fld=this.dataset.field,val=this.dataset.val;
-      document.querySelectorAll('.ms-opt[data-step="'+s+'"]').forEach(function(b){b.classList.remove('ms-sel');});
-      this.classList.add('ms-sel');
-      var hf=document.getElementById('msf-'+fld);if(hf)hf.value=val;
-      ga4('multistep_option_selected',{site:SITE,step:s+1,field:fld,value:val});
-      setTimeout(function(){go(s+1);},200);
-    });
-  });
-  document.querySelectorAll('.ms-back-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){go(+this.dataset.goto);});
-  });
-  var f=document.querySelector('form');
-  if(f) f.addEventListener('submit',function(){ga4('multistep_submit',{site:SITE});});
-  go(0);
-})();
-</script>
-</div>
-</section>
-
-<section class="stats">
-<div class="container stats-grid">
-<div class="stat"><h2><span>4,000+</span></h2><p>Properties Through Industry Relationships</p></div>
-<div class="stat"><h2><span>1M+</span></h2><p>Units Nationwide</p></div>
-<div class="stat"><h2><span>$3B+</span></h2><p>Vendor Negotiations</p></div>
-<div class="stat"><h2><span>38</span></h2><p>States Served</p></div>
-</div>
-</section>
-
-<section class="carriers">
-<div class="container">
-<p class="carriers-label">Carriers We Access</p>
-<div class="carriers-grid">
-<img src="/logos/image001.png" alt="Travelers Insurance" loading="lazy">
-<img src="/logos/image004.png" alt="Zurich Insurance" loading="lazy">
-<img src="/logos/image005.png" alt="The Cincinnati Insurance Companies" loading="lazy">
-<img src="/logos/image006.png" alt="EMC Insurance" loading="lazy">
-<img src="/logos/image007.png" alt="Liberty Mutual Insurance" loading="lazy">
-<img src="/logos/image008.png" alt="Nationwide Insurance" loading="lazy">
-</div>
-</div>
-</section>
-
-<section class="section" id="services">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">What We Review</div>
-<h2>HOA insurance reviews built to catch gaps before renewal.</h2>
-<p>We review HOA master insurance policies for pricing, replacement cost accuracy, liability exposure, deductible structures, and competitive market options before boards auto-renew another term.</p>
-</div>
-<div class="review-grid">
-<div class="review-card">
-<div class="review-icon">🛡️</div>
-<h3>HOA Master Policies</h3>
-<p>Review of property, liability, umbrella, D&amp;O, crime, and specialty coverages on your association's master program.</p>
-</div>
-<div class="review-card">
-<div class="review-icon">🏢</div>
-<h3>Coverage Limits</h3>
-<p>We evaluate current policy limits against real-world replacement and exposure risks for your community.</p>
-</div>
-<div class="review-card">
-<div class="review-icon">📋</div>
-<h3>Replacement Cost Analysis</h3>
-<p>Identify underinsured buildings and outdated valuations before a claim exposes the gap.</p>
-</div>
-<div class="review-card">
-<div class="review-icon">⚖️</div>
-<h3>Deductible Structures</h3>
-<p>Analyze wind, hail, wildfire, water, and percentage deductible exposure that can fall to owners or the association.</p>
-</div>
-<div class="review-card">
-<div class="review-icon">👥</div>
-<h3>Board Liability Protection</h3>
-<p>Review directors &amp; officers protection and potential board exposure issues.</p>
-</div>
-<div class="review-card">
-<div class="review-icon">📈</div>
-<h3>Competitive Carrier Options</h3>
-<p>Compare available market options, pricing structures, and renewal strategy across carriers.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section how-section">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Who We Serve</div>
-<h2>Built for the boards and managers who run communities.</h2>
-<p>Every association is structured and insured differently. We review your program and point you toward the markets and strategy that fit.</p>
-</div>
-<div class="seg-grid">
-<div class="seg-item"><span class="check">✓</span><div><strong>HOA &amp; COA boards</strong><span>Board presidents, treasurers, and members responsible for the master policy.</span></div></div>
-<div class="seg-item"><span class="check">✓</span><div><strong>Property managers</strong><span>Community managers coordinating renewals across one or many associations.</span></div></div>
-<div class="seg-item"><span class="check">✓</span><div><strong>Condo &amp; townhome</strong><span>Condominium, townhome, and stacked-unit communities with shared structures.</span></div></div>
-<div class="seg-item"><span class="check">✓</span><div><strong>Master-planned</strong><span>Large master-planned and mixed-use communities with complex exposures.</span></div></div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">How It Works</div>
-<h2>Three steps. About two weeks. Zero cost to your association.</h2>
-<p>You sit back. We coordinate everything and deliver a clean, board-ready insurance review.</p>
-</div>
-<div class="how-grid">
-<div class="how-card">
-<div class="step-badge">01</div>
-<div class="how-icon">📄</div>
-<h3>Share your current policy</h3>
-<p>A short call, then send your current binder, renewal notice, declaration pages, and premium history.</p>
-</div>
-<div class="how-card">
-<div class="step-badge">02</div>
-<div class="how-icon">🔍</div>
-<h3>We benchmark the market</h3>
-<p>We compare your HOA insurance program against competitive carrier options, deductibles, and coverage structures.</p>
-</div>
-<div class="how-card">
-<div class="step-badge">03</div>
-<div class="how-icon">✅</div>
-<h3>You get clear next steps</h3>
-<p>Your board receives a practical review showing savings opportunities, coverage gaps, and renewal concerns.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section how-section">
-<div class="container">
-<div class="section-head">
-<div class="eyebrow">Common Questions</div>
-<h2>Board Liability FAQ</h2>
-</div>
-<div class="faq">
-<div class="faq-item">
-<h3>What is D&amp;O coverage for an HOA?</h3>
-<p>Directors &amp; officers coverage helps protect board members from personal liability for decisions and actions taken in their role for the association.</p>
-</div>
-<div class="faq-item">
-<h3>Why does it matter?</h3>
-<p>Board members are volunteers, but lawsuits over decisions, elections, or enforcement can name them personally. Adequate D&amp;O limits and defense coverage matter.</p>
-</div>
-<div class="faq-item">
-<h3>Is the review free?</h3>
-<p>Yes — free, no obligation, and your information is never sold or shared.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="final-cta">
-<div class="container">
-<div class="cta-box">
-<div class="eyebrow">No Cost • No Obligation</div>
-<h2>Request Your Free Board Liability Review</h2>
-<p>Make sure your board is protected before renewal.</p>
-<a href="#form" class="btn btn-primary">Get My Free Review →</a>
-</div>
-</div>
-</section>
-
-<footer id="contact">
-<div class="container">
-<div class="footer-grid">
-<div>
-<div class="logo" style="color:#fff;margin-bottom:20px">
-<div class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></div>
-HOA Contracts
-</div>
-<p>Free HOA and condo association insurance reviews focused on premium savings, liability protection, and renewal strategy.</p>
-</div>
-<div>
-<h4>Reviews</h4>
-<a href="/hoa-insurance-review.html">HOA Insurance Review</a>
-<a href="/hoa-master-insurance-policies.html">HOA Master Policies</a>
-<a href="/hoa-board-liability-insurance.html">Board Liability (D&amp;O)</a>
-<a href="/hoa-replacement-cost-analysis.html">Replacement Cost</a>
-</div>
-<div>
-<h4>Resources</h4>
-<a href="/blog.html">Blog &amp; Insights</a>
-<a href="/condo-association-insurance.html">Condo Association Insurance</a>
-<a href="/coverage-gap-review.html">Coverage Gap Review</a>
-<a href="/hoa-insurance-carrier-review.html">Carrier Review</a>
-</div>
-<div>
-<h4>Contact</h4>
-<a href="tel:12083614295">(208) 361-4295</a>
-<a href="mailto:reviews@hoacontracts.com">reviews@hoacontracts.com</a>
-<a href="/privacy-policy.html">Privacy Policy</a>
-<a href="/terms.html">Terms &amp; Conditions</a>
-</div>
-</div>
-<div class="footer-disclaimer">This website is for lead generation and referral purposes. Coverage availability, terms, and pricing vary by carrier, state, and underwriting review. Submitting a request does not bind, alter, or guarantee coverage.</div>
-<div class="footer-bottom">© 2026 HOA Contracts. All rights reserved.</div>
-</div>
-</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const phoneInput = document.querySelector('input[name="phone"]');
-  if (phoneInput) {
-    phoneInput.addEventListener("input", function (e) {
-      let value = e.target.value.replace(/\D/g, "");
-      if (value.charAt(0) === "1") value = value.slice(1); // strip US country code — no area code starts with 1
-      value = value.slice(0, 10);
-      if (value.length > 6) {
-        e.target.value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6)}`;
-      } else if (value.length > 3) {
-        e.target.value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
-      } else if (value.length > 0) {
-        e.target.value = `(${value}`;
-      }
-    });
-  }
-});
-</script>
-<!-- Procure form analytics — GA4 funnel events (no PII to GA) + partial capture to separate DB -->
+<!-- Procure form analytics — GA4 funnel events (no PII to GA) + partial capture to separate DB (from live) -->
 <script>
 (function(){
   var form = document.querySelector('form'); if(!form) return;
   var ENDPOINT = 'https://procure-lead-engine.dan-fda.workers.dev/partial';
   var SITE = 'hoacontracts.com';
-  var SKIP = {_gotcha:1,_redirect:1,site:1,lead_source:1,vertical:1,pm_sid:1,gclid:1,gbraid:1,wbraid:1,utm_source:1,utm_medium:1,utm_campaign:1,utm_term:1,utm_content:1};
+  var SKIP = {_gotcha:1,_redirect:1,site:1,lead_source:1,vertical:1,variant:1,pm_sid:1,gclid:1,gbraid:1,wbraid:1,utm_source:1,utm_medium:1,utm_campaign:1,utm_term:1,utm_content:1,sms_consent_text:1,sms_consent_url:1,sms_consent_timestamp:1};
   var FIELDS = [];
   Array.prototype.forEach.call(form.querySelectorAll('[name]'), function(el){
     var n=el.name; if(!n||SKIP[n]||el.type==='hidden') return; if(FIELDS.indexOf(n)<0) FIELDS.push(n);
@@ -730,32 +457,13 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener('submit', function(){ beacon(true); });
   window.addEventListener('pagehide', function(){ if(started) beacon(false); });
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && started) beacon(false); });
-  // --- cradle-to-grave tracking additions (2026-06-24) ---
   try{ lastField='pageview'; beacon(false); }catch(e){}
-  Array.prototype.forEach.call(document.querySelectorAll('.ms-opt'), function(b){
-    b.addEventListener('click', function(){ if(this.disabled) return;
-      var fld=this.getAttribute('data-field'); if(fld){ reached[fld]=true; lastField=fld; }
-      setTimeout(function(){ beacon(false); }, 0); });
-  });
   var _sms=document.getElementById('sms_consent_box');
   if(_sms) _sms.addEventListener('change', function(){ if(this.checked){ reached['sms_consent']=true; lastField='sms_consent'; ga('form_progress',{field_name:'sms_consent'}); } beacon(false); });
 })();
 </script>
-<!-- single-page revert: surface contact form, bypass multi-step quiz. Fail-safe: if this errors the page falls back to the working funnel. Remove this block to restore multi-step. -->
-<script>
-(function(){try{
-  document.querySelectorAll('.ms-progress').forEach(function(e){e.style.display='none';});
-  var key=document.querySelector('input[name="email"]')||document.querySelector('input[name="phone"]')||document.querySelector('input[name="name"]');
-  var panel=key&&key.closest('.ms-panel');
-  if(!panel) return;
-  document.querySelectorAll('.ms-panel').forEach(function(p){
-    if(p===panel){p.style.display='block';p.classList.add('ms-active');}
-    else{p.style.display='none';p.classList.remove('ms-active');}
-  });
-  var bk=panel.querySelector('.ms-back-btn'); if(bk) bk.style.display='none';
-  var q=panel.querySelector('.ms-q'); if(q) q.style.display='none';
-}catch(e){}})();
-</script>
-  <script defer src="/procure-chat-widget.js"></script>
+<!-- Procure first-party chat widget (matches live; JS served from repo root /procure-chat-widget.js) -->
+<script src="/procure-chat-widget.js" defer></script>
+
 </body>
 </html>
