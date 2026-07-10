@@ -97,5 +97,24 @@ footer{background:#071B2D;}
   © 2026 HOA Contracts. All rights reserved.
 </footer>
 <script src="/procure-chat-widget.js" defer></script>
+<script>
+/* Phone-tap tracking: fires a GA4 'phone_call_click' event on every tap-to-call.
+   Surfaces call INTENT in GA4 and gives Google Ads a signal to optimize toward callers.
+   To count it: mark 'phone_call_click' as a Key event in GA4, then import it into Google Ads as a conversion. */
+(function(){
+  function pmAttr(){ try{ var c=(document.cookie.match(/(?:^|; )pm_attr=([^;]*)/)||[])[1]; return c?JSON.parse(decodeURIComponent(c)):{}; }catch(e){ return {}; } }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if(!a) return;
+    var A = pmAttr();
+    try{ if(window.gtag) gtag('event','phone_call_click',{
+      call_position: a.getAttribute('data-callpos') || 'link',
+      phone: (a.getAttribute('href')||'').replace('tel:',''),
+      page_path: location.pathname,
+      gclid: A.gclid||'', utm_source: A.utm_source||'', utm_medium: A.utm_medium||'', utm_campaign: A.utm_campaign||''
+    }); }catch(_){}
+  }, true);
+})();
+</script>
 </body>
 </html>
