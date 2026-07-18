@@ -256,52 +256,6 @@ footer a{color:#A7BED1;display:block;margin-bottom:12px;}
 @media(max-width:500px){.ms-opts{grid-template-columns:1fr;}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
-<style>
-/*opt1-override*/
-/* Option 1 identity override — repoints the old navy/gold system to the new navy+blue look.
-   Injected before </head> so it wins the cascade; page content, scripts + SEO untouched. */
-:root{
-  --navy:#0A2540;--navy-dark:#0A2540;
-  --gold:#1E63F0;--gold-dark:#0B4AD1;--accent:#1E63F0;--accent-dark:#0B4AD1;--cta:#1E63F0;--cta-dark:#0B4AD1;
-  --light:#F4F7FC;--text:#132339;--muted:#5C6B7D;--line:#E4EBF3;
-  --radius:16px;--shadow:0 18px 44px rgba(10,37,64,.10);
-}
-body{-webkit-font-smoothing:antialiased;color:var(--text);}
-.top-bar{background:var(--navy);color:#C6D7E8;}
-.nav{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);}
-.nav-inner{height:74px;}
-.logo{color:var(--navy);letter-spacing:-.02em;}
-.logo-box{background:var(--navy);color:#fff;border-radius:11px;}
-.nav-cta{border:1.5px solid var(--line);color:var(--navy);}
-.nav-cta:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
-.eyebrow{background:rgba(30,99,240,.10);color:#0B4AD1;letter-spacing:.10em;}
-.btn{border-radius:12px;letter-spacing:-.01em;}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(30,99,240,.26);}
-.btn-primary:hover{background:var(--accent-dark);}
-.call-btn{background:var(--accent);box-shadow:0 8px 20px rgba(30,99,240,.24);}
-.call-btn:hover{background:var(--accent-dark);}
-.callbar{background:var(--accent);}
-.hero{background:radial-gradient(680px 340px at 85% -10%,rgba(30,99,240,.20),transparent 60%),linear-gradient(160deg,var(--navy),#0A2540);}
-.highlight{color:#6FA8FF;}
-.hero-points span,.seg-item .check{color:#6FA8FF;}
-.stat h2 span{color:#6FA8FF;}
-.stats{background:var(--navy);}
-.form-head{background:var(--accent);}
-.form-call a{color:#0B4AD1;}
-.review-icon,.how-icon{background:rgba(30,99,240,.10);}
-.step-badge{background:var(--accent);}
-.section-head h2,.article h1,.article h2,.legal h1,.legal h2,.faq-item h3,.thanks h1,.blog-card h2,.article-cta-box h3{color:var(--navy);}
-.article .back,.blog-card .read-more,.blog-card-tag{color:#0B4AD1;}
-.article-cta-box{background:var(--light);border-color:var(--line);}
-.thanks .badge{background:rgba(30,99,240,.12);color:var(--accent);}
-.final-cta{background:linear-gradient(135deg,var(--navy),#123A5E);}
-footer{background:#071B2D;}
-.ms-dot.ms-active{background:var(--accent);}
-.ms-dot.ms-done,.ms-line.ms-done{background:var(--navy);}
-.ms-opt:hover,.ms-opt.ms-sel{border-color:var(--accent);background:rgba(30,99,240,.07);}
-.ms-arr{color:var(--accent);}
-.sms-consent input{accent-color:var(--accent);}
-</style>
 </head>
 <body>
 <header class="nav">
@@ -363,25 +317,5 @@ HOA Contracts
 <div class="footer-bottom">© 2026 HOA Contracts. All rights reserved.</div>
 </div>
 </footer>
-<script src="/procure-chat-widget.js" defer></script>
-<script>
-/* Phone-tap tracking: fires a GA4 'phone_call_click' event on every tap-to-call.
-   Surfaces call INTENT in GA4 and gives Google Ads a signal to optimize toward callers.
-   To count it: mark 'phone_call_click' as a Key event in GA4, then import it into Google Ads as a conversion. */
-(function(){
-  function pmAttr(){ try{ var c=(document.cookie.match(/(?:^|; )pm_attr=([^;]*)/)||[])[1]; return c?JSON.parse(decodeURIComponent(c)):{}; }catch(e){ return {}; } }
-  document.addEventListener('click', function(e){
-    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
-    if(!a) return;
-    var A = pmAttr();
-    try{ if(window.gtag) gtag('event','phone_call_click',{
-      call_position: a.getAttribute('data-callpos') || 'link',
-      phone: (a.getAttribute('href')||'').replace('tel:',''),
-      page_path: location.pathname,
-      gclid: A.gclid||'', utm_source: A.utm_source||'', utm_medium: A.utm_medium||'', utm_campaign: A.utm_campaign||''
-    }); }catch(_){}
-  }, true);
-})();
-</script>
 </body>
 </html>
