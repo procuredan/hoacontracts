@@ -259,17 +259,15 @@ footer a:hover{color:#fff}
             <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
             <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
             <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
+            <div class="f full"><label class="lab" for="property_type">What kind of community?</label>
+              <select id="property_type" name="property_type" required><option value="">Select community type</option><option>Condo association</option><option>Townhome community</option><option>High-rise / condo tower</option><option>Single-family HOA</option></select>
+            </div>
             <div class="f full"><label class="lab" for="name">Full name</label><input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required></div>
             <div class="grid2">
               <div class="f"><label class="lab" for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required></div>
               <div class="f"><label class="lab" for="email">Email</label><input id="email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required></div>
             </div>
-            <div class="grid2">
-              <div class="f"><label class="lab" for="state">State</label><input id="state" type="text" name="state" autocomplete="address-level1" placeholder="e.g. Florida" required></div>
-              <div class="f"><label class="lab" for="property_type">Community type <span style="color:var(--muted);font-weight:500">(optional)</span></label>
-                <select id="property_type" name="property_type"><option value="">Select type</option><option>Condo association</option><option>Townhome community</option><option>Single-family HOA</option><option>High-rise / condo tower</option></select>
-              </div>
-            </div>
+            <div class="f full"><label class="lab" for="state">State</label><input id="state" type="text" name="state" autocomplete="address-level1" placeholder="e.g. Florida"></div>
             <div class="grid2">
               <div class="f"><label class="lab" for="community_size">Community size <span style="color:var(--muted);font-weight:500">(optional)</span></label>
                 <select id="community_size" name="community_size"><option value="">Select size</option><option>1–50 Units</option><option>51–100 Units</option><option>101–300 Units</option><option>301+ Units</option></select>
@@ -465,5 +463,24 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- Procure first-party chat widget (matches live; JS served from repo root /procure-chat-widget.js) -->
 <script src="/procure-chat-widget.js" defer></script>
 
+<script>
+/* Phone-tap tracking: fires a GA4 'phone_call_click' event on every tap-to-call.
+   Surfaces call INTENT in GA4 and gives Google Ads a signal to optimize toward callers.
+   To count it: mark 'phone_call_click' as a Key event in GA4, then import it into Google Ads as a conversion. */
+(function(){
+  function pmAttr(){ try{ var c=(document.cookie.match(/(?:^|; )pm_attr=([^;]*)/)||[])[1]; return c?JSON.parse(decodeURIComponent(c)):{}; }catch(e){ return {}; } }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if(!a) return;
+    var A = pmAttr();
+    try{ if(window.gtag) gtag('event','phone_call_click',{
+      call_position: a.getAttribute('data-callpos') || 'link',
+      phone: (a.getAttribute('href')||'').replace('tel:',''),
+      page_path: location.pathname,
+      gclid: A.gclid||'', utm_source: A.utm_source||'', utm_medium: A.utm_medium||'', utm_campaign: A.utm_campaign||''
+    }); }catch(_){}
+  }, true);
+})();
+</script>
 </body>
 </html>
