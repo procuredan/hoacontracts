@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>HOA Master Insurance Policies | HOA Contracts</title>
+<title>HOA Master Insurance Policy — Coverage &amp; Quotes | HOA Contracts</title>
 <meta name="description" content="Free review of your HOA master insurance policy — property, general liability, umbrella, directors &amp; officers, crime, and specialty coverages — benchmarked for savings and gaps before renewal." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="HOA Contracts" />
@@ -204,6 +204,87 @@ footer a:hover{color:#fff}
   .callbar{display:flex;align-items:center;justify-content:center;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:14px;box-shadow:0 -4px 16px rgba(0,0,0,.18)}
   .callbar svg{width:19px;height:19px}
 }
+
+.m-cta{display:none}
+.fieldnote{display:none}
+/* ===== MOBILE REBUILD 2026-09-29 — mobile-only; desktop rules above are untouched ===== */
+@media(max-width:960px){
+  /* Pitch before form. The old rule put a cold form above the headline. */
+  .hero-copy{order:1}
+  .hero-form{order:2}
+}
+@media(max-width:600px){
+  /* 16px minimum stops iOS Safari from auto-zooming on focus */
+  input,select,textarea{font-size:16px;padding:12px 13px;border-radius:10px}
+  .hero{padding:22px 0 18px}
+  .hero h1{font-size:30px;line-height:1.12}
+  .hero .sub{font-size:16px}
+  .hero .miniproof{display:none}
+  .hero-note{display:none}
+  .points{margin-top:16px;gap:9px}
+  .points li{font-size:14.5px}
+  .card-head{padding:16px 18px 14px}
+  .card-head h3{font-size:19px}
+  .card-body{padding:16px 18px 20px}
+  .f{margin-bottom:11px}
+  .f,.card{scroll-margin-top:92px}
+  /* Optional on mobile: one less text field to thumb-type */
+  .f.m-hide{display:none}
+  .consent{font-size:11.5px;padding:10px 11px}
+  .submit{margin-top:12px;padding:15px;font-size:16px}
+  .trust-row{margin-top:12px;padding-top:12px}
+  .tcpa{font-size:10px;margin-top:10px}
+  .m-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;
+         padding:15px;font-size:16px;font-weight:800;border-radius:12px;
+         background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(30,99,240,.28)}
+  .m-cta.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);box-shadow:none;margin-top:10px}
+  .fieldnote{display:block;font-size:11.5px;color:#c0392b;font-weight:700;margin-top:5px}
+}
+
+/* ===== CALL-FIRST HERO (P1 redesign 2026-09-29) — namespaced cf-, mobile-first, replaces old .hero ===== */
+.cf-hero{background:linear-gradient(180deg,var(--paper) 0%,#fff 100%);padding:26px 0 30px;position:relative;overflow:hidden}
+.cf-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(680px 340px at 88% -8%,rgba(30,99,240,.10),transparent 62%);pointer-events:none}
+.cf-in{position:relative;max-width:640px;margin:0 auto;padding:0 18px}
+.cf-eyebrow{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--accent-ink);background:rgba(30,99,240,.09);padding:6px 11px;border-radius:999px;margin-bottom:14px}
+.cf-h1{font-size:clamp(30px,6.2vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:900;color:var(--navy)}
+.cf-h1 .u{color:var(--accent)}
+.cf-sub{margin-top:12px;font-size:clamp(16px,2.2vw,19px);color:#3d4d61}
+.cf-forwho{margin-top:12px;font-size:13.5px;font-weight:800;color:var(--accent-ink);display:inline-block;background:rgba(30,99,240,.08);padding:8px 12px;border-radius:10px;line-height:1.35}
+.cf-callbtn{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);color:#fff;font-weight:900;font-size:clamp(20px,4.2vw,25px);letter-spacing:-.01em;padding:18px 16px;border-radius:14px;margin-top:22px;box-shadow:0 12px 26px rgba(30,99,240,.30);transition:.18s ease}
+.cf-callbtn:hover{background:var(--accent-ink);transform:translateY(-2px)}
+.cf-callbtn svg{width:24px;height:24px;flex:0 0 auto}
+.cf-callbtn .lab{display:flex;flex-direction:column;align-items:center;line-height:1.15}
+.cf-callbtn .lab small{font-size:11.5px;font-weight:700;opacity:.9;letter-spacing:.02em;text-transform:uppercase}
+.cf-orcall{display:block;text-align:center;margin-top:14px;font-size:16px;font-weight:800;color:var(--accent-ink);cursor:pointer}
+.cf-orcall span{border-bottom:2px solid rgba(11,74,209,.3)}
+.cf-formwrap{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.cf-formwrap.open{max-height:2200px}
+.cf-formcard{margin-top:16px;border:1px solid var(--line);border-radius:14px;padding:18px;background:linear-gradient(180deg,#fbfcff,#fff)}
+.cf-formcard h2{font-size:18px;color:var(--navy);margin-bottom:3px}
+.cf-formcard .small{font-size:13px;color:var(--muted);margin-bottom:8px}
+.cf-formcard label.lab{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin:11px 0 5px}
+.cf-formcard input[type=text],.cf-formcard input[type=tel],.cf-formcard input[type=email]{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:11px;font-size:16px;font-family:inherit;color:var(--text);background:#fff}
+.cf-formcard input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(30,99,240,.12)}
+.cf-opt{font-weight:500;color:var(--muted)}
+.cf-submit{width:100%;margin-top:15px;padding:16px;background:var(--accent);color:#fff;border:0;border-radius:12px;font-size:17px;font-weight:900;font-family:inherit;cursor:pointer;transition:.15s}
+.cf-submit:hover{background:var(--accent-ink)}
+.cf-smsrow{display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#4a5768;margin-top:12px;cursor:pointer}
+.cf-smsrow input{width:18px;height:18px;flex:0 0 auto;margin-top:1px;accent-color:var(--accent)}
+.cf-tcpa{font-size:11px;line-height:1.45;color:#8a97a6;margin-top:12px}
+.cf-tcpa a{text-decoration:underline}
+.cf-trust{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;justify-content:center}
+.cf-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#54657a;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px}
+.cf-chip svg{width:13px;height:13px;color:var(--good)}
+.cf-reassure{margin-top:20px;padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:13px}
+.cf-reassure b{color:var(--navy)}
+.cf-reassure p{font-size:14.5px;color:#3d4d61}
+.cf-reassure ul{list-style:none;margin-top:12px;display:grid;gap:9px}
+.cf-reassure li{display:flex;gap:9px;font-size:14px;color:var(--ink);align-items:flex-start}
+.cf-reassure li svg{width:17px;height:17px;color:var(--accent);flex:0 0 auto;margin-top:2px}
+@media(min-width:700px){
+  .cf-in{padding:6px 24px 0}
+  .cf-trust{justify-content:flex-start}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"HOA Master Insurance Policies | HOA Contracts","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Free review of your HOA master insurance policy — property, general liability, umbrella, directors & officers, crime, and specialty coverages — benchmarked for savings and gaps before renewal.","url":"https://hoacontracts.com/hoa-master-insurance-policies.html"}</script>
@@ -223,71 +304,64 @@ footer a:hover{color:#fff}
 </header>
 <a href="tel:12083614295" class="callbar" aria-label="Call Now: (208) 361-4295"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now · (208) 361-4295</a>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow" id="hero-eyebrow">HOA master policies</span>
-      <h1 id="hero-h1">Premium up or carrier <span class="u">gone</span>? See your HOA's options.</h1>
-      <p class="sub" id="hero-sub">Free, board-ready review of your master policy — benchmarked against the carriers still writing HOAs. Most boards find a coverage gap or an overpayment in the first look.</p>
-      <p class="miniproof">Property, liability, umbrella, D&amp;O, crime and specialty coverages — reviewed line by line.</p>
-      <ul class="points">
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Compare your program against competitive carrier options</li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Spot coverage gaps, replacement-cost &amp; deductible issues</li>
-        <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>No board vote required to begin — your info is never sold or shared</li>
-      </ul>
-      <div class="hero-note"><span class="av"><span>HB</span><span>PM</span><span>CT</span></span>Trusted by HOA boards, treasurers &amp; property managers nationwide</div>
+<section class="cf-hero">
+  <div class="cf-in">
+    <span class="cf-eyebrow" id="hero-eyebrow">HOA &amp; condo association master policy</span>
+    <h1 class="cf-h1" id="hero-h1">HOA Master Insurance Policy <span class="u">Coverage &amp; Quotes</span></h1>
+    <p class="cf-sub" id="hero-sub"><b>Need coverage, a new quote, or a review of your association&#39;s current master policy?</b> Get a free, board-ready review from a licensed broker — we compare coverage and options for HOA &amp; condo association master policies.</p>
+    <p class="cf-forwho">For HOA &amp; condo association boards &amp; property managers — not individual unit owners</p>
+
+    <a href="tel:12083614295" class="cf-callbtn" data-callpos="hero" aria-label="Call now: (208) 361-4295">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="lab"><small>See your association&#39;s insurance options</small>(208) 361-4295</span>
+    </a>
+    <a class="cf-orcall" id="cf-orcall" href="#form" role="button"><span>or have us call you &rarr;</span></a>
+
+    <div class="cf-formwrap" id="cf-formwrap">
+      <div class="cf-formcard" id="form">
+        <h2>Get a callback</h2>
+        <p class="small">Two quick things and a licensed specialist calls you back — usually within a business hour.</p>
+        <form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
+          <input type="hidden" name="lead_source" value="hoacontracts.com/hoa-master-insurance-policies">
+          <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="site" value="hoacontracts.com">
+          <input type="hidden" name="vertical" value="HOA Insurance">
+          <input type="hidden" name="variant" value="callfirst-2026-09">
+          <input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
+          <input type="hidden" name="sms_consent_text" value="">
+          <input type="hidden" name="sms_consent_url" value="">
+          <input type="hidden" name="sms_consent_timestamp" value="">
+          <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
+          <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
+          <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
+          <label class="lab" for="name">Full name</label>
+          <input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required>
+          <label class="lab" for="phone">Phone</label>
+          <input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" required>
+          <label class="lab" for="email">Email <span class="cf-opt">(optional)</span></label>
+          <input id="email" type="email" name="email" autocomplete="email" placeholder="you@email.com">
+          <button class="cf-submit" type="submit">Request my callback &rarr;</button>
+          <label class="cf-smsrow"><input type="checkbox" id="sms_consent_box"><span>Text me updates too (optional). By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
+          <div class="cf-tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. <strong>SMS:</strong> if you check the box, msg frequency varies, msg &amp; data rates may apply, reply STOP to opt out. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</div>
+        </form>
+      </div>
     </div>
 
-    <div class="hero-form">
-      <div class="card" id="form">
-        <div class="card-head">
-          <div class="k">Free HOA insurance review</div>
-          <h3>Get your free HOA policy review</h3>
-          <p>Takes about a minute — or call <a href="tel:12083614295" style="color:var(--accent-ink);font-weight:700">(208) 361-4295</a> and skip the form.</p>
-        </div>
-        <div class="card-body">
-          <form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
-            <input type="hidden" name="lead_source" value="hoacontracts.com/hoa-master-insurance-policies">
-            <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="site" value="hoacontracts.com">
-            <input type="hidden" name="vertical" value="HOA Insurance">
-            <input type="hidden" name="variant" value="opt1-2026-07">
-            <input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
-            <input type="hidden" name="sms_consent_text" value="">
-            <input type="hidden" name="sms_consent_url" value="">
-            <input type="hidden" name="sms_consent_timestamp" value="">
-            <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
-            <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
-            <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
-            <div class="f full"><label class="lab" for="property_type">What kind of community?</label>
-              <select id="property_type" name="property_type" required><option value="">Select community type</option><option>Condo association</option><option>Townhome community</option><option>High-rise / condo tower</option><option>Single-family HOA</option></select>
-            </div>
-            <div class="f full"><label class="lab" for="name">Full name</label><input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required></div>
-            <div class="grid2">
-              <div class="f"><label class="lab" for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required></div>
-              <div class="f"><label class="lab" for="email">Email</label><input id="email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required></div>
-            </div>
-            <div class="f full"><label class="lab" for="state">State</label><input id="state" type="text" name="state" autocomplete="address-level1" placeholder="e.g. Florida"></div>
-            <div class="grid2">
-              <div class="f"><label class="lab" for="community_size">Community size <span style="color:var(--muted);font-weight:500">(optional)</span></label>
-                <select id="community_size" name="community_size"><option value="">Select size</option><option>1–50 Units</option><option>51–100 Units</option><option>101–300 Units</option><option>301+ Units</option></select>
-              </div>
-              <div class="f"><label class="lab" for="role">Your role <span style="color:var(--muted);font-weight:500">(optional)</span></label>
-                <select id="role" name="role"><option value="">Select one</option><option>Board President</option><option>Board Treasurer</option><option>Board Member</option><option>Property Manager</option><option>Committee Member</option></select>
-              </div>
-            </div>
-            <label class="consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
-            <button class="btn btn-primary submit" type="submit">Get my free review →</button>
-            <div class="reassure">Most HOA boards find at least one coverage gap in the first review.</div>
-            <div class="trust-row">
-              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>SSL secured</span>
-              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TCPA-compliant</span>
-              <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Never sold or shared</span>
-            </div>
-            <div class="tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. <strong>SMS:</strong> if you check the box, msg frequency varies, msg &amp; data rates may apply, reply STOP to opt out. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</div>
-          </form>
-        </div>
-      </div>
+    <div class="cf-trust">
+      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No cost, no obligation</span>
+      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Never sold or shared</span>
+      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Licensed insurance broker</span>
+    </div>
+
+    <div class="cf-reassure">
+      <p><b>Compare your HOA&#39;s master policy, coverage and insurance options.</b> New to coverage, shopping a fresh quote, or facing a change at renewal — a licensed broker handles it and brings your board clear options. We help with:</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>New master policies &amp; quotes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Renewals &amp; re-shopping your program</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Premium increases &amp; carrier non-renewals</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coverage gaps &amp; replacement-cost shortfalls</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Board (D&amp;O) liability exposure</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -481,5 +555,55 @@ document.addEventListener("DOMContentLoaded", function () {
   }, true);
 })();
 </script>
+
+<script>
+/* Mobile phone-field hardening (2026-09-29).
+   The old pattern excluded "+", so an iOS/Android autofill of "+1 (208) 555-1234"
+   failed native validation and the submit was silently blocked. This normalizes the
+   value to a clean US format on the way in, so validation always passes, and shows a
+   readable inline message instead of a native tooltip. */
+(function(){
+  var f=document.querySelector('form[action*="/submit"]'); if(!f) return;
+  var phone=f.querySelector('[name="phone"]'); if(!phone) return;
+  var note=document.createElement('small'); note.className='fieldnote'; note.setAttribute('role','alert');
+  phone.parentNode.appendChild(note);
+  function digits(v){ return String(v||'').replace(/\D/g,''); }
+  function usTen(v){ var d=digits(v); if(d.length===11 && d.charAt(0)==='1') d=d.slice(1); return d; }
+  function fmt(v){ var d=usTen(v);
+    if(d.length!==10) return v;
+    return '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6); }
+  function clearNote(){ note.style.display='none'; phone.setCustomValidity(''); }
+  phone.addEventListener('input', clearNote);
+  phone.addEventListener('blur', function(){ var n=fmt(phone.value); if(n!==phone.value) phone.value=n; });
+  f.addEventListener('submit', function(e){
+    phone.value=fmt(phone.value);
+    if(usTen(phone.value).length!==10){
+      e.preventDefault();
+      note.textContent='Please enter a 10-digit US phone number.';
+      note.style.display='block';
+      phone.focus();
+      try{ phone.scrollIntoView({block:'center',behavior:'smooth'}); }catch(_){}
+      return false;
+    }
+    clearNote();
+  }, true);
+})();
+</script>
+
+<script>
+/* Call-first progressive form (P1 2026-09-29): reveal the callback form on the
+   "or have us call you" tap, on any #form link, or a #form hash. Calling stays the
+   primary action; if JS is off the <noscript> rule below leaves the form open. */
+(function(){
+  var wrap=document.getElementById('cf-formwrap');
+  var toggle=document.getElementById('cf-orcall');
+  if(!wrap) return;
+  function reveal(focus){ wrap.classList.add('open'); if(focus){ var n=document.getElementById('name'); if(n){ try{n.focus();}catch(e){} } } }
+  if(toggle) toggle.addEventListener('click',function(e){ e.preventDefault(); var willOpen=!wrap.classList.contains('open'); wrap.classList.toggle('open'); if(willOpen){ var n=document.getElementById('name'); if(n){ try{n.focus();}catch(e){} } } });
+  document.addEventListener('click',function(e){ var a=e.target&&e.target.closest?e.target.closest('a[href="#form"]'):null; if(a){ reveal(true); } });
+  if(location.hash==='#form') reveal(false);
+})();
+</script>
+<noscript><style>.cf-formwrap{max-height:none!important}.cf-orcall{display:none}</style></noscript>
 </body>
 </html>
