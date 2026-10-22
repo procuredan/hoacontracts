@@ -204,13 +204,43 @@ footer a:hover{color:#fff}
   .callbar{display:flex;align-items:center;justify-content:center;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:14px;box-shadow:0 -4px 16px rgba(0,0,0,.18)}
   .callbar svg{width:19px;height:19px}
 }
+
+/* ===== MOBILE REBUILD 2026-10-01 — mobile-only; desktop rules above untouched ===== */
+.fieldnote{display:none}
+@media(max-width:960px){
+  /* Pitch before form. The old rule put a cold form above the headline. */
+  .hero-copy{order:1}
+  .hero-form{order:2}
+}
+@media(max-width:600px){
+  input,select,textarea{font-size:16px;padding:12px 13px;border-radius:10px}
+  .hero{padding:22px 0 18px}
+  .hero h1{font-size:30px;line-height:1.12}
+  .hero .sub{font-size:16px}
+  .hero .miniproof,.hero-note{display:none}
+  .points{margin-top:16px;gap:9px}
+  .points li{font-size:14.5px}
+  .card-head{padding:16px 18px 14px}
+  .card-head h3{font-size:19px}
+  .card-body{padding:16px 18px 20px}
+  .f{margin-bottom:11px}
+  .f,.card{scroll-margin-top:92px}
+  .f.m-hide{display:none}
+  .consent{font-size:11.5px;padding:10px 11px}
+  .submit{margin-top:12px;padding:15px;font-size:16px}
+  .tcpa{font-size:10px;margin-top:10px}
+  .fieldnote{display:block;font-size:11.5px;color:#c0392b;font-weight:700;margin-top:5px}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"HOA Contracts | Free HOA & Condo Association Insurance Review","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Free HOA master insurance policy reviews for condo and homeowners associations. Identify premium savings, coverage gaps, replacement cost issues, deductible exposure, and competitive carrier options before renewal.","url":"https://hoacontracts.com/"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does an HOA insurance review cost?","acceptedAnswer":{"@type":"Answer","text":"Nothing. The review is free, there's no obligation to switch, and your association's information is never sold or shared."}},{"@type":"Question","name":"Do we need a board vote to start?","acceptedAnswer":{"@type":"Answer","text":"No. Any board member or property manager can request the review. A board vote is only relevant if you later decide to change carriers."}},{"@type":"Question","name":"What do you need from us?","acceptedAnswer":{"@type":"Answer","text":"Your current binder or declaration pages, the renewal date, and a little history. The more you share, the sharper the benchmarking."}},{"@type":"Question","name":"Will this disrupt our current coverage?","acceptedAnswer":{"@type":"Answer","text":"No. A review is just a benchmark. Nothing changes with your existing policy unless your board chooses to act on the findings."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hoacontracts.com/"},{"@type":"ListItem","position":2,"name":"HOA Contracts | Free HOA & Condo Association Insurance Review","item":"https://hoacontracts.com/index.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"HOA Contracts","url":"https://hoacontracts.com/","publisher":{"@type":"Organization","name":"HOA Contracts"}}</script>
+<link rel="alternate" type="text/markdown" href="/index.md" />
 </head>
 <body>
-<div class="top-bar"><b>HOA &amp; condo association insurance reviews</b> — premium savings, coverage gaps, replacement cost &amp; board liability, before renewal.</div>
+<div class="top-bar"><b>Carriers are dropping HOAs &amp; condos — premiums keep rising.</b> Get a free, board-ready insurance review before your renewal · (208) 361-4295</div>
 
 <header class="nav">
   <div class="wrap nav-in">
@@ -261,7 +291,7 @@ footer a:hover{color:#fff}
             <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
             <div class="f full"><label class="lab" for="name">Full name</label><input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required></div>
             <div class="grid2">
-              <div class="f"><label class="lab" for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" pattern="[\d\s\-\(\)\.]{10,20}" required></div>
+              <div class="f"><label class="lab" for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="(555) 555-5555" autocomplete="tel" inputmode="tel" required></div>
               <div class="f"><label class="lab" for="email">Email</label><input id="email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required></div>
             </div>
             <div class="grid2">
@@ -499,6 +529,39 @@ document.addEventListener("DOMContentLoaded", function () {
       page_path: location.pathname,
       gclid: A.gclid||'', utm_source: A.utm_source||'', utm_medium: A.utm_medium||'', utm_campaign: A.utm_campaign||''
     }); }catch(_){}
+    try{ if(window.gtag) gtag('event','conversion',{ 'send_to':'AW-17934471659/DO8yCIfg5ZsdEOuj6edC' }); }catch(_){}
+  }, true);
+})();
+</script>
+
+<script>
+/* Phone-field hardening (2026-10-01) — same normalizer already shipped on the
+   master-policies lander. Normalizes "+1 (208) 555-1234" style autofill to a clean
+   US format so validation always passes, and shows a readable inline message
+   instead of a native tooltip. */
+(function(){
+  var f=document.querySelector('form[action*="/submit"]'); if(!f) return;
+  var phone=f.querySelector('[name="phone"]'); if(!phone) return;
+  var note=document.createElement('small'); note.className='fieldnote'; note.setAttribute('role','alert');
+  phone.parentNode.appendChild(note);
+  function digits(v){ return String(v||'').replace(/\D/g,''); }
+  function usTen(v){ var d=digits(v); if(d.length===11 && d.charAt(0)==='1') d=d.slice(1); return d; }
+  function fmt(v){ var d=usTen(v); if(d.length!==10) return v;
+    return '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6); }
+  function clearNote(){ note.style.display='none'; }
+  phone.addEventListener('input', clearNote);
+  phone.addEventListener('blur', function(){ var n=fmt(phone.value); if(n!==phone.value) phone.value=n; });
+  f.addEventListener('submit', function(e){
+    phone.value=fmt(phone.value);
+    if(usTen(phone.value).length!==10){
+      e.preventDefault();
+      note.textContent='Please enter a 10-digit US phone number.';
+      note.style.display='block';
+      phone.focus();
+      try{ phone.scrollIntoView({block:'center',behavior:'smooth'}); }catch(_){}
+      return false;
+    }
+    clearNote();
   }, true);
 })();
 </script>
