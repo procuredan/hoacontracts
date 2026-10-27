@@ -27,6 +27,7 @@
   gtag('js', new Date());
   gtag('config', 'G-Z38W9N0GQQ');
   gtag('config', 'AW-17934471659');
+  gtag('config', 'AW-17934471659/nww6COr7g6wdEOuj6edC', { 'phone_conversion_number': '(208) 361-4295' });
 </script>
 <!-- Procure click-source capture: stores gclid/UTM on landing, attaches to the form -->
 <script>
@@ -457,6 +458,13 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('pagehide', function(){ if(started) beacon(false); });
   document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden' && started) beacon(false); });
   try{ lastField='pageview'; beacon(false); }catch(e){}
+  // phone-tap attribution (2026-10-27): a tel: tap writes a partial row (last_field='phone_tap')
+  // so an inbound call can be matched to this session's gclid/landing_page (engine side: 15-min lookback).
+  document.addEventListener('click', function(e){
+    var _a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if(!_a) return;
+    try{ lastField='phone_tap'; reached['phone_tap']=1; beacon(false); }catch(_){}
+  }, true);
   var _sms=document.getElementById('sms_consent_box');
   if(_sms) _sms.addEventListener('change', function(){ if(this.checked){ reached['sms_consent']=true; lastField='sms_consent'; ga('form_progress',{field_name:'sms_consent'}); } beacon(false); });
 })();
