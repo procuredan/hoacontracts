@@ -2,7 +2,7 @@
 
 > Terms & Conditions for HOA Contracts.
 
-**Source:** https://hoacontracts.com/terms.html · HOA Contracts · Questions? Call (208) 361-4295
+**Source:** https://hoacontracts.com/terms · HOA Contracts · Questions? Call (208) 361-4295
 
 ---
 

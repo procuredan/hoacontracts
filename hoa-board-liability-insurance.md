@@ -1,4 +1,4 @@
-# FREE HOA Directors and Officers Liability Insurance Review
+# Insurance for HOA Board Members — D&O & Directors & Officers
 
 > Free review of HOA directors & officers (D&O) liability coverage. Protect board members from personal exposure for decisions made on behalf of the association.
 
@@ -6,23 +6,28 @@
 
 **4,000+ communities served · $3B+ in coverage reviewed · 38 states · Licensed broker · Your info is never sold or shared.**
 
-**Source:** https://hoacontracts.com/hoa-board-liability-insurance.html · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
+**Source:** https://hoacontracts.com/hoa-board-liability-insurance · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
 
 ---
 
-# FREE HOA Directors and Officers Liability Insurance Review
+HOA board & directors & officers (D&O) insurance
 
-Call now — a licensed broker reviews your board's coverage and compares your rates, free.
+# Insurance for HOA Board Members — D&O & Liability
 
-[Call (208) 361-4295](tel:12083614295)
+**Is your HOA board personally protected — or facing a D&O premium hike or non-renewal?** Get a free, board-ready review from a licensed broker. We check your directors & officers (D&O) insurance, board of directors liability and fidelity bond, and compare options for HOA & condo association boards.
 
-Or we'll call you back: enter your phone number, then complete your name and optional email to request a callback. SMS updates are optional.
+For HOA & condo association boards & property managers — not individual unit owners
+
+[Review your board's D&O coverage(208) 361-4295](tel:12083614295)
+[or have us call you →](#form)
+
+## Get a callback
+
+Two quick things and a licensed specialist calls you back — usually within a business hour.
 
 No cost, no obligation
 Never sold or shared
 Licensed insurance broker
-
-For HOA & condo association boards & property managers — not individual unit owners
 
 **Directors & officers (D&O) and liability insurance for your HOA board.** Protecting board members personally, or shopping a fresh quote at renewal — a licensed broker reviews your board's exposure and brings clear options. We help with:
 

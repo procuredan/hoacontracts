@@ -2,7 +2,7 @@
 
 > Privacy Policy for HOA Contracts.
 
-**Source:** https://hoacontracts.com/privacy-policy.html · HOA Contracts · Questions? Call (208) 361-4295
+**Source:** https://hoacontracts.com/privacy-policy · HOA Contracts · Questions? Call (208) 361-4295
 
 ---
 

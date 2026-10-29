@@ -6,7 +6,7 @@
 
 **4,000+ communities served · $3B+ in coverage reviewed · 38 states · Licensed broker · Your info is never sold or shared.**
 
-**Source:** https://hoacontracts.com/hoa-trash-contract-review.html · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
+**Source:** https://hoacontracts.com/hoa-trash-contract-review · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
 
 ---
 

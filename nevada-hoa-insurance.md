@@ -6,7 +6,7 @@
 
 **4,000+ communities served · $3B+ in coverage reviewed · 38 states · Licensed broker · Your info is never sold or shared.**
 
-**Source:** https://hoacontracts.com/nevada-hoa-insurance.html · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
+**Source:** https://hoacontracts.com/nevada-hoa-insurance · HOA Contracts · Free, no-obligation review · Call **(208) 361-4295**
 
 ---
 
