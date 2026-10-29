@@ -1,4 +1,4 @@
-# HOA Master Insurance Policy — Coverage & Quotes
+# FREE HOA Master Insurance Policy Review
 
 > Free review of your HOA master insurance policy — property, general liability, umbrella, directors & officers, crime, and specialty coverages — benchmarked for savings and gaps before renewal.
 
@@ -10,24 +10,19 @@
 
 ---
 
-HOA & condo association master policy
+# FREE HOA Master Insurance Policy Review
 
-# HOA Master Insurance Policy Coverage & Quotes
+Call now — a licensed broker reviews your master policy and compares your rates, free.
 
-**Need coverage, a new quote, or a review of your association's current master policy?** Get a free, board-ready review from a licensed broker — we compare coverage and options for HOA & condo association master policies.
+[Call (208) 361-4295](tel:12083614295)
 
-For HOA & condo association boards & property managers — not individual unit owners
-
-[See your association's insurance options(208) 361-4295](tel:12083614295)
-[or have us call you →](#form)
-
-## Get a callback
-
-Two quick things and a licensed specialist calls you back — usually within a business hour.
+Or we'll call you back: enter your phone number, then complete your name and optional email to request a callback. SMS updates are optional.
 
 No cost, no obligation
 Never sold or shared
 Licensed insurance broker
+
+For HOA & condo association boards & property managers — not individual unit owners
 
 **Compare your HOA's master policy, coverage and insurance options.** New to coverage, shopping a fresh quote, or facing a change at renewal — a licensed broker handles it and brings your board clear options. We help with:
 

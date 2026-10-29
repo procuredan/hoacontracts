@@ -1,4 +1,4 @@
-# Insurance for HOA Board Members — D&O & Directors & Officers
+# FREE HOA Directors and Officers Liability Insurance Review
 
 > Free review of HOA directors & officers (D&O) liability coverage. Protect board members from personal exposure for decisions made on behalf of the association.
 
@@ -10,24 +10,19 @@
 
 ---
 
-HOA board & directors & officers (D&O) insurance
+# FREE HOA Directors and Officers Liability Insurance Review
 
-# Insurance for HOA Board Members — D&O & Liability
+Call now — a licensed broker reviews your board's coverage and compares your rates, free.
 
-**Is your HOA board personally protected — or facing a D&O premium hike or non-renewal?** Get a free, board-ready review from a licensed broker. We check your directors & officers (D&O) insurance, board of directors liability and fidelity bond, and compare options for HOA & condo association boards.
+[Call (208) 361-4295](tel:12083614295)
 
-For HOA & condo association boards & property managers — not individual unit owners
-
-[Review your board's D&O coverage(208) 361-4295](tel:12083614295)
-[or have us call you →](#form)
-
-## Get a callback
-
-Two quick things and a licensed specialist calls you back — usually within a business hour.
+Or we'll call you back: enter your phone number, then complete your name and optional email to request a callback. SMS updates are optional.
 
 No cost, no obligation
 Never sold or shared
 Licensed insurance broker
+
+For HOA & condo association boards & property managers — not individual unit owners
 
 **Directors & officers (D&O) and liability insurance for your HOA board.** Protecting board members personally, or shopping a fresh quote at renewal — a licensed broker reviews your board's exposure and brings clear options. We help with:
 
