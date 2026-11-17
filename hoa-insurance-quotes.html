@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -56,413 +55,98 @@
   }catch(e){}
 })();
 </script>
-<style>
-:root{
-  --navy:#0A2540;--navy-2:#123A5E;--ink:#0F2136;
-  --accent:#1E63F0;--accent-ink:#0B4AD1;--good:#0E9F6E;
-  --paper:#F4F7FC;--surface:#FFFFFF;--line:#E4EBF3;--muted:#5C6B7D;--text:#132339;
-  --radius:16px;--shadow:0 18px 44px rgba(10,37,64,.10);--shadow-sm:0 6px 18px rgba(10,37,64,.07);
-  --container:1200px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--surface);line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{width:100%;max-width:var(--container);margin:auto;padding:0 24px}
-a{text-decoration:none;color:inherit}
-img{max-width:100%}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.10em;text-transform:uppercase;color:var(--accent-ink);background:rgba(30,99,240,.09);padding:7px 13px;border-radius:999px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 26px;border-radius:12px;font-weight:800;font-size:16px;cursor:pointer;border:1.5px solid transparent;transition:.18s ease;font-family:inherit}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(30,99,240,.28)}
-.btn-primary:hover{background:var(--accent-ink);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--navy);background:var(--navy);color:#fff}
-.btn svg{width:18px;height:18px}
-.top-bar{background:var(--navy);color:#C6D7E8;text-align:center;font-size:13px;font-weight:600;padding:9px 16px}
-.top-bar b{color:#fff}
-.nav{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.logo{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy);font-size:20px;letter-spacing:-.02em}
-.logo-box{width:40px;height:40px;border-radius:11px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff}
-.logo-box svg{width:22px;height:22px}
-.nav-right{display:flex;align-items:center;gap:16px}
-.nav-phone{display:flex;flex-direction:column;line-height:1.05;text-align:right}
-.nav-phone small{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.nav-phone strong{font-size:18px;font-weight:900;color:var(--navy)}
-.callbar{display:none}
-.hero{background:linear-gradient(180deg,var(--paper) 0%,#fff 100%);padding:64px 0 40px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(680px 340px at 88% -8%,rgba(30,99,240,.10),transparent 62%);pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
-.hero h1{font-size:clamp(34px,4.3vw,54px);line-height:1.06;letter-spacing:-.025em;font-weight:900;color:var(--navy);margin:20px 0 16px}
-.hero h1 .u{color:var(--accent);white-space:nowrap}
-.hero .sub{font-size:19px;color:#3d4d61;max-width:560px}
-.hero .miniproof{margin-top:12px;font-size:14px;color:var(--muted);max-width:560px}
-.points{margin:24px 0 0;display:grid;gap:12px;max-width:560px}
-.points li{list-style:none;display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:500}
-.points .ic{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(14,159,110,.12);color:var(--good);display:flex;align-items:center;justify-content:center;margin-top:1px}
-.points .ic svg{width:13px;height:13px}
-.hero-note{margin-top:24px;display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--muted);font-weight:600}
-.hero-note .av{display:flex}
-.hero-note .av span{width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:var(--navy-2);margin-left:-8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800}
-.hero-note .av span:first-child{margin-left:0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-.card-head{padding:22px 26px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfcff)}
-.card-head .k{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink)}
-.card-head h3{font-size:22px;color:var(--navy);letter-spacing:-.02em;margin:5px 0 3px}
-.card-head p{font-size:13.5px;color:var(--muted)}
-.card-body{padding:22px 26px 24px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.f{margin-bottom:13px}
-.f.full{grid-column:1/-1}
-label.lab{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px}
-input,select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:11px;font-size:15px;font-family:inherit;background:#fff;color:var(--text);transition:.15s}
-input::placeholder{color:#9aa7b6}
-input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(30,99,240,.12)}
-.consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;line-height:1.45;color:#4a5768;background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:11px 12px;cursor:pointer}
-.consent input{width:18px;height:18px;margin-top:1px;flex-shrink:0;accent-color:var(--accent)}
-.submit{width:100%;margin-top:14px;padding:16px;font-size:17px}
-.reassure{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
-.reassure a{color:var(--accent-ink);font-weight:700}
-.trust-row{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#54657a;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 10px}
-.chip svg{width:12px;height:12px;color:var(--good)}
-.tcpa{font-size:10.5px;line-height:1.5;color:#8a97a6;margin-top:12px}
-.tcpa a{text-decoration:underline}
-.carriers{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
-.carriers .lab{text-align:center;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.carrier-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 44px}
-.carrier-row img{height:34px;width:auto;opacity:.72;filter:grayscale(25%);transition:.25s ease}
-.carrier-row img:hover{opacity:1;filter:grayscale(0)}
-.stats{background:var(--navy);color:#fff;padding:46px 0}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-.stat b{display:block;font-size:40px;font-weight:900;letter-spacing:-.02em;line-height:1}
-.stat b i{color:#6FA8FF;font-style:normal}
-.stat span{display:block;margin-top:9px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9C0D8}
-.sec{padding:82px 0}
-.sec.alt{background:var(--paper)}
-.sec-head{max-width:760px;margin:0 auto 52px;text-align:center}
-.sec-head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-.025em;color:var(--navy);margin:14px 0 12px}
-.sec-head p{font-size:17px;color:var(--muted)}
-.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.rev{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow-sm);transition:.2s}
-.rev:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d3dfec}
-.rev .ic{width:48px;height:48px;border-radius:12px;background:rgba(30,99,240,.10);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.rev .ic svg{width:24px;height:24px}
-.rev h3{font-size:19px;color:var(--navy);letter-spacing:-.01em;margin-bottom:9px}
-.rev p{color:var(--muted);font-size:15px}
-.serve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px;margin:0 auto}
-.serve{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--shadow-sm)}
-.serve .ic{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center}
-.serve .ic svg{width:20px;height:20px}
-.serve strong{display:block;color:var(--navy);font-size:16px;margin-bottom:3px}
-.serve span{color:var(--muted);font-size:14px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:34px 26px 26px;box-shadow:var(--shadow-sm)}
-.step .n{position:absolute;top:-16px;left:26px;width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:15px;box-shadow:0 8px 18px rgba(30,99,240,.3)}
-.step h3{color:var(--navy);font-size:18px;margin:6px 0 9px}
-.step p{color:var(--muted);font-size:15px}
-.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
-.qa{border:1px solid var(--line);border-radius:13px;background:#fff;padding:20px 22px}
-.qa h3{color:var(--navy);font-size:17px;margin-bottom:6px;display:flex;gap:9px;align-items:flex-start}
-.qa h3 svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:2px}
-.qa p{color:var(--muted);font-size:15px;padding-left:27px}
-.final{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;text-align:center;padding:76px 20px}
-.final h2{font-size:clamp(28px,3.6vw,44px);letter-spacing:-.025em;line-height:1.1;margin-bottom:16px;max-width:760px;margin-left:auto;margin-right:auto}
-.final p{color:#C6D7E8;font-size:18px;max-width:640px;margin:0 auto 28px}
-.final .btn-primary{background:#fff;color:var(--navy)}
-.final .btn-primary:hover{background:#eaf1ff}
-.final .callalt{display:block;margin-top:16px;color:#C6D7E8;font-size:14px}
-.final .callalt a{color:#fff;font-weight:800}
-footer{background:#071B2D;color:#9FB6C9;padding:56px 0 26px;font-size:14px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:34px}
-footer h4{color:#fff;font-size:14px;margin-bottom:14px;letter-spacing:.02em}
-footer a{display:block;margin-bottom:10px;color:#9FB6C9}
-footer a:hover{color:#fff}
-.foot-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900;font-size:18px;margin-bottom:14px}
-.foot-logo .logo-box{width:34px;height:34px;border-radius:9px}
-.foot-dis{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;font-size:12px;color:#6f8598;line-height:1.6;margin-bottom:12px}
-@media(max-width:960px){
-  .hero-grid{grid-template-columns:1fr;gap:28px}
-  .hero-copy{order:2}
-  .hero-form{order:1}
-  .rev-grid,.steps{grid-template-columns:1fr}
-  .serve-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr 1fr;gap:26px 16px}
-  .foot-grid{grid-template-columns:1fr 1fr}
-  .top-bar{display:none}
-  .sec{padding:56px 0}
-  .hero{padding:34px 0 24px}
-}
-@media(max-width:600px){
-  .nav-phone small{display:none}
-  .nav-cta{display:none}
-  .nav-in{height:auto;padding:11px 0}
-  .logo{font-size:17px;white-space:nowrap}
-  .logo-box{width:34px;height:34px}
-  .nav-phone strong{font-size:15px;white-space:nowrap}
-  .grid2{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr}
-  body{padding-bottom:62px}
-  .callbar{display:flex;align-items:center;justify-content:center;gap:9px;position:fixed;left:0;right:0;bottom:0;z-index:1000;background:var(--accent);color:#fff;font-weight:800;font-size:16px;padding:14px;box-shadow:0 -4px 16px rgba(0,0,0,.18)}
-  .callbar svg{width:19px;height:19px}
-}
 
-.m-cta{display:none}
-.fieldnote{display:none}
-/* ===== MOBILE REBUILD 2026-09-29 — mobile-only; desktop rules above are untouched ===== */
-@media(max-width:960px){
-  /* Pitch before form. The old rule put a cold form above the headline. */
-  .hero-copy{order:1}
-  .hero-form{order:2}
-}
-@media(max-width:600px){
-  /* 16px minimum stops iOS Safari from auto-zooming on focus */
-  input,select,textarea{font-size:16px;padding:12px 13px;border-radius:10px}
-  .hero{padding:22px 0 18px}
-  .hero h1{font-size:30px;line-height:1.12}
-  .hero .sub{font-size:16px}
-  .hero .miniproof{display:none}
-  .hero-note{display:none}
-  .points{margin-top:16px;gap:9px}
-  .points li{font-size:14.5px}
-  .card-head{padding:16px 18px 14px}
-  .card-head h3{font-size:19px}
-  .card-body{padding:16px 18px 20px}
-  .f{margin-bottom:11px}
-  .f,.card{scroll-margin-top:92px}
-  /* Optional on mobile: one less text field to thumb-type */
-  .f.m-hide{display:none}
-  .consent{font-size:11.5px;padding:10px 11px}
-  .submit{margin-top:12px;padding:15px;font-size:16px}
-  .trust-row{margin-top:12px;padding-top:12px}
-  .tcpa{font-size:10px;margin-top:10px}
-  .m-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;
-         padding:15px;font-size:16px;font-weight:800;border-radius:12px;
-         background:var(--accent);color:#fff;box-shadow:0 8px 18px rgba(30,99,240,.28)}
-  .m-cta.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);box-shadow:none;margin-top:10px}
-  .fieldnote{display:block;font-size:11.5px;color:#c0392b;font-weight:700;margin-top:5px}
-}
-
-/* ===== CALL-FIRST HERO (P1 redesign 2026-09-29) — namespaced cf-, mobile-first, replaces old .hero ===== */
-.cf-hero{background:linear-gradient(180deg,var(--paper) 0%,#fff 100%);padding:26px 0 30px;position:relative;overflow:hidden}
-.cf-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(680px 340px at 88% -8%,rgba(30,99,240,.10),transparent 62%);pointer-events:none}
-.cf-in{position:relative;max-width:640px;margin:0 auto;padding:0 18px}
-.cf-eyebrow{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--accent-ink);background:rgba(30,99,240,.09);padding:6px 11px;border-radius:999px;margin-bottom:14px}
-.cf-h1{font-size:clamp(30px,6.2vw,44px);line-height:1.08;letter-spacing:-.02em;font-weight:900;color:var(--navy)}
-.cf-h1 .u{color:var(--accent)}
-.cf-sub{margin-top:12px;font-size:clamp(16px,2.2vw,19px);color:#3d4d61}
-.cf-forwho{margin-top:12px;font-size:13.5px;font-weight:800;color:var(--accent-ink);display:inline-block;background:rgba(30,99,240,.08);padding:8px 12px;border-radius:10px;line-height:1.35}
-.cf-callbtn{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--accent);color:#fff;font-weight:900;font-size:clamp(20px,4.2vw,25px);letter-spacing:-.01em;padding:18px 16px;border-radius:14px;margin-top:22px;box-shadow:0 12px 26px rgba(30,99,240,.30);transition:.18s ease}
-.cf-callbtn:hover{background:var(--accent-ink);transform:translateY(-2px)}
-.cf-callbtn svg{width:24px;height:24px;flex:0 0 auto}
-.cf-callbtn .lab{display:flex;flex-direction:column;align-items:center;line-height:1.15}
-.cf-callbtn .lab small{font-size:11.5px;font-weight:700;opacity:.9;letter-spacing:.02em;text-transform:uppercase}
-.cf-orcall{display:block;text-align:center;margin-top:14px;font-size:16px;font-weight:800;color:var(--accent-ink);cursor:pointer}
-.cf-orcall span{border-bottom:2px solid rgba(11,74,209,.3)}
-.cf-formwrap{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.cf-formwrap.open{max-height:2200px}
-.cf-formcard{margin-top:16px;border:1px solid var(--line);border-radius:14px;padding:18px;background:linear-gradient(180deg,#fbfcff,#fff)}
-.cf-formcard h2{font-size:18px;color:var(--navy);margin-bottom:3px}
-.cf-formcard .small{font-size:13px;color:var(--muted);margin-bottom:8px}
-.cf-formcard label.lab{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin:11px 0 5px}
-.cf-formcard input[type=text],.cf-formcard input[type=tel],.cf-formcard input[type=email]{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:11px;font-size:16px;font-family:inherit;color:var(--text);background:#fff}
-.cf-formcard input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(30,99,240,.12)}
-.cf-opt{font-weight:500;color:var(--muted)}
-.cf-submit{width:100%;margin-top:15px;padding:16px;background:var(--accent);color:#fff;border:0;border-radius:12px;font-size:17px;font-weight:900;font-family:inherit;cursor:pointer;transition:.15s}
-.cf-submit:hover{background:var(--accent-ink)}
-.cf-smsrow{display:flex;gap:9px;align-items:flex-start;font-size:12px;line-height:1.4;color:#4a5768;margin-top:12px;cursor:pointer}
-.cf-smsrow input{width:18px;height:18px;flex:0 0 auto;margin-top:1px;accent-color:var(--accent)}
-.cf-tcpa{font-size:11px;line-height:1.45;color:#8a97a6;margin-top:12px}
-.cf-tcpa a{text-decoration:underline}
-.cf-trust{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;justify-content:center}
-.cf-chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#54657a;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 11px}
-.cf-chip svg{width:13px;height:13px;color:var(--good)}
-.cf-reassure{margin-top:20px;padding:18px;background:var(--paper);border:1px solid var(--line);border-radius:13px}
-.cf-reassure b{color:var(--navy)}
-.cf-reassure p{font-size:14.5px;color:#3d4d61}
-.cf-reassure ul{list-style:none;margin-top:12px;display:grid;gap:9px}
-.cf-reassure li{display:flex;gap:9px;font-size:14px;color:var(--ink);align-items:flex-start}
-.cf-reassure li svg{width:17px;height:17px;color:var(--accent);flex:0 0 auto;margin-top:2px}
-@media(min-width:700px){
-  .cf-in{padding:6px 24px 0}
-  .cf-trust{justify-content:flex-start}
-}
-/*cf-abovefold*/.cf-ctaline{font-size:17px!important;font-weight:800!important;line-height:1.4!important;color:var(--navy)!important;margin:12px 0 0!important}.cf-ctaline .u{color:var(--accent)}.cf-orline{display:flex;align-items:center;gap:10px;color:#5B7088;font-size:13px;font-weight:700;margin:16px 0 0}.cf-orline:before,.cf-orline:after{content:"";height:1px;background:#E3EAF2;flex:1}.cf-orline span{white-space:nowrap}.cf-formwrap.open{max-height:none!important}.cf-formcard{background:none!important;border:none!important;box-shadow:none!important;padding:0!important;margin-top:10px!important}.cf-inlinecap{display:flex;gap:8px}.cf-inlinecap input{flex:1;min-width:0;border:1.6px solid #CFDAE8;border-radius:12px;padding:14px;font-size:16px;font-weight:600;background:#fff}.cf-getbtn{flex-shrink:0;border:0;background:var(--navy);color:#fff;font-weight:800;font-size:14.5px;padding:0 16px;border-radius:12px;white-space:nowrap;cursor:pointer}.cf-more{display:none;margin-top:12px}.cf-more.open{display:block}.cf-forwho-sm{font-size:12px!important;color:#5B7088!important;font-weight:650!important;background:none!important;padding:0!important;margin:12px 0 0!important;display:block!important}@media(max-width:640px){.brand-txt{display:inline-block!important;font-size:16px!important;max-width:none}.logo{font-size:16px!important}.call-txt small{display:none!important}.call-txt strong{font-size:15px!important}.call-btn{padding:8px 12px!important}.logo-box{width:36px!important;height:36px!important}.logo-box svg{width:20px!important;height:20px!important}}/*cf-headpill*/.nav-phone{background:var(--accent)!important;color:#fff!important;border-radius:12px!important;padding:9px 14px!important;flex-direction:row!important;align-items:center!important;gap:7px!important;text-decoration:none!important;box-shadow:0 6px 18px rgba(30,99,240,.25)!important}.nav-phone small{display:none!important}.nav-phone strong{color:#fff!important;font-size:15px!important;font-weight:800!important}.nav-ph-ic{width:16px;height:16px;flex-shrink:0}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HOA Contracts","url":"https://hoacontracts.com/","telephone":"(208) 361-4295","areaServed":"US","logo":"https://hoacontracts.com/og.png"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"HOA Insurance Quotes & Coverage Review | HOA Contracts","serviceType":"HOA insurance","areaServed":"US","provider":{"@type":"Organization","name":"HOA Contracts","telephone":"(208) 361-4295","url":"https://hoacontracts.com/"},"description":"Get HOA insurance quotes and a free coverage review. We compare the HOA insurance companies still writing associations and show your board the gaps.","url":"https://hoacontracts.com/hoa-insurance-quotes"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What affects an HOA insurance quote the most?","acceptedAnswer":{"@type":"Answer","text":"Replacement cost of the common property, claims history, roof age, water exposure, the number of units and amenities like pools, and the state the community sits in. Two associations with the same budget can quote very differently on those factors alone."}},{"@type":"Question","name":"How many HOA insurance companies will quote us?","acceptedAnswer":{"@type":"Answer","text":"Fewer than five years ago. In some states only two or three carriers still write homeowners associations. Part of the review is telling you which companies are open for your community type before you spend time on applications."}},{"@type":"Question","name":"Is the quote and coverage review really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no fee, no obligation and no board vote required to look. The quotes come from carriers we are appointed with; your information is never sold or shared."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What affects an HOA insurance quote the most?", "acceptedAnswer": {"@type": "Answer", "text": "Replacement cost of the common property, claims history, roof age, water exposure, the number of units and amenities like pools, and the state the community sits in. Two associations with the same budget can quote very differently on those factors alone."}}, {"@type": "Question", "name": "How many HOA insurance companies will quote us?", "acceptedAnswer": {"@type": "Answer", "text": "Fewer than five years ago. In some states only two or three carriers still write homeowners associations. Part of the review is telling you which companies are open for your community type before you spend time on applications."}}, {"@type": "Question", "name": "Is the quote and coverage review really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There is no fee, no obligation and no board vote required to look. The quotes come from carriers we are appointed with; your information is never sold or shared."}}, {"@type": "Question", "name": "When should we review our policy?", "acceptedAnswer": {"@type": "Answer", "text": "Before you auto-renew. A full read of your program — pricing, replacement-cost accuracy, liability exposure, deductible structure and competitive market options."}}, {"@type": "Question", "name": "Who is this review for?", "acceptedAnswer": {"@type": "Answer", "text": "Association boards and property managers — not individual unit owners."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hoacontracts.com/"},{"@type":"ListItem","position":2,"name":"HOA Insurance Quotes & Coverage Review","item":"https://hoacontracts.com/hoa-insurance-quotes"}]}</script>
 <link rel="alternate" type="text/markdown" href="/hoa-master-insurance-policies.md" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Arial,sans-serif;background:#fff;-webkit-font-smoothing:antialiased;padding-bottom:62px}
+.top-bar{background:#F6A821;color:#15314f;text-align:center;font-size:12.5px;font-weight:800;padding:9px 14px;line-height:1.3}
+.nav{background:#0A2540;padding:11px 16px;display:flex;align-items:center;justify-content:space-between}
+.nav .lg{display:flex;align-items:center;gap:9px;color:#fff;text-decoration:none}.nav .lg .bx{width:34px;height:34px;border-radius:9px;background:#F6A821;display:flex;align-items:center;justify-content:center;color:#0A2540}.nav .lg .bx svg{width:19px}.nav .lg b{font-size:15.5px;font-weight:800}
+.nav .ph{display:inline-flex;align-items:center;gap:6px;color:#F6A821;font-weight:800;font-size:14px;text-decoration:none}.nav .ph svg{width:15px}
+.hero{background:radial-gradient(120% 120% at 70% -10%,#12365c 0%,#0A2540 60%);color:#fff;padding:26px 18px 30px}
+.hero .eye{color:#F6A821;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.hero h1{font-size:30px;line-height:1.12;font-weight:850;letter-spacing:-.02em;margin-top:10px}.hero h1 .g{color:#F6A821}
+.hero p{color:#c3d3e5;font-size:15px;line-height:1.5;margin-top:12px;font-weight:500}
+.card{background:#fff;border-radius:16px;padding:18px 15px 16px;margin-top:20px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.card h3{color:#0A2540;font-size:16px;font-weight:800;text-align:center;margin-bottom:13px}
+.lab{display:none}
+.zin{display:flex;align-items:center;gap:8px;border:1.6px solid #d7dfe8;border-radius:12px;padding:0 13px;margin-bottom:10px}.zin svg{width:17px;color:#0A2540;flex-shrink:0}
+.zin input,.zin select{border:0;outline:0;width:100%;padding:15px 0;font-size:16px;font-weight:700;color:#0A2540;background:transparent}
+.zin input::placeholder{color:#9aa6b2;font-weight:600}.zin select{color:#9aa6b2}.zin select.filled{color:#0A2540}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.tile{border:1.8px solid #d7dfe8;border-radius:12px;padding:15px 10px;text-align:center;font-weight:800;font-size:15px;color:#0A2540;cursor:pointer;background:#fff}
+.tile.sel{border-color:#F6A821;background:#FFF7E8;box-shadow:0 2px 10px rgba(246,168,33,.3)}
+.btn{width:100%;border:0;background:#F6A821;color:#0A2540;font-weight:900;font-size:17px;padding:16px;border-radius:12px;margin-top:12px;box-shadow:0 8px 20px rgba(246,168,33,.5);cursor:pointer}
+.fieldnote{display:none;color:#c0392b;font-size:12px;font-weight:700;margin:-4px 0 8px}
+.pm-consent{display:flex;gap:9px;align-items:flex-start;margin:12px 0 0;text-align:left;cursor:pointer}.pm-consent>input{margin-top:3px;width:16px;height:16px;flex:0 0 auto;accent-color:#F6A821}.pm-consent>span{font-size:12px;line-height:1.5;color:#5E6B78}
+.pm-consent-submit{margin:12px 0 0;font-size:11.5px;line-height:1.5;color:#7B8794}
+.pm-consent-terms{margin:8px 0 0;font-size:10.5px;line-height:1.5;color:#9AA6B2}.pm-consent-terms a{color:#C98A12}
+.c4{display:none}.c4.show{display:block}
+.steps{display:flex;justify-content:space-between;position:relative;margin:16px 8px 2px}.steps:before{content:'';position:absolute;top:13px;left:14px;right:14px;height:3px;background:#E6EBF1;border-radius:2px;z-index:0}
+.steps .s{position:relative;z-index:1;text-align:center;width:25%}.steps .dot{width:27px;height:27px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;background:#EEF2F6;color:#9aa6b2;border:2px solid #E6EBF1}.steps .dot svg{width:14px}
+.steps .s.on .dot,.steps .s.done .dot{background:#F6A821;color:#0A2540;border-color:#F6A821}
+.mini{text-align:center;color:#7d8794;font-size:11.5px;font-weight:650;margin-top:10px}
+.trust{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.trust .t{flex:1;text-align:center}.trust .t b{display:block;color:#F6A821;font-size:22px;font-weight:900}.trust .t span{color:#9fb4ca;font-size:10.5px;font-weight:700;text-transform:uppercase}
+.car{background:#F4F7FB;padding:20px 16px 24px;text-align:center;border-top:3px solid #F6A821}.car .lab2{color:#5B7088;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}.car .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 22px}.car .row img{height:24px;width:auto;opacity:.72;filter:grayscale(25%)}
+.info{background:#fff;padding:8px 18px 28px}.info .aud{display:flex;gap:9px;align-items:flex-start;background:#FFF7E8;border:1px solid #F3E2BA;border-radius:12px;padding:11px 13px;font-size:13px;font-weight:700;color:#5a4a28;line-height:1.4}.info .aud svg{width:18px;color:#C98A12;flex-shrink:0;margin-top:1px}.info .aud b{color:#0A2540}
+.info .lead{font-size:14.5px;line-height:1.55;color:#44586c;font-weight:500;margin-top:14px}
+.info .help{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}.info .help li{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:700;color:#0A2540}.info .help li svg{width:18px;color:#D98E12;flex-shrink:0;margin-top:1px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#F6A821;color:#0A2540;display:flex;align-items:center;justify-content:center;gap:9px;font-weight:900;font-size:16px;text-decoration:none;padding:15px;z-index:50}.sticky svg{width:18px}
+.panel{display:none}.panel.on{display:block}
+.nav{position:sticky;top:0;z-index:60}
+.xplain{background:#fff;padding:6px 18px 10px}.xplain h2{font-size:18px;font-weight:850;color:#0A2540;letter-spacing:-.01em}.xplain p{font-size:14.5px;line-height:1.55;color:#44586c;font-weight:500;margin-top:8px}.xplain b{color:#0A2540}
+.faq{background:#fff;padding:8px 18px 26px}.faq h2{font-size:18px;font-weight:850;color:#0A2540;margin-bottom:10px}
+.faq details{border-top:1px solid #E6EBF1;padding:12px 0}.faq details:last-child{border-bottom:1px solid #E6EBF1}
+.faq summary{list-style:none;cursor:pointer;font-weight:800;font-size:14.5px;color:#0A2540;display:flex;justify-content:space-between;gap:10px}.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:'+';color:#C98A12;font-weight:900}.faq details[open] summary:after{content:'\2013'}
+.faq p{font-size:14px;line-height:1.55;color:#44586c;font-weight:500;margin-top:8px}
+</style>
 </head>
 <body>
-<div class="top-bar"><b>Carriers are dropping HOAs &amp; condos — premiums keep rising.</b> Get a free, board-ready insurance review before your renewal · (208) 361-4295</div>
-
-<header class="nav">
-  <div class="wrap nav-in">
-    <a href="/" class="logo"><span class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/><path d="M9 11h.01M15 11h.01"/></svg></span>HOA Contracts</a>
-    <div class="nav-right">
-      <a href="#form" class="btn btn-ghost nav-cta">Get my free review</a>
-      <a href="tel:12083614295" class="nav-phone" aria-label="Call Now: (208) 361-4295"><svg class="nav-ph-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><small>Call now · toll-free</small><strong>(208) 361-4295</strong></a>
-    </div>
-  </div>
-</header>
-<a href="tel:12083614295" class="callbar" aria-label="Call Now: (208) 361-4295"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now · (208) 361-4295</a>
-
-<section class="cf-hero">
-  <div class="cf-in">
-    <h1 class="cf-h1" id="hero-h1"><span class="u">FREE</span> HOA Insurance Quotes &amp; Coverage Review</h1>
-    <p class="cf-sub cf-ctaline" id="hero-sub">Call now — a licensed broker pulls <span class="u">HOA insurance quotes</span> from carriers still writing associations and reviews your coverage, free.</p>
-
-    <a href="tel:12083614295" class="cf-callbtn" data-callpos="hero" aria-label="Call now: (208) 361-4295">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span class="lab"><small>HOA insurance quotes &amp; coverage</small>(208) 361-4295</span>
-    </a>
-    <div class="cf-orline"><span>or we&#39;ll call you back</span></div>
-
-    <div class="cf-formwrap open" id="cf-formwrap">
-      <div class="cf-formcard" id="form">
-        <form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST">
+<div class="top-bar">Carriers are dropping HOA insurance policies and continuously raising premiums.</div>
+<header class="nav"><a class="lg" href="/"><span class="bx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></span><b>HOA Contracts</b></a><a class="ph" href="tel:12083614295" data-callpos="header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(208) 361-4295</a></header>
+<section class="hero"><div class="eye">GET AHEAD OF YOUR RENEWAL</div><h1><span class="g">FREE</span> HOA Insurance Review</h1><p>A licensed broker shops your HOA policy across carriers and brings your board options.</p><div class="card"><form action="https://procure-lead-engine.dan-fda.workers.dev/submit" method="POST" id="msform">
           <input type="hidden" name="lead_source" value="hoacontracts.com/hoa-insurance-quotes">
           <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="site" value="hoacontracts.com">
           <input type="hidden" name="vertical" value="HOA Insurance">
-          <input type="hidden" name="variant" value="callfirst-2026-09">
+          <input type="hidden" name="variant" value="zipfirst-2026-11">
           <input type="hidden" name="sms_consent" id="sms_consent_field" value="false">
           <input type="hidden" name="sms_consent_text" value="">
           <input type="hidden" name="sms_consent_url" value="">
-          <input type="hidden" name="sms_consent_timestamp" value="">
+          <input type="hidden" name="sms_consent_timestamp" value=""><input type="hidden" name="consent_version" value="hoa-sms-v1-2026-11-16">
           <input type="hidden" name="_redirect" value="https://hoacontracts.com/thank-you.html">
           <input type="hidden" id="msf-renewal_timing" name="renewal_timing" value="">
           <input type="hidden" id="msf-ab_variant" name="ab_variant" value="">
-          <div class="cf-inlinecap">
-          <input id="phone" type="tel" name="phone" placeholder="Your phone number" autocomplete="tel" inputmode="tel" required>
-          <button type="button" class="cf-getbtn" id="cf-getbtn">Get my review &rarr;</button>
-          </div>
-          <div class="cf-more" id="cf-more">
-          <label class="lab" for="name">Full name</label>
-          <input id="name" type="text" name="name" autocomplete="name" placeholder="Jane Doe" required>
-          <label class="lab" for="email">Email <span class="cf-opt">(optional)</span></label>
-          <input id="email" type="email" name="email" autocomplete="email" placeholder="you@email.com">
-          <button class="cf-submit" type="submit">Request my callback &rarr;</button>
-          <label class="cf-smsrow"><input type="checkbox" id="sms_consent_box"><span>Text me updates too (optional). By checking this box I agree to receive SMS text messages from HOA Contracts (Procure Media, LLC) at the number I provided. Msg &amp; data rates may apply.</span></label>
-          <div class="cf-tcpa">By submitting, you agree to be contacted about your request by ProcureMedia and its brands and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase. <strong>SMS:</strong> if you check the box, msg frequency varies, msg &amp; data rates may apply, reply STOP to opt out. See our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms">Terms</a>.</div>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="cf-trust">
-      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>No cost, no obligation</span>
-      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Never sold or shared</span>
-      <span class="cf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Licensed insurance broker</span>
-    </div>
-    <p class="cf-forwho cf-forwho-sm">For HOA &amp; condo association boards &amp; property managers — not individual unit owners</p>
-
-    <div class="cf-reassure">
-      <p><b>Compare your HOA&#39;s master policy, coverage and insurance options.</b> New to coverage, shopping a fresh quote, or facing a change at renewal — a licensed broker handles it and brings your board clear options. We help with:</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>New master policies &amp; quotes</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Renewals &amp; re-shopping your program</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Premium increases &amp; carrier non-renewals</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coverage gaps &amp; replacement-cost shortfalls</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Board (D&amp;O) liability exposure</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="carriers">
-  <div class="wrap">
-    <div class="lab">Carriers we access</div>
-    <div class="carrier-row">
-      <img src="/logos/image001.png" alt="Travelers Insurance" loading="lazy">
-      <img src="/logos/image004.png" alt="Zurich Insurance" loading="lazy">
-      <img src="/logos/image005.png" alt="The Cincinnati Insurance Companies" loading="lazy">
-      <img src="/logos/image006.png" alt="EMC Insurance" loading="lazy">
-      <img src="/logos/image007.png" alt="Liberty Mutual Insurance" loading="lazy">
-      <img src="/logos/image008.png" alt="Nationwide Insurance" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="wrap stats-grid">
-    <div class="stat"><b><i>4,000+</i></b><span>Communities served</span></div>
-    <div class="stat"><b><i>1M+</i></b><span>Units nationwide</span></div>
-    <div class="stat"><b><i>$3B+</i></b><span>Coverage reviewed</span></div>
-    <div class="stat"><b><i>38</i></b><span>States served</span></div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">What an HOA insurance quote should include</span><h2>Every line of coverage a homeowners association needs, priced side by side</h2><p>An HOA insurance quote is not one number. It is a package: property on the common elements, general liability, directors and officers, crime, umbrella, and the endorsements your governing documents require. We quote the whole package and show where your current policy is thin or overpriced.</p></div>
-    <div class="rev-grid">
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Property for common areas</h3><p>Clubhouse, pool, gates, roads, fences, signage and any building the association owns, at a replacement cost that matches today's construction prices, not the figure set years ago.</p></div>
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 3-3 3 3 5-6"/></svg></div><h3>General liability</h3><p>Slip-and-fall, playground and pool incidents, contractor injuries. We check per-occurrence and aggregate limits against your unit count and amenities, and confirm volunteers are covered.</p></div>
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-6h6v6"/></svg></div><h3>Directors &amp; officers</h3><p>Boards get sued over assessments, enforcement and elections. We confirm the D&amp;O limit, the defense-cost wording and whether past boards and committees are covered.</p></div>
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg></div><h3>Umbrella &amp; excess</h3><p>A single severe claim can exceed the primary liability limit. We price an umbrella that sits over liability, D&amp;O and auto, and show what each extra million costs.</p></div>
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3>Crime &amp; fidelity</h3><p>Many state statutes and lender guidelines require fidelity coverage equal to reserves plus three months of assessments. We verify the limit covers the manager and the bank balance.</p></div>
-      <div class="rev"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div><h3>Which HOA insurance companies still write you</h3><p>Carriers have left whole states and building types. We know which HOA insurance companies are quoting your community type this year and bring their numbers to your board.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Who we quote</span><h2>Homeowners associations of every size and type</h2><p>Single-family HOAs, master-planned communities, gated neighborhoods and mixed-use associations. Each one carries different exposures, so each one gets a quote built from its own documents and budget.</p></div>
-    <div class="serve-grid">
-      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span><div><strong>HOA &amp; COA boards</strong><span>Presidents, treasurers and members responsible for the master policy.</span></div></div>
-      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V7l6-4 6 4v14"/><path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01"/></svg></span><div><strong>Property managers</strong><span>Community managers coordinating renewals across one or many associations.</span></div></div>
-      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></span><div><strong>Condo &amp; townhome</strong><span>Condominium, townhome and stacked-unit communities with shared structures.</span></div></div>
-      <div class="serve"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><strong>Master-planned</strong><span>Large master-planned and mixed-use communities with complex exposures.</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">How it works</span><h2>Quotes and a coverage review in about two weeks</h2><p>No board vote needed to look. We gather the documents, go to market, and bring back quotes with a plain-English comparison.</p></div>
-    <div class="steps">
-      <div class="step"><span class="n">1</span><h3>Send your current policy</h3><p>A short call, then your declarations pages, renewal notice, budget and governing documents.</p></div>
-      <div class="step"><span class="n">2</span><h3>We go to market</h3><p>We submit to the HOA insurance companies still writing associations in your state and compare quotes line by line against what you have.</p></div>
-      <div class="step"><span class="n">3</span><h3>Your board gets the numbers</h3><p>A one-page comparison of premium, limits, deductibles and gaps, ready for the next board meeting.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec alt">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Common questions</span><h2>HOA insurance quote FAQ</h2></div>
-    <div class="faq"><div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>What affects an HOA insurance quote the most?</h3><p>Replacement cost of the common property, claims history, roof age, water exposure, the number of units and amenities like pools, and the state the community sits in. Two associations with the same budget can quote very differently on those factors alone.</p></div>
-      <div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>How many HOA insurance companies will quote us?</h3><p>Fewer than five years ago. In some states only two or three carriers still write homeowners associations. Part of the review is telling you which companies are open for your community type before you spend time on applications.</p></div>
-      <div class="qa"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Is the quote and coverage review really free?</h3><p>Yes. There is no fee, no obligation and no board vote required to look. The quotes come from carriers we are appointed with; your information is never sold or shared.</p></div></div>
-  </div>
-</section>
-
-<section class="final">
-  <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff">No cost · No obligation · No board vote</span>
-  <h2>Get HOA insurance quotes and a free coverage review</h2>
-  <p>Compare HOA insurance companies, limits and premiums side by side before your renewal locks in another term.</p>
-  <a href="#form" class="btn btn-primary">Get my free review →</a>
-  <span class="callalt">or call <a href="tel:12083614295">(208) 361-4295</a></span>
-</section>
-
-<footer id="contact">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo"><span class="logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5"/></svg></span>HOA Contracts</div>
-        <p style="color:#9FB6C9;max-width:300px">Free HOA and condo association insurance reviews focused on premium savings, liability protection and renewal strategy.</p>
-      </div>
-      <div><h4>Reviews</h4><a href="/hoa-insurance-review">HOA Insurance Review</a><a href="/hoa-master-insurance-policies">HOA Master Policies</a><a href="/hoa-board-liability-insurance">Board Liability (D&amp;O)</a><a href="/hoa-replacement-cost-analysis">Replacement Cost</a></div>
-      <div><h4>Resources</h4><a href="/blog">Blog &amp; Insights</a><a href="/condo-association-insurance">Condo Association Insurance</a><a href="/coverage-gap-review">Coverage Gap Review</a><a href="/hoa-insurance-carrier-review">Carrier Review</a></div>
-      <div><h4>Contact</h4><a href="tel:12083614295">(208) 361-4295</a><a href="mailto:reviews@hoacontracts.com">reviews@hoacontracts.com</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms &amp; Conditions</a></div>
-    </div>
-    <div class="foot-dis">This website is for lead generation and referral purposes. Coverage availability, terms and pricing vary by carrier, state and underwriting review. Submitting a request does not bind, alter or guarantee coverage.</div>
-    <div style="font-size:13px">© 2026 HOA Contracts. All rights reserved.</div>
-  </div>
-</footer>
-
+          <input type="hidden" name="community_size" id="community_size" value="">
+          <div class="panel on" data-p="1"><h3>Get your free review — start with your ZIP</h3>
+            <label class="zin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><input name="zip" placeholder="Enter your ZIP code" inputmode="numeric" maxlength="5" autocomplete="postal-code"></label>
+            <small class="fieldnote" data-n="1">Please enter your 5-digit ZIP code.</small></div>
+          <div class="panel" data-p="2"><h3>How many units in your HOA?</h3>
+            <div class="tiles"><div class="tile" data-v="0-10">0–10</div><div class="tile" data-v="11-25">11–25</div><div class="tile" data-v="26-74">26–74</div><div class="tile" data-v="75+">75 or more</div></div>
+            <small class="fieldnote" data-n="2">Please choose one.</small></div>
+          <div class="panel" data-p="3"><h3>Almost there — who should we address it to?</h3>
+            <label class="zin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><input name="name" placeholder="Your name" autocomplete="name"></label>
+            <label class="zin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg><select name="role" class="role"><option value="">Your HOA board title</option><option>Board President</option><option>Vice President</option><option>Treasurer</option><option>Secretary</option><option>Board Member</option><option>Property Manager</option><option>Other</option></select></label>
+            <small class="fieldnote" data-n="3">Please add your name and title.</small></div>
+          <div class="panel" data-p="4"><h3>Where should we send your options?</h3>
+            <label class="zin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg><input type="email" name="email" placeholder="Email address" autocomplete="email"></label>
+            <label class="zin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" inputmode="tel"></label>
+            <label class="pm-consent"><input type="checkbox" id="sms_consent_box"><span>Yes, text me about my request. By checking this box, I agree to receive SMS text messages about my insurance review request and related follow-ups from HOA Contracts (Procure Media, LLC) at the phone number I provided, including messages sent using automated technology. Msg &amp; data rates may apply. Message frequency varies.</span></label>
+            <small class="fieldnote" data-n="4">Please add email and phone.</small></div>
+          <button class="btn" id="msnext" type="button">Get started &rarr;</button>
+          <div class="c4" id="c4"><p class="pm-consent-submit">By clicking "See options," I agree to be contacted about my request by HOA Contracts (Procure Media, LLC) and The Partners Group by phone call and email, including via automated technology. Consent is not a condition of purchase.</p><p class="pm-consent-terms">SMS terms: If you check the box above, message frequency varies and Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. SMS consent is not a condition of purchase. See our <a href="/privacy-policy.html">Privacy Policy</a> and <a href="/terms.html">Terms</a>.</p></div>
+          <div class="steps" id="msbar"><div class="s on"><div class="dot">1</div></div><div class="s"><div class="dot">2</div></div><div class="s"><div class="dot">3</div></div><div class="s"><div class="dot">4</div></div></div>
+          <div class="mini">60 seconds &middot; no cost &middot; your info is never sold</div>
+        </form></div><div class="trust"><div class="t"><b>4,000+</b><span>Communities</span></div><div class="t"><b>38</b><span>States</span></div><div class="t"><b>$3B+</b><span>Reviewed</span></div></div></section>
+<div class="car"><div class="lab2">Carriers we access</div><div class="row"><img src="/logos/image001.png" alt="" loading="lazy"><img src="/logos/image004.png" alt="" loading="lazy"><img src="/logos/image005.png" alt="" loading="lazy"><img src="/logos/image006.png" alt="" loading="lazy"><img src="/logos/image007.png" alt="" loading="lazy"><img src="/logos/image008.png" alt="" loading="lazy"></div></div>
+<section class="info"><div class="aud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>For HOA boards &amp; property managers — <b>not individual unit owners</b></span></div><p class="lead">We compare HOA insurance quotes and the companies still writing homeowners association insurance, and check your HOA insurance coverage before you renew, so your board gets a board-ready comparison. We help with:</p><ul class="help"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>HOA insurance quotes from multiple carriers</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Which HOA insurance companies still write you</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Your HOA insurance coverage, limits &amp; deductibles</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Coverage gaps &amp; replacement-cost shortfalls</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Premium increases &amp; carrier non-renewals</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Insurance for homeowners associations of every size</li></ul></section>
+<section class="xplain"><h2>Your HOA insurance review</h2><p>We compare the HOA insurance companies still writing homeowners associations and review your HOA insurance coverage, limits and deductibles for premium savings — a free HOA insurance quote before renewal.</p></section><section class="faq"><h2>Frequently asked questions</h2><details><summary>What affects an HOA insurance quote the most?</summary><p>Replacement cost of the common property, claims history, roof age, water exposure, the number of units and amenities like pools, and the state the community sits in. Two associations with the same budget can quote very differently on those factors alone.</p></details><details><summary>How many HOA insurance companies will quote us?</summary><p>Fewer than five years ago. In some states only two or three carriers still write homeowners associations. Part of the review is telling you which companies are open for your community type before you spend time on applications.</p></details><details><summary>Is the quote and coverage review really free?</summary><p>Yes. There is no fee, no obligation and no board vote required to look. The quotes come from carriers we are appointed with; your information is never sold or shared.</p></details><details><summary>When should we review our policy?</summary><p>Before you auto-renew. A full read of your program — pricing, replacement-cost accuracy, liability exposure, deductible structure and competitive market options.</p></details><details><summary>Who is this review for?</summary><p>Association boards and property managers — not individual unit owners.</p></details></section><a class="sticky" href="tel:12083614295" data-callpos="sticky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call now &middot; (208) 361-4295</a>
 <script>
 /* Phone formatter (from live) */
 document.addEventListener("DOMContentLoaded", function () {
@@ -491,7 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if(form) form.addEventListener("submit",sync);
 })();
 </script>
-<!-- Procure form analytics — GA4 funnel events (no PII to GA) + partial capture to separate DB (from live) -->
 <script>
 (function(){
   var form = document.querySelector('form'); if(!form) return;
@@ -544,9 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if(_sms) _sms.addEventListener('change', function(){ if(this.checked){ reached['sms_consent']=true; lastField='sms_consent'; ga('form_progress',{field_name:'sms_consent'}); } beacon(false); });
 })();
 </script>
-<!-- Procure first-party chat widget (matches live; JS served from repo root /procure-chat-widget.js) -->
-<script src="/procure-chat-widget.js" defer></script>
-
 <script>
 /* Phone-tap tracking: fires a GA4 'phone_call_click' event on every tap-to-call.
    Surfaces call INTENT in GA4 and gives Google Ads a signal to optimize toward callers.
@@ -567,7 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }, true);
 })();
 </script>
-
 <script>
 /* Mobile phone-field hardening (2026-09-29).
    The old pattern excluded "+", so an iOS/Android autofill of "+1 (208) 555-1234"
@@ -578,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var f=document.querySelector('form[action*="/submit"]'); if(!f) return;
   var phone=f.querySelector('[name="phone"]'); if(!phone) return;
   var note=document.createElement('small'); note.className='fieldnote'; note.setAttribute('role','alert');
-  phone.parentNode.appendChild(note);
+  phone.insertAdjacentElement('afterend', note);
   function digits(v){ return String(v||'').replace(/\D/g,''); }
   function usTen(v){ var d=digits(v); if(d.length===11 && d.charAt(0)==='1') d=d.slice(1); return d; }
   function fmt(v){ var d=usTen(v);
@@ -601,20 +280,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }, true);
 })();
 </script>
-
+<script src="/procure-chat-widget.js" defer></script>
 <script>
-/* Call-first progressive form (P1 2026-09-29): reveal the callback form on the
-   "or have us call you" tap, on any #form link, or a #form hash. Calling stays the
-   primary action; if JS is off the <noscript> rule below leaves the form open. */
+/* ZIP-first multistep controller (zipfirst-2026-11). Advances steps, validates per step; step 4
+   submits the form so the live phone-hardening, /partial beacon(true) and thank-you redirect all
+   fire unchanged. Units tile sets hidden community_size + fires form_progress, matching live telemetry. */
 (function(){
-  var more=document.getElementById('cf-more');
-  function reveal(){ if(more) more.classList.add('open'); }
-  var phone=document.getElementById('phone'); if(phone) phone.addEventListener('focus', reveal);
-  var getbtn=document.getElementById('cf-getbtn'); if(getbtn) getbtn.addEventListener('click', function(){ reveal(); if(phone){ try{phone.focus();}catch(e){} } });
-  document.addEventListener('click',function(e){ var a=e.target&&e.target.closest?e.target.closest('a[href="#form"]'):null; if(a){ e.preventDefault(); reveal(); if(phone){ try{phone.focus();}catch(e){} } } });
-  if(location.hash==='#form') reveal();
+  var step=1, LAB=["Get started →","Continue →","Almost done →","See options →"];
+  var form=document.getElementById("msform"), btn=document.getElementById("msnext"), bar=document.getElementById("msbar");
+  var panels=[].slice.call(form.querySelectorAll(".panel")); var dots=[].slice.call(bar.querySelectorAll(".s"));
+  var cs=document.getElementById("community_size");
+  var CKSVG='<svg viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  function note(n,on){ var el=form.querySelector('.fieldnote[data-n="'+n+'"]'); if(el) el.style.display=on?"block":"none"; }
+  function render(){
+    panels.forEach(function(p){ p.classList.toggle("on", +p.dataset.p===step); });
+    btn.innerHTML=LAB[step-1]; document.getElementById("c4").classList.toggle("show", step===4);
+    dots.forEach(function(d,i){ var n=i+1; d.className="s"+(n<step?" done":n===step?" on":""); d.querySelector(".dot").innerHTML=(n<step?CKSVG:n); });
+  }
+  form.querySelectorAll(".tile").forEach(function(t){ t.onclick=function(){
+    form.querySelectorAll(".tile").forEach(function(x){ x.classList.remove("sel"); });
+    t.classList.add("sel"); if(cs) cs.value=t.dataset.v; note(2,false);
+    try{ if(window.gtag) gtag('event','form_progress',{field_name:'community_size',step:2}); }catch(e){}
+  };});
+  var role=form.querySelector(".role"); if(role) role.onchange=function(){ this.classList.toggle("filled", !!this.value); };
+  function ok(){
+    if(step===1){ var z=(form.querySelector('[name=zip]').value||'').replace(/\D/g,''); if(z.length!==5){ note(1,true); return false; } }
+    if(step===2){ if(!cs||!cs.value){ note(2,true); return false; } }
+    if(step===3){ var nm=(form.querySelector('[name=name]').value||'').trim(); var rl=form.querySelector('[name=role]').value; if(!nm||!rl){ note(3,true); return false; } }
+    if(step===4){ var em=(form.querySelector('[name=email]').value||'').trim();
+      var pd=(form.querySelector('[name=phone]').value||'').replace(/\D/g,''); if(pd.charAt(0)==='1'&&pd.length===11) pd=pd.slice(1);
+      if(!em||em.indexOf('@')<1||pd.length!==10){ note(4,true); return false; } }
+    return true;
+  }
+  btn.onclick=function(){ if(!ok()) return; if(step<4){ step++; render(); } else { if(form.requestSubmit) form.requestSubmit(); else form.submit(); } };
+  render();
 })();
 </script>
-<noscript><style>.cf-formwrap{max-height:none!important}.cf-more{display:block!important}</style></noscript>
-</body>
-</html>
+</body></html>
