@@ -247,7 +247,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }, true);
 })();
 </script>
-<script src="/procure-chat-widget.js" defer></script>
+
+<script>
+/* Mobile phone-field hardening (2026-09-29).
+   The old pattern excluded "+", so an iOS/Android autofill of "+1 (208) 555-1234"
+   failed native validation and the submit was silently blocked. This normalizes the
+   value to a clean US format on the way in, so validation always passes, and shows a
+   readable inline message instead of a native tooltip. */
+(function(){
+  var f=document.querySelector('form[action*="/submit"]'); if(!f) return;
+  var phone=f.querySelector('[name="phone"]'); if(!phone) return;
+  var note=document.createElement('small'); note.className='fieldnote'; note.setAttribute('role','alert');
+  phone.insertAdjacentElement('afterend', note);
+  function digits(v){ return String(v||'').replace(/\D/g,''); }
+  function usTen(v){ var d=digits(v); if(d.length===11 && d.charAt(0)==='1') d=d.slice(1); return d; }
+  function fmt(v){ var d=usTen(v);
+    if(d.length!==10) return v;
+    return '('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6); }
+  function clearNote(){ note.style.display='none'; phone.setCustomValidity(''); }
+  phone.addEventListener('input', clearNote);
+  phone.addEventListener('blur', function(){ var n=fmt(phone.value); if(n!==phone.value) phone.value=n; });
+  f.addEventListener('submit', function(e){
+    phone.value=fmt(phone.value);
+    if(usTen(phone.value).length!==10){
+      e.preventDefault();
+      note.textContent='Please enter a 10-digit US phone number.';
+      note.style.display='block';
+      phone.focus();
+      try{ phone.scrollIntoView({block:'center',behavior:'smooth'}); }catch(_){}
+      return false;
+    }
+    clearNote();
+  }, true);
+})();
+</script><script src="/procure-chat-widget.js" defer></script>
 <script>
 /* ZIP-first multistep controller (zipfirst-2026-11). Advances steps, validates per step; step 4
    submits the form so the live phone-hardening, /partial beacon(true) and thank-you redirect all
